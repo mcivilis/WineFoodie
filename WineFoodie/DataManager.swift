@@ -13,16 +13,14 @@ class DataManager {
     func loadDataFromURL(url: NSURL, completion:(data: NSData?, error: NSError?) -> Void) {
         let session = NSURLSession.sharedSession()
         let loadDataTask = session.dataTaskWithURL(url) { (data, response, error) -> Void in
-            print("completed")
             if let error = error {
-                print("error");
+                print("error loading data");
                 completion(data: nil, error: error)
             } else {
-                print("no error");
+                print("no error loading data");
                 completion(data: data, error: nil)
             }
         }
-        print("resuming")
         loadDataTask.resume()
     }
 }

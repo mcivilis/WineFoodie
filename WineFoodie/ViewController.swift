@@ -21,7 +21,7 @@ class ViewController: UIViewController {
             print(data)
             guard error != nil else {
                 print(error)
-                fatalError() //return
+                return
             }
             
             typealias winePayload = [String: AnyObject]
@@ -32,13 +32,13 @@ class ViewController: UIViewController {
                 
             } catch {
                 print(error)
-                fatalError() //return
+                return
             }
             
             guard let wines = json["wines"] as? [AnyObject]
                 else {
                     print("No wines found")
-                    fatalError() //return
+                    return
             }
             
             var wineList : [Wine]!
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
                 
                 guard let recipes = wine["recipes"] as? recipePayload
                     else {
-                        fatalError() //return
+                        return
                 }
                 
                 if let name = wine["name"] as? String,
