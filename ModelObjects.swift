@@ -23,9 +23,13 @@ struct Wine {
 
 struct  Recipe {
     var name: String!
-    var link: String!
-    var sourceLink: String!
-    var sourceID: String!
-    var image: String!
+    var link: String?
+    var sourceLink: String?
+    var sourceID: String?
+    var image: String?
+    
+    init(recipeName: String) {
+        name = recipeName
+    }
 }
 
