@@ -9,16 +9,17 @@
 import Foundation
 
 struct Wine {
-    
-    var name : String!
     var code : String!
-    var varietal : String!
-    var vintage : String!
-    var wineType : String!
     var region : String!
-    var snoothrank : Int!
-    var price : Int!
-    var recipes : [Recipe]!
+    var varietal : String!
+    var type: String!
+    
+    init(wineCode: String, wineRegion: String, wineVarietal:String, wineType:String) {
+        code = wineCode
+        region = wineRegion
+        varietal = wineVarietal
+        type = wineType
+    }
 }
 
 struct  Recipe {
