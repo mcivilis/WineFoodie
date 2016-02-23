@@ -10,6 +10,14 @@ import Foundation
 
 class DataManager {
     
+    let wineListAPI = "http://api.snooth.com/wines/"
+    let detailWineAPI = "http://api.snooth.com/wine/"
+    let apiKey = "?akey=" + "exv5m69z4qivba6bcrroro20p0vxwucryz1xou81qv9vcf21"
+
+    let wineListOptions = "&q=wine"
+    let detailWineOptions = "&food=1"
+    let detailWineIdCommand = "&id="
+    
     func loadDataFromURL(url: NSURL, completion:(data: NSData?, error: NSError?) -> Void) {
         let session = NSURLSession.sharedSession()
         let loadDataTask = session.dataTaskWithURL(url) { (data, response, error) -> Void in

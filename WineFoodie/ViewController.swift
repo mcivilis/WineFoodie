@@ -10,9 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var recipeList = [Recipe]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DataManager().detailWineRecipes("conway-deep-sea-chardonnay-la-costa-wine-co-2008-1") { (recipeList) -> Void in
+            self.recipeList = recipeList
+            for recipe in recipeList {
+                print(recipe.name)
+            }
+        }
+        
+        
+    }
+}
+
+
+
+/*
         //let winesPlusKey = "http://api.snooth.com/wines/?akey=exv5m69z4qivba6bcrroro20p0vxwucryz1xou81qv9vcf21"
         let winesDetailPlusKey = "http://api.snooth.com/wine/?akey=exv5m69z4qivba6bcrroro20p0vxwucryz1xou81qv9vcf21&id="
         let wineCode = "conway-deep-sea-chardonnay-la-costa-wine-co-2008-1"
@@ -173,3 +189,4 @@ class ViewController: UIViewController {
 //
 //}
 
+*/

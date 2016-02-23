@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFCFBE621C7CBAD8007D360C /* DataManager+Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */; };
+		AFCFBE651C7CC388007D360C /* DataManager+WineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */; };
 		AFD498C51C7BD47F0083B788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498C41C7BD47F0083B788 /* AppDelegate.swift */; };
 		AFD498C71C7BD47F0083B788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498C61C7BD47F0083B788 /* ViewController.swift */; };
 		AFD498CA1C7BD47F0083B788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD498C81C7BD47F0083B788 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataManager+Recipes.swift"; path = "../DataManager+Recipes.swift"; sourceTree = "<group>"; };
+		AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+WineList.swift"; sourceTree = "<group>"; };
 		AFD498C11C7BD47F0083B788 /* WineFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD498C41C7BD47F0083B788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFD498C61C7BD47F0083B788 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFCFBE631C7CBAE6007D360C /* API DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				AFD498D61C7BD4930083B788 /* DataManager.swift */,
+				AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */,
+				AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */,
+			);
+			name = "API DataManager";
+			sourceTree = "<group>";
+		};
 		AFD498B81C7BD47F0083B788 = {
 			isa = PBXGroup;
 			children = (
@@ -61,7 +75,7 @@
 				AFD498C41C7BD47F0083B788 /* AppDelegate.swift */,
 				AFD498C61C7BD47F0083B788 /* ViewController.swift */,
 				AFD498C81C7BD47F0083B788 /* Main.storyboard */,
-				AFD498D61C7BD4930083B788 /* DataManager.swift */,
+				AFCFBE631C7CBAE6007D360C /* API DataManager */,
 				AFD498DC1C7BD54A0083B788 /* ModelObjects.swift */,
 				AFD498CB1C7BD47F0083B788 /* Assets.xcassets */,
 				AFD498CD1C7BD47F0083B788 /* LaunchScreen.storyboard */,
@@ -141,8 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFCFBE651C7CC388007D360C /* DataManager+WineList.swift in Sources */,
 				AFD498DD1C7BD54A0083B788 /* ModelObjects.swift in Sources */,
 				AFD498C71C7BD47F0083B788 /* ViewController.swift in Sources */,
+				AFCFBE621C7CBAD8007D360C /* DataManager+Recipes.swift in Sources */,
 				AFD498D71C7BD4930083B788 /* DataManager.swift in Sources */,
 				AFD498C51C7BD47F0083B788 /* AppDelegate.swift in Sources */,
 			);
@@ -294,6 +310,7 @@
 				AFD498D51C7BD47F0083B788 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
