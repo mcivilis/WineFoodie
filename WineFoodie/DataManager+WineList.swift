@@ -10,10 +10,10 @@ import Foundation
 
 extension DataManager {
     
-    func wineList (completion: (wineList: [Wine]) -> Void) {
+    func wineList (wineOptions: String, completion: (wineList: [Wine]) -> Void) {
         
-        let wineListURL = NSURL(string: wineListAPI + apiKey + wineListOptions)
-        
+        let wineListURL = NSURL(string: wineListAPI + apiKey + wineListDefaultOptions + wineOptions)
+        print(wineListURL)
         
         loadDataFromURL(wineListURL!) { (data, error) -> Void in
             guard error == nil else {

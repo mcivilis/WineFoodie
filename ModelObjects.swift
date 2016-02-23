@@ -8,11 +8,12 @@
 
 import Foundation
 
-struct Wine {
+class Wine {
     var code : String!
     var region : String!
     var varietal : String!
     var type: String!
+    var recipes: [Recipe]?
     
     init(wineCode: String, wineRegion: String, wineVarietal:String, wineType:String) {
         code = wineCode

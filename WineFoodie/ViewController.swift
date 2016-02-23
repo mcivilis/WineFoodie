@@ -10,22 +10,33 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var recipeList = [Recipe]()
     var wineList = [Wine]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataManager().detailWineRecipes("conway-deep-sea-chardonnay-la-costa-wine-co-2008-1") { (recipeList) -> Void in
-            self.recipeList = recipeList
-        }
-     
-        DataManager().wineList { (wineList) -> Void in
-            self.wineList = wineList
-            for wine in self.wineList {
-                print(wine.code)
+        for color in wineColor {
+            DataManager().wineList(color) { (wineList) -> Void in
+                self.wineList = self.wineList + wineList
+                print("Number of wines in the list is:", self.wineList.count)
             }
         }
+        
+        for type in wineType {
+            DataManager().wineList(type) { (wineList) -> Void in
+                self.wineList = self.wineList + wineList
+                print("Number of wines in the list is:", self.wineList.count)
+            }
+        }
+        
+        for wine in wineList {
+            
+            DataManager().detailWineRecipes(wine.code) { (recipeList) -> Void in
+                wine.recipes = recipeList
+            }
+        }
+        
+        
         
     }
 }
