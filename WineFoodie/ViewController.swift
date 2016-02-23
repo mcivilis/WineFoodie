@@ -13,45 +13,54 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
-        let url = NSURL(string: "http://api.snooth.com/wines/?akey=exv5m69z4qivba6bcrroro20p0vxwucryz1xou81qv9vcf21&food=1")
+        let domainPlusKey = "http://api.snooth.com/wines/?akey=exv5m69z4qivba6bcrroro20p0vxwucryz1xou81qv9vcf21"
+        let url = NSURL(string: domainPlusKey + "&food=1")
         
         DataManager().loadDataFromURL(url!) { (data, error) -> Void in
             
-            print(data)
             guard error != nil else {
-                print(error)
                 return
             }
             
-            typealias winePayload = [String: AnyObject]
-            var json: winePayload!
+            typealias WinePayload = [String: AnyObject]
+            var json: WinePayload!
             
             do {
-                json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as? winePayload
+                json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as? WinePayload
                 
             } catch {
-                print(error)
+                print("error")
                 return
             }
             
-            guard let wines = json["wines"] as? [AnyObject]
+            guard let wines = json["wines"] as? [Wine]
                 else {
                     print("No wines found")
                     return
             }
             
+            for wine in wines {
+                print(wine.name)
+            }
+            
             var wineList : [Wine]!
             
-            typealias recipePayload = [Recipe]
-            var recipes: recipePayload
+            typealias RecipePayload = [Recipe]
+            var recipes: RecipePayload
             
             for wine in wines {
                 
-                guard let recipes = wine["recipes"] as? recipePayload
+                guard let recipes = wine["recipes"] as? [RecipePayload]
                     else {
+                        print("No recipes found")
                         return
                 }
+                
+//                guard let recipes = wine["recipes"] as? recipePayload
+//                    else {
+//                        print("recipes not saved")
+//                        return
+//                }
                 
                 if let name = wine["name"] as? String,
                     let code = wine["code"] as? String,
