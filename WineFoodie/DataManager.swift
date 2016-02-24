@@ -20,38 +20,56 @@ class DataManager {
     var wineList : [Wine]!
     var delegate : DataManagerDelegate?
     
+    var redWineList : [String : [WinePair]]!
+    var whiteWineList : [String : [WinePair]]!
+    var roseWineList : [String : [WinePair]]!
+    var sparklingWineList : [String : [WinePair]]!
+    var dessertWineList : [String : [WinePair]]!
+    
     func prepareFoodPairingModel(food: Foods) {
         
-        var sparklingWineList = [WinePair]()
-        var redWineLinst = [WinePair]()
-        var whiteWineList = [WinePair]()
-        var roseWineList = [WinePair]()
-        var desserWineList = [WinePair]()
+        var allSparkling = [WinePair]()
+        var allRed = [WinePair]()
+        var allWhite = [WinePair]()
+        var allRose = [WinePair]()
+        var allDessert = [WinePair]()
         
         for wine in wineList {
             
             let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
             
             switch wine.type {
-            case "Red Wine"          : redWineLinst.append(winePair)
-            case "White Wine"        : whiteWineList.append(winePair)
-            case "Rosé Wine"         : roseWineList.append(winePair)
-            case "Sparkling Wine"    : sparklingWineList.append(winePair)
-            case "Dessert/Fortified" : desserWineList.append(winePair)
+            case "Red Wine"          : allRed.append(winePair)
+            case "White Wine"        : allWhite.append(winePair)
+            case "Rosé Wine"         : allRose.append(winePair)
+            case "Sparkling Wine"    : allSparkling.append(winePair)
+            case "Dessert/Fortified" : allDessert.append(winePair)
             default                  : print("Unexpected wine type found")
             }
         }
-        sparklingWineList = Array(Set(sparklingWineList))
-        redWineLinst = Array(Set(redWineLinst))
-        whiteWineList = Array(Set(whiteWineList))
-        roseWineList = Array(Set(roseWineList))
-        desserWineList = Array(Set(desserWineList))
+        allRed = Array(Set(allRed))
+        allWhite = Array(Set(allWhite))
+        allRose = Array(Set(allRose))
+        allSparkling = Array(Set(allSparkling))
+        allDessert = Array(Set(allDessert))
         
-        for winePair in redWineLinst {                                         //PRINTING
+        for winePair in allRed {                                               //PRINTING
             print(winePair.country, winePair.region, winePair.varietal)        //PRINTING
         }                                                                      //PRINTING
     }
     
+    //func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
+    //
+    //    var wineListDictionary = [String : [WinePair]]()
+    //    for winePair in allWinePairs {
+    //        if wineListDictionary[winePair.country] == nil {
+    //            wineListDictionary[winePair.country] = []
+    //        }
+    //        wineListDictionary[winePair.country]?.append(winePair)
+    //    }
+    //    return wineListDictionary
+    //    
+    //}
     
     func loadRecipes() {
         
