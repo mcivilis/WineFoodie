@@ -31,10 +31,14 @@ class WinePairingModel {
     }
 }
 
-class WinePair : NSObject {
+class WinePair : Equatable, Hashable {
     var varietal : String!
     var country : String!
     var region: String!
+    
+    var hashValue: Int{
+        return (varietal + country + region).hashValue
+    }
     
     init (wineRegion: String, wineVarietal: String) {
         varietal = wineVarietal
@@ -63,16 +67,9 @@ class WinePair : NSObject {
         }
         return region
     }
-    
-    override func isEqual(object: AnyObject?) -> Bool {
-        if let object = object as? WinePair {
-            return equalWinePairs(self, toPair: object)
-        } else {
-            return false
-        }
-    }
-    
-    func equalWinePairs(comparePair:WinePair, toPair:WinePair) -> Bool {
-        return comparePair.country == toPair.country && comparePair.region == toPair.region && comparePair.varietal == toPair.varietal
-    }
 }
+
+func == (lhs:WinePair, rhs:WinePair) -> Bool {
+    return ((lhs.varietal == rhs.varietal) && (lhs.country == rhs.country) && (lhs.region == rhs.region))
+}
+
