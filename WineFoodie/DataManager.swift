@@ -13,9 +13,12 @@ protocol DataManagerDelegate : class {
     func didUpdateRecepes(recipesUpdated: Int)
 }
 
+
+
 class DataManager {
     
     var wineList : [Wine]!
+    var winePairings : [String : AnyObject]?
     var delegate : DataManagerDelegate?
     
     func loadRecipes() {
@@ -26,10 +29,28 @@ class DataManager {
             recipes(wine.code, completion: { (recipeList) -> Void in
                 callCount++
                 wine.recipes = recipeList
+                wine.foods = self.pairFood(recipeList)
+                print(wine.foods)
                 self.delegate!.didUpdateRecepes(callCount)
-                print(callCount)
             })
         }
+    }
+    
+    func pairFood (recipeList: [Recipe]) -> [String] {
+        
+        var foodPairing = [String]()
+        for recipe in recipeList {
+            for food in foods {
+                if recipe.name.rangeOfString(food) != nil {
+//                    guard foodPairing[food]==nil else {
+//                        foodPairing[food] = Array(wine.co
+//                    }
+//                    
+                    foodPairing.append(food)
+                }
+            }
+        }
+        return Array(Set(foodPairing))
     }
     
     func loadWines() {

@@ -46,7 +46,6 @@ extension DataManager {
                         wineList.append(newWine)
                 }
             }
-            print("wineList count",wineList.count)
             completion(wineList: wineList)
         }
     }
