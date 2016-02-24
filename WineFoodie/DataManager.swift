@@ -19,8 +19,6 @@ class DataManager {
     
     var wineList : [Wine]!
     var winePairingModel = WinePairingModel()
-    
-    //var winePairings : [String : AnyObject]?
     var delegate : DataManagerDelegate?
     
     func prepareFoodPairingModel(food: Foods) {
@@ -43,6 +41,7 @@ class DataManager {
         winePairingModel.whiteWineList = Array(Set(winePairingModel.whiteWineList))
         winePairingModel.roseWineList = Array(Set(winePairingModel.roseWineList))
         winePairingModel.desserWineList = Array(Set(winePairingModel.desserWineList))
+        print(winePairingModel.printWineList(winePairingModel.redWineLinst))
     }
     
     func loadRecipes() {
