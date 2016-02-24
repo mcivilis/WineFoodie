@@ -18,31 +18,40 @@ protocol DataManagerDelegate : class {
 class DataManager {
     
     var wineList : [Wine]!
-    var winePairingModel = WinePairingModel()
     var delegate : DataManagerDelegate?
     
     func prepareFoodPairingModel(food: Foods) {
+        
+        var sparklingWineList = [WinePair]()
+        var redWineLinst = [WinePair]()
+        var whiteWineList = [WinePair]()
+        var roseWineList = [WinePair]()
+        var desserWineList = [WinePair]()
         
         for wine in wineList {
             
             let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
             
             switch wine.type {
-            case "Red Wine"          : winePairingModel.sparklingWineList.append(winePair)
-            case "White Wine"        : winePairingModel.redWineLinst.append(winePair)
-            case "Rosé Wine"         : winePairingModel.whiteWineList.append(winePair)
-            case "Sparkling Wine"    : winePairingModel.roseWineList.append(winePair)
-            case "Dessert/Fortified" : winePairingModel.desserWineList.append(winePair)
+            case "Red Wine"          : redWineLinst.append(winePair)
+            case "White Wine"        : whiteWineList.append(winePair)
+            case "Rosé Wine"         : roseWineList.append(winePair)
+            case "Sparkling Wine"    : sparklingWineList.append(winePair)
+            case "Dessert/Fortified" : desserWineList.append(winePair)
             default                  : print("Unexpected wine type found")
             }
         }
-        winePairingModel.sparklingWineList = Array(Set(winePairingModel.sparklingWineList))
-        winePairingModel.redWineLinst = Array(Set(winePairingModel.redWineLinst))
-        winePairingModel.whiteWineList = Array(Set(winePairingModel.whiteWineList))
-        winePairingModel.roseWineList = Array(Set(winePairingModel.roseWineList))
-        winePairingModel.desserWineList = Array(Set(winePairingModel.desserWineList))
-        print(winePairingModel.printWineList(winePairingModel.redWineLinst))
+        sparklingWineList = Array(Set(sparklingWineList))
+        redWineLinst = Array(Set(redWineLinst))
+        whiteWineList = Array(Set(whiteWineList))
+        roseWineList = Array(Set(roseWineList))
+        desserWineList = Array(Set(desserWineList))
+        
+        for winePair in redWineLinst {                                         //PRINTING
+            print(winePair.country, winePair.region, winePair.varietal)        //PRINTING
+        }                                                                      //PRINTING
     }
+    
     
     func loadRecipes() {
         
