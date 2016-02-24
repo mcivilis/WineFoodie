@@ -23,15 +23,19 @@ class ViewController: UIViewController, DataManagerDelegate {
 
     func didUpdateWineListWithOptions(optionsUpdated: Int) {
         if optionsUpdated == dataManager.queryOptions().count {
-            print("Wine list is update for every query option")
-            print("There are", dataManager.wineList.count, "wines in the list")
+            print("There are", dataManager.wineList.count, "wines in the 'loaded' list")
             self.dataManager.loadRecipes()
         }
     }
 
     func didUpdateRecepes(recipesUpdated: Int) {
         if recipesUpdated == dataManager.wineList.count {
-            print("Entire wine list is updated with recepes. Wine list count =", self.dataManager.wineList.count)
+            printInfo()
+            self.dataManager.prepareFoodPairingModel()
         }
+    }
+    
+    func printInfo() {
+        print("Entire wine list is updated with recepes. Final wine list count =", self.dataManager.wineList.count)
     }
 }

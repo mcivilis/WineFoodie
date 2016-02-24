@@ -8,13 +8,17 @@
 
 import Foundation
 
+class WinePairing {
+    
+    
+}
+
 class Wine {
     var code : String!
     var region : String!
     var varietal : String!
     var type: String!
     var foods : [String]?
-    var cheeses : [String]?
     var recipes: [Recipe]?
     
     init(wineCode: String, wineRegion: String, wineVarietal:String, wineType:String) {

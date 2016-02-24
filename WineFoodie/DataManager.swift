@@ -21,6 +21,10 @@ class DataManager {
     var winePairings : [String : AnyObject]?
     var delegate : DataManagerDelegate?
     
+    func prepareFoodPairingModel() {
+        
+    }
+    
     func loadRecipes() {
         
         var callCount = 0
@@ -30,7 +34,7 @@ class DataManager {
                 callCount++
                 wine.recipes = recipeList
                 wine.foods = self.pairFood(recipeList)
-                print(wine.foods)
+                print(callCount) //REMOVE PRINTING
                 self.delegate!.didUpdateRecepes(callCount)
             })
         }
