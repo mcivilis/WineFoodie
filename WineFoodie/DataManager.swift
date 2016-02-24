@@ -21,7 +21,7 @@ class DataManager {
     var winePairings : [String : AnyObject]?
     var delegate : DataManagerDelegate?
     
-    func prepareFoodPairingModel() {
+    func prepareFoodPairingModel(food: Foods) {
         
     }
     
@@ -46,10 +46,6 @@ class DataManager {
         for recipe in recipeList {
             for food in foods {
                 if recipe.name.rangeOfString(food) != nil {
-//                    guard foodPairing[food]==nil else {
-//                        foodPairing[food] = Array(wine.co
-//                    }
-//                    
                     foodPairing.append(food)
                 }
             }

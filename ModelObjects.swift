@@ -8,9 +8,26 @@
 
 import Foundation
 
-class WinePairing {
+enum Foods : String {
+    case Beef = "Beef"
+    case Pork = "Pork"
+    case Salmon = "Salmon"
+    case WhiteFish = "White Fish"
+}
+
+
+class WinePairingModel {
     
-    
+    var sparklingWineList: [WinePair]?
+    var redWineLinst: [WinePair]?
+    var whiteWineList: [WinePair]?
+    var roseWineList: [WinePair]?
+    var desserWineList:[WinePair]?
+}
+
+class WinePair {
+    var region : String!
+    var varietal : String!
 }
 
 class Wine {

@@ -31,7 +31,7 @@ class ViewController: UIViewController, DataManagerDelegate {
     func didUpdateRecepes(recipesUpdated: Int) {
         if recipesUpdated == dataManager.wineList.count {
             printInfo()
-            self.dataManager.prepareFoodPairingModel()
+            self.dataManager.prepareFoodPairingModel(Foods.Beef)
         }
     }
     
