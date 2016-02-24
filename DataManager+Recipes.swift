@@ -10,7 +10,7 @@ import Foundation
 
 extension DataManager {
     
-    func detailWineRecipes (wineCode: String, completion: (recipeList: [Recipe]) -> Void) {
+    func recipes(wineCode: String, completion: (recipeList: [Recipe]) -> Void) {
         
         let detailWineListURL = NSURL(string: detailWineAPI + apiKey + detailWineIdCommand + wineCode + detailWineOptions)
         

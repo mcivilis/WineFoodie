@@ -10,6 +10,7 @@
 		AFCFBE621C7CBAD8007D360C /* DataManager+Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */; };
 		AFCFBE651C7CC388007D360C /* DataManager+WineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */; };
 		AFCFBEE71C7CF863007D360C /* searchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBEE61C7CF863007D360C /* searchOptions.swift */; };
+		AFCFBEEB1C7D2BD3007D360C /* DataManager+Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBEEA1C7D2BD3007D360C /* DataManager+Session.swift */; };
 		AFD498C51C7BD47F0083B788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498C41C7BD47F0083B788 /* AppDelegate.swift */; };
 		AFD498C71C7BD47F0083B788 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498C61C7BD47F0083B788 /* ViewController.swift */; };
 		AFD498CA1C7BD47F0083B788 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD498C81C7BD47F0083B788 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataManager+Recipes.swift"; path = "../DataManager+Recipes.swift"; sourceTree = "<group>"; };
 		AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+WineList.swift"; sourceTree = "<group>"; };
 		AFCFBEE61C7CF863007D360C /* searchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchOptions.swift; sourceTree = "<group>"; };
+		AFCFBEEA1C7D2BD3007D360C /* DataManager+Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+Session.swift"; sourceTree = "<group>"; };
 		AFD498C11C7BD47F0083B788 /* WineFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD498C41C7BD47F0083B788 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFD498C61C7BD47F0083B788 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +51,9 @@
 			isa = PBXGroup;
 			children = (
 				AFD498D61C7BD4930083B788 /* DataManager.swift */,
-				AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */,
 				AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */,
+				AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */,
+				AFCFBEEA1C7D2BD3007D360C /* DataManager+Session.swift */,
 				AFCFBEE61C7CF863007D360C /* searchOptions.swift */,
 			);
 			name = "API DataManager";
@@ -165,6 +168,7 @@
 				AFD498D71C7BD4930083B788 /* DataManager.swift in Sources */,
 				AFCFBEE71C7CF863007D360C /* searchOptions.swift in Sources */,
 				AFD498C51C7BD47F0083B788 /* AppDelegate.swift in Sources */,
+				AFCFBEEB1C7D2BD3007D360C /* DataManager+Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

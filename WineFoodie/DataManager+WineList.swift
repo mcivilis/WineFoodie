@@ -13,7 +13,6 @@ extension DataManager {
     func wineList (wineOptions: String, completion: (wineList: [Wine]) -> Void) {
         
         let wineListURL = NSURL(string: wineListAPI + apiKey + wineListDefaultOptions + wineOptions)
-        print(wineListURL)
         
         loadDataFromURL(wineListURL!) { (data, error) -> Void in
             guard error == nil else {
@@ -47,6 +46,7 @@ extension DataManager {
                         wineList.append(newWine)
                 }
             }
+            print("wineList count",wineList.count)
             completion(wineList: wineList)
         }
     }
