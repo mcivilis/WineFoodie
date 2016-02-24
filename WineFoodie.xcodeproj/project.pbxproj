@@ -50,6 +50,7 @@
 		AFCFBE631C7CBAE6007D360C /* API DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				AFD498DC1C7BD54A0083B788 /* ModelObjects.swift */,
 				AFD498D61C7BD4930083B788 /* DataManager.swift */,
 				AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */,
 				AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */,
@@ -82,7 +83,6 @@
 				AFD498C61C7BD47F0083B788 /* ViewController.swift */,
 				AFD498C81C7BD47F0083B788 /* Main.storyboard */,
 				AFCFBE631C7CBAE6007D360C /* API DataManager */,
-				AFD498DC1C7BD54A0083B788 /* ModelObjects.swift */,
 				AFD498CB1C7BD47F0083B788 /* Assets.xcassets */,
 				AFD498CD1C7BD47F0083B788 /* LaunchScreen.storyboard */,
 				AFD498D01C7BD47F0083B788 /* Info.plist */,

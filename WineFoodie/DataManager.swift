@@ -18,11 +18,31 @@ protocol DataManagerDelegate : class {
 class DataManager {
     
     var wineList : [Wine]!
-    var winePairings : [String : AnyObject]?
+    var winePairingModel = WinePairingModel()
+    
+    //var winePairings : [String : AnyObject]?
     var delegate : DataManagerDelegate?
     
     func prepareFoodPairingModel(food: Foods) {
         
+        for wine in wineList {
+            
+            let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
+            
+            switch wine.type {
+            case "Red Wine"          : winePairingModel.sparklingWineList.append(winePair)
+            case "White Wine"        : winePairingModel.redWineLinst.append(winePair)
+            case "Rosé Wine"         : winePairingModel.whiteWineList.append(winePair)
+            case "Sparkling Wine"    : winePairingModel.roseWineList.append(winePair)
+            case "Dessert/Fortified" : winePairingModel.desserWineList.append(winePair)
+            default                  : print("Unexpected wine type found")
+            }
+        }
+        winePairingModel.sparklingWineList = Array(Set(winePairingModel.sparklingWineList))
+        winePairingModel.redWineLinst = Array(Set(winePairingModel.redWineLinst))
+        winePairingModel.whiteWineList = Array(Set(winePairingModel.whiteWineList))
+        winePairingModel.roseWineList = Array(Set(winePairingModel.roseWineList))
+        winePairingModel.desserWineList = Array(Set(winePairingModel.desserWineList))
     }
     
     func loadRecipes() {
