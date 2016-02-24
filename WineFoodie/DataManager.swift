@@ -53,23 +53,25 @@ class DataManager {
         allSparkling = Array(Set(allSparkling))
         allDessert = Array(Set(allDessert))
         
-        for winePair in allRed {                                               //PRINTING
-            print(winePair.country, winePair.region, winePair.varietal)        //PRINTING
-        }                                                                      //PRINTING
+        redWineList = groupedDictionary(allRed)
+        whiteWineList = groupedDictionary(allWhite)
+        roseWineList = groupedDictionary(allRose)
+        sparklingWineList = groupedDictionary(allSparkling)
+        dessertWineList = groupedDictionary(allDessert)
     }
     
-    //func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
-    //
-    //    var wineListDictionary = [String : [WinePair]]()
-    //    for winePair in allWinePairs {
-    //        if wineListDictionary[winePair.country] == nil {
-    //            wineListDictionary[winePair.country] = []
-    //        }
-    //        wineListDictionary[winePair.country]?.append(winePair)
-    //    }
-    //    return wineListDictionary
-    //    
-    //}
+    func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
+    
+        var wineListDictionary = [String : [WinePair]]()
+        for winePair in allWinePairs {
+            if wineListDictionary[winePair.country] == nil {
+                wineListDictionary[winePair.country] = []
+            }
+            wineListDictionary[winePair.country]?.append(winePair)
+        }
+        return wineListDictionary
+        
+    }
     
     func loadRecipes() {
         
