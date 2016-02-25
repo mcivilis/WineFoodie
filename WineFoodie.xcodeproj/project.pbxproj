@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF7539FD1C7E75C10055D088 /* FoodDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */; };
 		AFCFBE621C7CBAD8007D360C /* DataManager+Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */; };
 		AFCFBE651C7CC388007D360C /* DataManager+WineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */; };
 		AFCFBEE71C7CF863007D360C /* searchOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFBEE61C7CF863007D360C /* searchOptions.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDefinitions.swift; sourceTree = "<group>"; };
 		AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DataManager+Recipes.swift"; path = "../DataManager+Recipes.swift"; sourceTree = "<group>"; };
 		AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+WineList.swift"; sourceTree = "<group>"; };
 		AFCFBEE61C7CF863007D360C /* searchOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchOptions.swift; sourceTree = "<group>"; };
@@ -50,12 +52,13 @@
 		AFCFBE631C7CBAE6007D360C /* API DataManager */ = {
 			isa = PBXGroup;
 			children = (
-				AFD498DC1C7BD54A0083B788 /* ModelObjects.swift */,
 				AFD498D61C7BD4930083B788 /* DataManager.swift */,
 				AFCFBE641C7CC388007D360C /* DataManager+WineList.swift */,
 				AFCFBE611C7CBAD8007D360C /* DataManager+Recipes.swift */,
 				AFCFBEEA1C7D2BD3007D360C /* DataManager+Session.swift */,
 				AFCFBEE61C7CF863007D360C /* searchOptions.swift */,
+				AFD498DC1C7BD54A0083B788 /* ModelObjects.swift */,
+				AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */,
 			);
 			name = "API DataManager";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				AFCFBE651C7CC388007D360C /* DataManager+WineList.swift in Sources */,
 				AFD498DD1C7BD54A0083B788 /* ModelObjects.swift in Sources */,
 				AFD498C71C7BD47F0083B788 /* ViewController.swift in Sources */,
+				AF7539FD1C7E75C10055D088 /* FoodDefinitions.swift in Sources */,
 				AFCFBE621C7CBAD8007D360C /* DataManager+Recipes.swift in Sources */,
 				AFD498D71C7BD4930083B788 /* DataManager.swift in Sources */,
 				AFCFBEE71C7CF863007D360C /* searchOptions.swift in Sources */,

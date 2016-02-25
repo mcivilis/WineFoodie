@@ -22,23 +22,3 @@ let detailWineOptions = "&food=1"
 let detailWineIdCommand = "&id="
 
 
-//Recipe search keywords
-
-let foods =
-   ["Beef",                                                     //Food = Beef
-    "Pork",                                                     //Food = Pork
-    "Chicken","Turkey",                                         //Food = ?
-    "Salmon",                                                   //Food = Salmon
-    "Tuna",                                                     //Food = ?
-    "Basa", "Cod", "Tilapia",                                   //Food = WhiteFish
-    "Shrimp", "Oysters", "Mussels","Prawns", "Lobster",         //Food = Shellfish
-    "Veal",                                                     //Food = ?
-    "Lamb",                                                     //Food = ?
-    "Duck",                                                     //Food = ?
-    "Goat Cheese",                                              //Food = ?
-    "Roquefort",                                                //Food = ?
-    "Camembert",                                                //Food = ?
-    "Brie",                                                     //Food = ?
-    "Blue Cheese",                                              //Food = ?
-    "Gouda",                                                    //Food = ?
-    "Parmigiano"]                                               //Food = ?

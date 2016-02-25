@@ -8,14 +8,6 @@
 
 import Foundation
 
-enum Foods : String {
-    case Beef = "Beef"
-    case Pork = "Pork"
-    case Salmon = "Salmon"
-    case WhiteFish = "White Fish"
-}
-
-
 class WinePair : Equatable, Hashable {
     var varietal : String!
     var country : String!

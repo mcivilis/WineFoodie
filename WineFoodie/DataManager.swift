@@ -13,8 +13,6 @@ protocol DataManagerDelegate : class {
     func didUpdateRecepes(recipesUpdated: Int)
 }
 
-
-
 class DataManager {
     
     var wineList : [Wine]!
@@ -33,20 +31,31 @@ class DataManager {
         var allWhite = [WinePair]()
         var allRose = [WinePair]()
         var allDessert = [WinePair]()
+        var keywordFound = false
+        let foodDefinitions = FoodDefinitions()
         
         for wine in wineList {
             
-            let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
-            
-            switch wine.type {
-            case "Red Wine"          : allRed.append(winePair)
-            case "White Wine"        : allWhite.append(winePair)
-            case "Rosé Wine"         : allRose.append(winePair)
-            case "Sparkling Wine"    : allSparkling.append(winePair)
-            case "Dessert/Fortified" : allDessert.append(winePair)
-            default                  : print("Unexpected wine type found")
+            for keyword in foodDefinitions.keywordsforFood(food) {
+                for recipe in wine.recipes! {
+                    if recipe.name.rangeOfString(keyword) != nil {
+                        keywordFound = true
+                    }
+                }
+            }
+            if keywordFound {
+                let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
+                switch wine.type {
+                    case "Red Wine"          : allRed.append(winePair)
+                    case "White Wine"        : allWhite.append(winePair)
+                    case "Rosé Wine"         : allRose.append(winePair)
+                    case "Sparkling Wine"    : allSparkling.append(winePair)
+                    case "Dessert/Fortified" : allDessert.append(winePair)
+                    default                  : print("Unexpected wine type found")
+                }
             }
         }
+        
         allRed = Array(Set(allRed))
         allWhite = Array(Set(allWhite))
         allRose = Array(Set(allRose))
