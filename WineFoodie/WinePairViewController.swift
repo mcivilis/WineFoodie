@@ -11,4 +11,18 @@ import UIKit
 class WinePairViewController: UIViewController {
     var foodType : String?
 
+    @IBOutlet var sparklingTapGesture: UITapGestureRecognizer!
+
+    @IBOutlet var whiteTapGesture: UITapGestureRecognizer!
+    
+    @IBOutlet var roseTapGesture: UITapGestureRecognizer!
+    
+    @IBOutlet var redTapGesture: UITapGestureRecognizer!
+   
+    @IBOutlet var dessertTapGesture: UITapGestureRecognizer!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+    }
 }

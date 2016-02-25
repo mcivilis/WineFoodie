@@ -89,11 +89,9 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
             if let indexPath = collectionView.indexPathsForSelectedItems()?.first {
                 let foodInSection = sectionFoods[sectionNames[indexPath.section]] as [String]!
                 let selectedFoodType = foodInSection[indexPath.row]
-                let winePaitController = (segue.destinationViewController as! UINavigationController).topViewController as! WinePairViewController
+                let winePaitController = (segue.destinationViewController as! WinePairViewController)
                 winePaitController.foodType = selectedFoodType
                 print(selectedFoodType)
-                winePaitController.navigationItem.leftBarButtonItem = navigationController?.navigationItem.backBarButtonItem
-                winePaitController.navigationItem.leftItemsSupplementBackButton = true
             }
         }
     }
