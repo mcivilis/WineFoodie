@@ -8,7 +8,7 @@
 
 import Foundation
 
-//API Search Options
+//Snooth API Options
 
 let wineListAPI = "http://api.snooth.com/wines/"
 let detailWineAPI = "http://api.snooth.com/wine/"

@@ -14,6 +14,8 @@ enum Foods : String {
     case Pork       = "Pork"
     case Salmon     = "Salmon"
     case WhiteFish  = "White Fish"
+    case Tuna       = "Tuna"
+    case Poultry    = "Poultry"
 }
 
 //Recipe search keywords
@@ -23,8 +25,8 @@ let foods =
     "Pork",                                                     //Food = Pork
     "Salmon",                                                   //Food = Salmon
     "Basa", "Cod", "Tilapia",                                   //Food = WhiteFish
-    "Tuna",                                                     //Food = ?
-    "Chicken","Turkey",                                         //Food = ?
+    "Tuna",                                                     //Food = Tuna
+    "Chicken","Turkey",                                         //Food = Poultry
     "Shrimp", "Oysters", "Mussels","Prawns", "Lobster",         //Food = ?
     "Veal",                                                     //Food = ?
     "Lamb",                                                     //Food = ?
@@ -37,6 +39,11 @@ let foods =
     "Gouda",                                                    //Food = ?
     "Parmigiano"]                                               //Food = ?
 
+let groupedFoods = [
+        "Meat"     : ["Beef", "Pork", "Veal", "Lamb", "Poultry", "Duck"],
+        "Seafood"  : ["Salmon", "Whitefish", "Tuna", "Shellfish"],
+        "Cheese"   : ["Goat Cheese", "Roquefort", "Camembert", "Brie", "Blue Cheese", "Gouda", "Parmigiano"]
+]
 
 class FoodDefinitions {
     
@@ -46,6 +53,8 @@ class FoodDefinitions {
         case .Pork          : return ["Pork"]
         case .Salmon        : return ["Salmon"]
         case .WhiteFish     : return ["Basa", "Cod", "Tilapia"]
+        case .Tuna          : return ["Tuna"]
+        case .Poultry       : return ["Chicken","Turkey"]
         }
     }
     
