@@ -8,11 +8,31 @@
 
 import Foundation
 
+struct LCBOWine {
+    
+    var name : String!
+    var currentPrice: Int!
+    var regularPrice: Int!
+    var priceSavings: Int!
+    var primaryCategory: String!
+    var secondaryCategory: String!
+    var origin: String!
+    var inventoryCount: Int!
+    var sugarContent: String!
+    var sugarInGrams: Int!
+    var producerName: String!
+    var isSeasonal: Bool!
+    var isVQA: Bool!
+    var imageURL: String!
+    var varietal: String!
+    var style: String!
+}
+
 class WinePair : Equatable, Hashable {
+    
     var varietal : String!
     var country : String!
     var region: String!
-    
     var hashValue: Int{
         return (varietal + country + region).hashValue
     }

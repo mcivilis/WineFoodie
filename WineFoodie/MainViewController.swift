@@ -24,6 +24,16 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
         super.viewDidLoad()
         dataManager.delegate = self
         dataManager.loadWines()
+        
+        //testing
+        
+        dataManager.lcboWineList("USA+California+Merlot") { (lcboWineList) -> Void in
+            for wine in lcboWineList {
+                print(wine.name)
+            }
+        }
+        
+        
     }
 
 //MARK: Data Manager Delegate
@@ -50,7 +60,6 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! FoodCell
         let foodInSection = sectionFoods[sectionNames[indexPath.section]] as [String]!
-        print(foodInSection[indexPath.row])
         cell.foodLabel.text = foodInSection[indexPath.row]
         return cell
     }
