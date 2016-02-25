@@ -26,11 +26,8 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
         dataManager.loadWines()
         
         //testing
-        
         dataManager.lcboWineList("USA+California+Merlot") { (lcboWineList) -> Void in
-            for wine in lcboWineList {
-                print(wine.name)
-            }
+            
         }
         
         
@@ -47,6 +44,7 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
     func didUpdateRecepes(recipesUpdated: Int) {
         if recipesUpdated == dataManager.wineList.count {
             self.dataManager.prepareFoodPairingModel(Foods.Beef)
+            print("snooth model is updated")
         }
     }
 
@@ -82,4 +80,33 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
     
 //MARK: Collection View Delegate
     
+
+
+// MARK: - Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showWinePairs" {
+            if let indexPath = collectionView.indexPathsForSelectedItems()?.first {
+                let foodInSection = sectionFoods[sectionNames[indexPath.section]] as [String]!
+                let selectedFoodType = foodInSection[indexPath.row]
+                let winePaitController = (segue.destinationViewController as! UINavigationController).topViewController as! WinePairViewController
+                winePaitController.foodType = selectedFoodType
+                print(selectedFoodType)
+                winePaitController.navigationItem.leftBarButtonItem = navigationController?.navigationItem.backBarButtonItem
+                winePaitController.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -56,7 +56,6 @@ extension DataManager {
                 let lcboStyle = wine["style"] as? String! {
                     
                     let lcboWine = LCBOWine(name: lcboName, currentPrice: lcboCurrentPrice, regularPrice: lcboRegularPrice, priceSavings: lcboPriceSavings, primaryCategory: lcboPrimaryCategory, secondaryCategory: lcboSecondaryCategory, origin: lcboOrigin, inventoryCount: lcboInventoryCount, sugarContent: lcboSugarContent, sugarInGrams: lcboSugarInGrams, producerName: lcboProducerName, isSeasonal: lcboIsSeasonal, isVQA: lcboIsVQA, imageURL: lcboImageURL, varietal: lcboVarietal, style: lcboStyle)
-                        print(lcboWine.name)
                         lcboWineList.append(lcboWine)
                 }
             }

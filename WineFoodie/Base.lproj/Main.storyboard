@@ -60,6 +60,7 @@
                                         <connections>
                                             <outlet property="foodLabel" destination="3js-5b-vfX" id="Cpc-oO-FwA"/>
                                             <outlet property="imageView" destination="d5z-gk-98m" id="P8n-sk-Jl0"/>
+                                            <segue destination="Opd-Jg-7S7" kind="show" identifier="showWinePairs" action="showDetailViewController:sender:" id="9Vf-9B-Y8v"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -117,7 +118,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfb-CR-DNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="883" y="241"/>
+            <point key="canvasLocation" x="895" y="241"/>
+        </scene>
+        <!--Wine Pair View Controller-->
+        <scene sceneID="USV-qA-FVa">
+            <objects>
+                <viewController id="sGJ-jN-GPb" customClass="WinePairViewController" customModule="WineFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="plW-hJ-k4h"/>
+                        <viewControllerLayoutGuide type="bottom" id="w0Z-UB-y8E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VQg-pn-h4f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oU2-z9-GTQ">
+                                <rect key="frame" x="46" y="277" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mwm-cN-bjC"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2bu-Vm-qa8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="246"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lei-sz-viW">
@@ -137,6 +164,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POP-NM-77k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="431" y="241"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oZ2-aq-SRB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKw-Yu-KZF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Opd-Jg-7S7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LPg-My-8fT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sGJ-jN-GPb" kind="relationship" relationship="rootViewController" id="hbv-ah-uhW"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1334" y="246"/>
         </scene>
     </scenes>
 </document>
