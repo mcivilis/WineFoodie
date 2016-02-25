@@ -12,7 +12,7 @@ extension DataManager {
     
     func recipes(wineCode: String, completion: (recipeList: [Recipe]) -> Void) {
         
-        let detailWineListURL = NSURL(string: detailWineAPI + apiKey + detailWineIdCommand + wineCode + detailWineOptions)
+        let detailWineListURL = NSURL(string: detailWineAPI + snoothAPIKey + detailWineIdCommand + wineCode + detailWineOptions)
         
         
         loadDataFromURL(detailWineListURL!) { (data, error) -> Void in

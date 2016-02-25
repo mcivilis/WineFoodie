@@ -62,6 +62,10 @@ class DataManager {
         allSparkling = Array(Set(allSparkling))
         allDessert = Array(Set(allDessert))
         
+        for red in allRed {
+            print(red.country,"+",red.region,"+",red.varietal)
+        }
+        
         redWineList = groupedDictionary(allRed)
         whiteWineList = groupedDictionary(allWhite)
         roseWineList = groupedDictionary(allRose)

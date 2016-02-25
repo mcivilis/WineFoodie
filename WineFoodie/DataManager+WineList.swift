@@ -12,7 +12,7 @@ extension DataManager {
     
     func wineList (wineOptions: String, completion: (wineList: [Wine]) -> Void) {
         
-        let wineListURL = NSURL(string: wineListAPI + apiKey + wineListDefaultOptions + wineOptions)
+        let wineListURL = NSURL(string: wineListAPI + snoothAPIKey + wineListDefaultOptions + wineOptions)
         
         loadDataFromURL(wineListURL!) { (data, error) -> Void in
             guard error == nil else {
