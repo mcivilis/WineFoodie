@@ -18,70 +18,6 @@ class DataManager {
     var wineList : [Wine]!
     var delegate : DataManagerDelegate?
     
-    var redWineList : [String : [WinePair]]!
-    var whiteWineList : [String : [WinePair]]!
-    var roseWineList : [String : [WinePair]]!
-    var sparklingWineList : [String : [WinePair]]!
-    var dessertWineList : [String : [WinePair]]!
-    
-    func prepareFoodPairingModel(food: Foods) {
-        
-        var allSparkling = [WinePair]()
-        var allRed = [WinePair]()
-        var allWhite = [WinePair]()
-        var allRose = [WinePair]()
-        var allDessert = [WinePair]()
-        var keywordFound = false
-        let foodDefinitions = FoodDefinitions()
-        
-        for wine in wineList {
-            
-            for keyword in foodDefinitions.keywordsforFood(food) {
-                for recipe in wine.recipes! {
-                    if recipe.name.rangeOfString(keyword) != nil {
-                        keywordFound = true
-                    }
-                }
-            }
-            if keywordFound {
-                let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
-                switch wine.type {
-                    case "Red Wine"          : allRed.append(winePair)
-                    case "White Wine"        : allWhite.append(winePair)
-                    case "Rosé Wine"         : allRose.append(winePair)
-                    case "Sparkling Wine"    : allSparkling.append(winePair)
-                    case "Dessert/Fortified" : allDessert.append(winePair)
-                    default                  : print("Unexpected wine type found")
-                }
-            }
-        }
-        
-        allRed = Array(Set(allRed))
-        allWhite = Array(Set(allWhite))
-        allRose = Array(Set(allRose))
-        allSparkling = Array(Set(allSparkling))
-        allDessert = Array(Set(allDessert))
-        
-        redWineList = groupedDictionary(allRed)
-        whiteWineList = groupedDictionary(allWhite)
-        roseWineList = groupedDictionary(allRose)
-        sparklingWineList = groupedDictionary(allSparkling)
-        dessertWineList = groupedDictionary(allDessert)
-    }
-    
-    func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
-    
-        var wineListDictionary = [String : [WinePair]]()
-        for winePair in allWinePairs {
-            if wineListDictionary[winePair.country] == nil {
-                wineListDictionary[winePair.country] = []
-            }
-            wineListDictionary[winePair.country]?.append(winePair)
-        }
-        return wineListDictionary
-        
-    }
-    
     func loadRecipes() {
         
         var callCount = 0
@@ -94,19 +30,6 @@ class DataManager {
                 self.delegate!.didUpdateRecepes(callCount)
             })
         }
-    }
-    
-    func pairFood (recipeList: [Recipe]) -> [String] {
-        
-        var foodPairing = [String]()
-        for recipe in recipeList {
-            for food in foods {
-                if recipe.name.rangeOfString(food) != nil {
-                    foodPairing.append(food)
-                }
-            }
-        }
-        return Array(Set(foodPairing))
     }
     
     func loadWines() {
@@ -127,6 +50,8 @@ class DataManager {
         }
     }
     
+//MARK: Helpers
+    
     func queryOptions() -> [String] {
         
         var options = [String]()
@@ -138,5 +63,17 @@ class DataManager {
         return options
     }
     
+    func pairFood (recipeList: [Recipe]) -> [String] {
+        
+        var foodPairing = [String]()
+        for recipe in recipeList {
+            for food in foods {
+                if recipe.name.rangeOfString(food) != nil {
+                    foodPairing.append(food)
+                }
+            }
+        }
+        return Array(Set(foodPairing))
+    }
    
 }

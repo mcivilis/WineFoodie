@@ -19,33 +19,24 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
     var sectionFoods = groupedFoods
     var sectionNames = Array(groupedFoods.keys)
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
         dataManager.loadWines()
-        
-        //testing
-        dataManager.lcboWineList("USA+California+Merlot") { (lcboWineList) -> Void in
-            
-        }
-        
-        
+        print("Started loading snooth model")
     }
 
 //MARK: Data Manager Delegate
 
     func didUpdateWineListWithOptions(optionsUpdated: Int) {
         if optionsUpdated == dataManager.queryOptions().count {
+            print("Finished loading wine list")
             self.dataManager.loadRecipes()
         }
     }
 
     func didUpdateRecepes(recipesUpdated: Int) {
-        if recipesUpdated == dataManager.wineList.count {
-            self.dataManager.prepareFoodPairingModel(Foods.Beef)
-            print("snooth model is updated")
-        }
+        //optional
     }
 
 //MARK: Collection View Data Source
@@ -85,14 +76,18 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
 // MARK: - Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "showWinePairs" {
+            let winePairController = (segue.destinationViewController as! WinePairViewController)
+            
             if let indexPath = collectionView.indexPathsForSelectedItems()?.first {
                 let foodInSection = sectionFoods[sectionNames[indexPath.section]] as [String]!
-                let selectedFoodType = foodInSection[indexPath.row]
-                let winePaitController = (segue.destinationViewController as! WinePairViewController)
-                winePaitController.foodType = selectedFoodType
-                print(selectedFoodType)
+                if let foodType = Foods(rawValue: foodInSection[indexPath.row]) {
+                    winePairController.foodType = foodType
+                    print(foodType)
+                }
             }
+            winePairController.dataManager = dataManager
         }
     }
 

@@ -10,9 +10,9 @@ import Foundation
 
 extension DataManager {
     
-    func lcboWineList (wineOptions: String, completion: (lcboWineList: [LCBOWine]) -> Void) {
+    func lcboWineList (queryOptions: String, completion: (lcboWineList: [LCBOWine]) -> Void) {
         
-        let lcboProductURL = NSURL(string: lcboProductsAPI + lcboQueryParameters + lcboAPIKey + lcboSort + lcboQueryCommand + "USA+California+Merlot")
+        let lcboProductURL = NSURL(string: lcboProductsAPI + lcboQueryParameters + lcboAPIKey + lcboSort + lcboQueryCommand + queryOptions)
         
         loadDataFromURL(lcboProductURL!) { (data, error) -> Void in
             guard error == nil else {
