@@ -76,6 +76,7 @@
 			children = (
 				AF3C4AE71C7F9E82003A5F5F /* WineTypeControl.swift */,
 				AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */,
+				AF3C4B091C80C04E003A5F5F /* WinePairingModel.swift */,
 			);
 			name = WinePairViewController;
 			sourceTree = "<group>";
@@ -134,7 +135,6 @@
 				AFCFBEE61C7CF863007D360C /* SearchOptions.swift */,
 				AFD498DC1C7BD54A0083B788 /* ModelObjects.swift */,
 				AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */,
-				AF3C4B091C80C04E003A5F5F /* WinePairingModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

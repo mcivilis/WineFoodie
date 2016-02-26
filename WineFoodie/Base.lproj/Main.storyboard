@@ -133,6 +133,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="KCN-Bb-bEH">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <color key="color" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-ey-WOI">
                                 <rect key="frame" x="16" y="84" width="288" height="73"/>
                                 <subviews>
@@ -253,8 +257,10 @@
                             <constraint firstItem="yVy-Qk-smG" firstAttribute="top" secondItem="Wej-ey-WOI" secondAttribute="bottom" constant="20" id="7xj-zJ-gua"/>
                             <constraint firstItem="Wej-ey-WOI" firstAttribute="leading" secondItem="VQg-pn-h4f" secondAttribute="leadingMargin" id="EG8-Xm-o6J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yVy-Qk-smG" secondAttribute="trailing" id="GpX-pl-5CI"/>
+                            <constraint firstItem="KCN-Bb-bEH" firstAttribute="centerY" secondItem="VQg-pn-h4f" secondAttribute="centerY" id="Nnl-M7-XEs"/>
                             <constraint firstItem="yVy-Qk-smG" firstAttribute="leading" secondItem="VQg-pn-h4f" secondAttribute="leadingMargin" id="dqC-p7-QoP"/>
                             <constraint firstItem="w0Z-UB-y8E" firstAttribute="top" secondItem="yVy-Qk-smG" secondAttribute="bottom" constant="20" id="fr7-6p-K1A"/>
+                            <constraint firstItem="KCN-Bb-bEH" firstAttribute="centerX" secondItem="VQg-pn-h4f" secondAttribute="centerX" id="hbT-N2-6lI"/>
                             <constraint firstItem="Wej-ey-WOI" firstAttribute="top" secondItem="plW-hJ-k4h" secondAttribute="bottom" constant="20" id="s4g-Kf-AIc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wej-ey-WOI" secondAttribute="trailing" id="wrO-TC-bPz"/>
                         </constraints>
@@ -262,6 +268,7 @@
                     <navigationItem key="navigationItem" id="Mwm-cN-bjC"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="KCN-Bb-bEH" id="bEK-pJ-ZS7"/>
                         <outlet property="dessertTapGesture" destination="clM-Jj-a2a" id="4Qb-Om-IFF"/>
                         <outlet property="redTapGesture" destination="LfS-wH-TNn" id="Qoj-l9-3be"/>
                         <outlet property="roseTapGesture" destination="d9t-E7-ly5" id="f1B-Sf-pVY"/>

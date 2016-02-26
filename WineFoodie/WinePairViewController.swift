@@ -10,6 +10,7 @@ import UIKit
 
 class WinePairViewController: UIViewController, DataManagerDelegate {
 
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet var sparklingTapGesture: UITapGestureRecognizer!
     @IBOutlet var whiteTapGesture: UITapGestureRecognizer!
     @IBOutlet var roseTapGesture: UITapGestureRecognizer!
@@ -18,11 +19,13 @@ class WinePairViewController: UIViewController, DataManagerDelegate {
     
     var foodType : Foods?
     var dataManager : DataManager!
-    var winePairingModel = WinePairingModel()
+    let winePairingModel = WinePairingModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
+        view.bringSubviewToFront(activityIndicatorView)
+        activityIndicatorView.startAnimating()
     
     }
     
@@ -32,7 +35,10 @@ class WinePairViewController: UIViewController, DataManagerDelegate {
     
     func didUpdateRecepes(recipesUpdated: Int) {
         if (recipesUpdated == dataManager.wineList.count) {
-            print("Finished loading wine list")
+            activityIndicatorView.stopAnimating()
+            print("Finished loading recipes")
+
+
         }
     }
 }

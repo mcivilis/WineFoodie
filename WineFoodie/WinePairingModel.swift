@@ -16,7 +16,7 @@ class WinePairingModel {
     var sparklingWineList : [String : [WinePair]]!
     var dessertWineList : [String : [WinePair]]!
     
-    func prepareFoodPairingModel(wineList: [Wine], food: Foods) {
+    func preparePairingModel(wineList: [Wine], foodType: Foods) {
         
         var allSparkling = [WinePair]()
         var allRed = [WinePair]()
@@ -28,7 +28,7 @@ class WinePairingModel {
         
         for wine in wineList {
             
-            for keyword in foodDefinitions.keywordsforFood(food) {
+            for keyword in foodDefinitions.keywordsforFood(foodType) {
                 for recipe in wine.recipes! {
                     if recipe.name.rangeOfString(keyword) != nil {
                         keywordFound = true
@@ -60,6 +60,8 @@ class WinePairingModel {
         sparklingWineList = groupedDictionary(allSparkling)
         dessertWineList = groupedDictionary(allDessert)
     }
+    
+//MARK: Helper
     
     func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
         
