@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, DataManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class MainViewController: UIViewController, DataManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, WinePairViewControllerDelegate {
     
 //MARK: Properties
     
@@ -18,25 +18,37 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
     var dataManager = DataManager()
     var sectionFoods = groupedFoods
     var sectionNames = Array(groupedFoods.keys)
+    var finishedLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dataManager.delegate = self
-        dataManager.loadWines()
-        print("Started loading snooth model")
+        if finishedLoading == false {
+            dataManager.loadWines()
+            print("Started loading snooth model")
+        }
+        
+    }
+    
+//MARK: WinePair View Controller Delegate
+    
+    func didFinishLoading(status: Bool) {
+        finishedLoading = status
     }
 
 //MARK: Data Manager Delegate
 
     func didUpdateWineListWithOptions(optionsUpdated: Int) {
         if optionsUpdated == dataManager.queryOptions().count {
-            print("Finished loading wine list")
+            print("Finished loading in the main view controller")
             self.dataManager.loadRecipes()
         }
     }
 
     func didUpdateRecepes(recipesUpdated: Int) {
-        //optional
+        if (recipesUpdated == dataManager.wineList.count) {
+            finishedLoading = true
+        }
     }
 
 //MARK: Collection View Data Source
@@ -87,7 +99,13 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
                     print(foodType)
                 }
             }
+            
+            if finishedLoading {
+                winePairController.finishedLoading = true
+            }
+            
             winePairController.dataManager = dataManager
+            winePairController.delegate = self
         }
     }
 

@@ -250,6 +250,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yVy-Qk-smG">
                                 <rect key="frame" x="16" y="177" width="288" height="371"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="M9b-tU-7jp">
+                                        <rect key="frame" x="0.0" y="28" width="288" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M9b-tU-7jp" id="4OE-mM-x8U">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="sGJ-jN-GPb" id="gYP-Ss-p1d"/>
+                                    <outlet property="delegate" destination="sGJ-jN-GPb" id="qlJ-Ka-WM4"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,6 +287,7 @@
                         <outlet property="redTapGesture" destination="LfS-wH-TNn" id="Qoj-l9-3be"/>
                         <outlet property="roseTapGesture" destination="d9t-E7-ly5" id="f1B-Sf-pVY"/>
                         <outlet property="sparklingTapGesture" destination="1Ll-61-Nyw" id="Sy3-mO-U3B"/>
+                        <outlet property="tableView" destination="yVy-Qk-smG" id="3Pa-Ke-mZy"/>
                         <outlet property="whiteTapGesture" destination="slR-g7-1DI" id="OXw-3P-Ndg"/>
                     </connections>
                 </viewController>

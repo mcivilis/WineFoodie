@@ -12,7 +12,11 @@ extension DataManager {
     
     func lcboWineList (queryOptions: String, completion: (lcboWineList: [LCBOWine]) -> Void) {
         
-        let lcboProductURL = NSURL(string: lcboProductsAPI + lcboQueryParameters + lcboAPIKey + lcboSort + lcboQueryCommand + queryOptions)
+        let url = lcboProductsAPI + lcboQueryParameters + lcboAPIKey + lcboSort + lcboQueryCommand + queryOptions
+        //url = url.stringByReplacingOccurrencesOfString("á", withString: "a")
+        
+        let lcboProductURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+        print(queryOptions)
         
         loadDataFromURL(lcboProductURL!) { (data, error) -> Void in
             guard error == nil else {

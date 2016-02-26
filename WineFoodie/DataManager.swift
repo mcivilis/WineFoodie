@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DataManagerDelegate : class {
+protocol DataManagerDelegate {
     func didUpdateWineListWithOptions(optionsUpdated: Int)
     func didUpdateRecepes(recipesUpdated: Int)
 }
@@ -27,6 +27,8 @@ class DataManager {
                 callCount++
                 wine.recipes = recipeList
                 wine.foods = self.pairFood(recipeList)
+                print(callCount)
+                print(self.wineList.count)
                 self.delegate!.didUpdateRecepes(callCount)
             })
         }
