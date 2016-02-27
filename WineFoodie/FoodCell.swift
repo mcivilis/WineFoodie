@@ -10,6 +10,5 @@ import UIKit
 
 class FoodCell: UICollectionViewCell {
 
-    @IBOutlet var imageView: UIImageView!
     @IBOutlet var foodLabel: UILabel!
 }

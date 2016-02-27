@@ -24,22 +24,27 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
-    @IBOutlet var sparklingTapGesture: UITapGestureRecognizer!
-    @IBOutlet var whiteTapGesture: UITapGestureRecognizer!
-    @IBOutlet var roseTapGesture: UITapGestureRecognizer!
-    @IBOutlet var redTapGesture: UITapGestureRecognizer!
-    @IBOutlet var dessertTapGesture: UITapGestureRecognizer!
+    @IBOutlet var dessertImage: UIImageView!
+    @IBOutlet var redImage: UIImageView!
+    @IBOutlet var roseImage: UIImageView!
+    @IBOutlet var whiteImage: UIImageView!
+    @IBOutlet var sparklingImage: UIImageView!
     
     var delegate : WinePairViewControllerDelegate?
     var foodType : Foods?
     var dataManager : DataManager!
-    var finishedLoading = false
     var winePairModel = WinePairModel()
-    
     var wines = [LCBOWine]()
+    var typeSelected = wineGroup.Red
+    var finishedLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    let tapGestureSparkling = UITapGestureRecognizer(target:self, action:Selector("tapActionSparkling"))
+        sparklingImage.userInteractionEnabled = true
+        sparklingImage.addGestureRecognizer(tapGestureSparkling)
+    
         dataManager.delegate = self
         
         view.bringSubviewToFront(activityIndicatorView)
@@ -51,7 +56,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             print("finished loading RIGHT AFTER view did load")
             
             //Defauilt view is red wine
-            displayWineList(.Red)
+            displayWineList()
         }
         delegate?.didFinishLoading(finishedLoading)
     }
@@ -72,8 +77,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             
             print("finished loading TRIGGERED BY PROTOCOL")
             
-            //Defauilt view is red wine
-            displayWineList(.Red)
+            displayWineList()
         
         }
     }
@@ -98,10 +102,10 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
 
 //MARK: Helpers
     
-    func displayWineList(type: wineGroup) {
+    func displayWineList() {
         var test = 0
         var winePairList : [WinePair]!
-        switch type {
+        switch typeSelected {
         case .Red : winePairList = winePairModel.redWineList
         case.Rose : winePairList = winePairModel.roseWineList
         case.White : winePairList = winePairModel.whiteWineList
@@ -125,4 +129,37 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         }
     }
 
+    
+//MARK: Gesture Recognizers
+    
+    @IBAction func tapActionSparkling() {
+        print("tap tap tap")
+        typeSelected = .Sparkling
+        tableView.reloadData()
+    }
+    
+    @IBAction func tapActionWhite() {
+        print("tap tap tap")
+        typeSelected = .White
+        tableView.reloadData()
+    }
+    
+    @IBAction func tapActionRose() {
+        print("tap tap tap")
+        typeSelected = .Rose
+        tableView.reloadData()
+    }
+    
+    @IBAction func tapActionRed() {
+        print("tap tap tap")
+        typeSelected = .Red
+        tableView.reloadData()
+    }
+    
+    @IBAction func tapActionDessert() {
+        print("tap tap tap")
+        typeSelected = .Dessert
+        tableView.reloadData()
+    }
+    
 }

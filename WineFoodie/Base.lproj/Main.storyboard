@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Main View Controller-->
@@ -21,46 +22,44 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-6Z-CY3">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="10" id="eGL-7I-aKS">
-                                    <size key="itemSize" width="120" height="120"/>
+                                    <size key="itemSize" width="120" height="50"/>
                                     <size key="headerReferenceSize" width="50" height="20"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="KU4-Bj-Qzl" customClass="FoodCell" customModule="WineFoodie" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="94" width="120" height="120"/>
+                                        <rect key="frame" x="10" y="94" width="120" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d5z-gk-98m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="3js-5b-vfX">
-                                                    <rect key="frame" x="8" y="88" width="104" height="24"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-Rn-0ty">
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-97-lwH">
+                                                    <rect key="frame" x="6" y="5" width="108" height="40"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="d5z-gk-98m" secondAttribute="bottom" id="6xm-GR-hpz"/>
-                                            <constraint firstItem="d5z-gk-98m" firstAttribute="leading" secondItem="KU4-Bj-Qzl" secondAttribute="leading" id="Jtl-hB-JMI"/>
-                                            <constraint firstItem="3js-5b-vfX" firstAttribute="trailing" secondItem="KU4-Bj-Qzl" secondAttribute="trailingMargin" id="Rbd-K7-b8q"/>
-                                            <constraint firstAttribute="trailing" secondItem="d5z-gk-98m" secondAttribute="trailing" id="kke-vU-CWg"/>
-                                            <constraint firstItem="3js-5b-vfX" firstAttribute="bottom" secondItem="KU4-Bj-Qzl" secondAttribute="bottomMargin" id="mcC-oD-PEp"/>
-                                            <constraint firstItem="3js-5b-vfX" firstAttribute="leading" secondItem="KU4-Bj-Qzl" secondAttribute="leadingMargin" id="z4o-so-rgo"/>
-                                            <constraint firstItem="d5z-gk-98m" firstAttribute="top" secondItem="KU4-Bj-Qzl" secondAttribute="top" id="zye-eD-sbE"/>
+                                            <constraint firstAttribute="bottom" secondItem="RGs-Rn-0ty" secondAttribute="bottom" id="37O-uq-ZcJ"/>
+                                            <constraint firstItem="RGs-Rn-0ty" firstAttribute="leading" secondItem="KU4-Bj-Qzl" secondAttribute="leading" id="5kj-lX-3NB"/>
+                                            <constraint firstItem="RGs-Rn-0ty" firstAttribute="top" secondItem="KU4-Bj-Qzl" secondAttribute="top" id="9Pn-lP-EJm"/>
+                                            <constraint firstItem="Oni-97-lwH" firstAttribute="width" secondItem="RGs-Rn-0ty" secondAttribute="width" multiplier="0.9" id="T6y-0w-3Tu"/>
+                                            <constraint firstItem="Oni-97-lwH" firstAttribute="centerX" secondItem="KU4-Bj-Qzl" secondAttribute="centerX" id="dlL-yK-efk"/>
+                                            <constraint firstAttribute="trailing" secondItem="RGs-Rn-0ty" secondAttribute="trailing" id="fJv-W9-tOT"/>
+                                            <constraint firstItem="Oni-97-lwH" firstAttribute="centerY" secondItem="KU4-Bj-Qzl" secondAttribute="centerY" id="gyg-ea-3xX"/>
+                                            <constraint firstItem="Oni-97-lwH" firstAttribute="height" secondItem="RGs-Rn-0ty" secondAttribute="height" multiplier="0.8" id="hHA-At-xif"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="foodLabel" destination="3js-5b-vfX" id="Cpc-oO-FwA"/>
-                                            <outlet property="imageView" destination="d5z-gk-98m" id="P8n-sk-Jl0"/>
+                                            <outlet property="foodLabel" destination="Oni-97-lwH" id="xia-k6-Wmb"/>
                                             <segue destination="sGJ-jN-GPb" kind="show" identifier="showWinePairs" id="ZmY-3I-Yeb"/>
                                         </connections>
                                     </collectionViewCell>
@@ -75,7 +74,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-C2-Avo">
                                                     <rect key="frame" x="8" y="-3" width="304" height="26"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -86,7 +85,6 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="iTV-mC-jfu" firstAttribute="top" secondItem="Lnd-nA-zzm" secondAttribute="top" id="FcO-XZ-qS6"/>
                                         <constraint firstAttribute="trailing" secondItem="iTV-mC-jfu" secondAttribute="trailing" id="Fvt-T6-TkT"/>
@@ -149,9 +147,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="izn-FI-ZFK" secondAttribute="height" multiplier="1:1" id="FsJ-6Q-yan"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="1Ll-61-Nyw" appends="YES" id="i1n-Z0-bjm"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sparkling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VjT-SK-qTQ">
                                                 <rect key="frame" x="0.0" y="58" width="58" height="15"/>
@@ -170,9 +165,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wSQ-Pb-qfu" secondAttribute="height" multiplier="1:1" id="Zcw-R1-gi5"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="slR-g7-1DI" appends="YES" id="rbl-cf-Yxj"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="White" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wY-Rr-L8o">
                                                 <rect key="frame" x="0.0" y="58" width="57" height="15"/>
@@ -191,9 +183,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xpp-KM-Iyr" secondAttribute="height" multiplier="1:1" id="gqA-lm-WXk"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="d9t-E7-ly5" appends="YES" id="ecY-tu-w7f"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9h-n7-rCK">
                                                 <rect key="frame" x="0.0" y="58" width="58" height="15"/>
@@ -212,9 +201,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RrX-tE-UPl" secondAttribute="height" multiplier="1:1" id="SxZ-uj-tuz"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="LfS-wH-TNn" appends="YES" id="OEC-hx-2OJ"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTw-UN-kUW">
                                                 <rect key="frame" x="0.0" y="58" width="57" height="15"/>
@@ -233,9 +219,6 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="DwT-TT-iS6" secondAttribute="height" multiplier="1:1" id="pB1-Z4-HUi"/>
                                                 </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="clM-Jj-a2a" appends="YES" id="HTz-lK-BEA"/>
-                                                </connections>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dessert" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyX-DR-Zkb">
                                                 <rect key="frame" x="0.0" y="58" width="58" height="15"/>
@@ -283,20 +266,15 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="KCN-Bb-bEH" id="bEK-pJ-ZS7"/>
-                        <outlet property="dessertTapGesture" destination="clM-Jj-a2a" id="4Qb-Om-IFF"/>
-                        <outlet property="redTapGesture" destination="LfS-wH-TNn" id="Qoj-l9-3be"/>
-                        <outlet property="roseTapGesture" destination="d9t-E7-ly5" id="f1B-Sf-pVY"/>
-                        <outlet property="sparklingTapGesture" destination="1Ll-61-Nyw" id="Sy3-mO-U3B"/>
+                        <outlet property="dessertImage" destination="DwT-TT-iS6" id="Il7-Iq-QiU"/>
+                        <outlet property="redImage" destination="RrX-tE-UPl" id="hdX-4H-du7"/>
+                        <outlet property="roseImage" destination="xpp-KM-Iyr" id="BLj-Dg-rDU"/>
+                        <outlet property="sparklingImage" destination="izn-FI-ZFK" id="EwS-LH-VOM"/>
                         <outlet property="tableView" destination="yVy-Qk-smG" id="3Pa-Ke-mZy"/>
-                        <outlet property="whiteTapGesture" destination="slR-g7-1DI" id="OXw-3P-Ndg"/>
+                        <outlet property="whiteImage" destination="wSQ-Pb-qfu" id="wcY-fO-U5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bu-Vm-qa8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="1Ll-61-Nyw"/>
-                <tapGestureRecognizer id="slR-g7-1DI"/>
-                <tapGestureRecognizer id="d9t-E7-ly5"/>
-                <tapGestureRecognizer id="LfS-wH-TNn"/>
-                <tapGestureRecognizer id="clM-Jj-a2a"/>
             </objects>
             <point key="canvasLocation" x="1414" y="241"/>
         </scene>
