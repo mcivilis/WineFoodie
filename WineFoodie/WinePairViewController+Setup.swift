@@ -11,6 +11,22 @@ import UIKit
 
 extension WinePairViewController {
     
+    //MARK: Initial Setup
+    
+    func prepareProperties() {
+        delegate?.didFinishLoading(finishedLoading)
+        dataManager.delegate = self
+        view.bringSubviewToFront(activityIndicatorView)
+        activityIndicatorView.startAnimating()
+        
+        wines.removeAll()
+        sparklingWines.removeAll()
+        whiteWines.removeAll()
+        roseWines.removeAll()
+        redWines.removeAll()
+        dessertWines.removeAll()
+    }
+    
     //MARK: Gesture Recognizers
     
     func configureGestures() {
@@ -36,32 +52,27 @@ extension WinePairViewController {
     }
     
     func tapActionSparkling() {
-        print("tap Sparkling")
-        typeSelected = .Sparkling
+        wines = sparklingWines
         tableView.reloadData()
     }
     
     func tapActionWhite() {
-        print("tap White")
-        typeSelected = .White
+        wines = whiteWines
         tableView.reloadData()
     }
     
     func tapActionRose() {
-        print("tap Rose")
-        typeSelected = .Rose
+        wines = roseWines
         tableView.reloadData()
     }
     
     func tapActionRed() {
-        print("tap Red")
-        typeSelected = .Red
+        wines = redWines
         tableView.reloadData()
     }
     
     func tapActionDessert() {
-        print("tap Dessert")
-        typeSelected = .Dessert
+        wines = dessertWines
         tableView.reloadData()
     }
 }

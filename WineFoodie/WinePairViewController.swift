@@ -35,26 +35,24 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     var dataManager : DataManager!
     var winePairModel = WinePairModel()
     var wines = [LCBOWine]()
-    var typeSelected = wineGroup.Red
+    var sparklingWines = [LCBOWine]()
+    var whiteWines = [LCBOWine]()
+    var roseWines = [LCBOWine]()
+    var redWines = [LCBOWine]()
+    var dessertWines = [LCBOWine]()
     var finishedLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        prepareProperties()
         configureGestures()
-        
-        dataManager.delegate = self
-        
-        view.bringSubviewToFront(activityIndicatorView)
-        activityIndicatorView.startAnimating()
-        
+                
         if finishedLoading {
             activityIndicatorView.stopAnimating()
             winePairModel.prepare(dataManager.wineList, foodType: foodType!)
-            print("finished loading RIGHT AFTER view did load")
-            displayWineList()
+            loadLCBOData()
         }
-        delegate?.didFinishLoading(finishedLoading)
     }
     
     func didUpdateWineListWithOptions(optionsUpdated: Int) {
@@ -70,11 +68,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             winePairModel.prepare(dataManager.wineList, foodType: foodType!)
             finishedLoading = true
             delegate?.didFinishLoading(finishedLoading)
-            
-            print("finished loading TRIGGERED BY PROTOCOL")
-            
-            displayWineList()
-        
+            loadLCBOData()
         }
     }
     
@@ -94,36 +88,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         
 
 //MARK: Table View Delegate
-
-
-//MARK: Helpers
-    
-    func displayWineList() {
-        var test = 0
-        var winePairList : [WinePair]!
-        switch typeSelected {
-        case .Red : winePairList = winePairModel.redWineList
-        case.Rose : winePairList = winePairModel.roseWineList
-        case.White : winePairList = winePairModel.whiteWineList
-        case.Sparkling : winePairList = winePairModel.sparklingWineList
-        case.Dessert : winePairList = winePairModel.dessertWineList
-        }
-        
-        for winePair in winePairList {
-            let plus = "+"
-            let queryOptions = winePair.country.stringByReplacingOccurrencesOfString(" ", withString: plus) + plus
-                + winePair.region.stringByReplacingOccurrencesOfString(" ", withString: plus) + plus
-                + winePair.varietal.stringByReplacingOccurrencesOfString(" ", withString: plus)
-            print(queryOptions, test)
-            test++
-            dataManager.lcboWineList(queryOptions, completion: { (lcboWineList) -> Void in
-                self.wines = self.wines + lcboWineList
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
-                })
-            })
-        }
-    }
 
     
     

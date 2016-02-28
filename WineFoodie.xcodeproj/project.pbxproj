@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */; };
+		AF2E64241C8382D400079BA2 /* WinePairViewController+LoadLCBOWines.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E64231C8382D400079BA2 /* WinePairViewController+LoadLCBOWines.swift */; };
 		AF3C4AD71C7F92AE003A5F5F /* WinePairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */; };
 		AF3C4ADF1C7F9890003A5F5F /* dessert.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF3C4ADA1C7F9890003A5F5F /* dessert.jpg */; };
 		AF3C4AE01C7F9890003A5F5F /* rose.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF3C4ADB1C7F9890003A5F5F /* rose.jpg */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WinePairViewController+Setup.swift"; sourceTree = "<group>"; };
+		AF2E64231C8382D400079BA2 /* WinePairViewController+LoadLCBOWines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WinePairViewController+LoadLCBOWines.swift"; sourceTree = "<group>"; };
 		AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinePairViewController.swift; sourceTree = "<group>"; };
 		AF3C4ADA1C7F9890003A5F5F /* dessert.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dessert.jpg; sourceTree = "<group>"; };
 		AF3C4ADB1C7F9890003A5F5F /* rose.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rose.jpg; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */,
 				AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */,
+				AF2E64231C8382D400079BA2 /* WinePairViewController+LoadLCBOWines.swift */,
 				AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */,
 			);
 			name = WinePairViewController;
@@ -266,6 +269,7 @@
 				AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */,
 				AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */,
 				AFD498DD1C7BD54A0083B788 /* ModelObjects.swift in Sources */,
+				AF2E64241C8382D400079BA2 /* WinePairViewController+LoadLCBOWines.swift in Sources */,
 				AFD498C71C7BD47F0083B788 /* MainViewController.swift in Sources */,
 				AF729BC31C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift in Sources */,
 				AF3C4AD71C7F92AE003A5F5F /* WinePairViewController.swift in Sources */,

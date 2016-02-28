@@ -40,7 +40,6 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
 
     func didUpdateWineListWithOptions(optionsUpdated: Int) {
         if optionsUpdated == dataManager.queryOptions().count {
-            print("Finished loading in the main view controller")
             self.dataManager.loadRecipes()
         }
     }
