@@ -41,10 +41,8 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    let tapGestureSparkling = UITapGestureRecognizer(target:self, action:Selector("tapActionSparkling"))
-        sparklingImage.userInteractionEnabled = true
-        sparklingImage.addGestureRecognizer(tapGestureSparkling)
-    
+        configureGestures()
+        
         dataManager.delegate = self
         
         view.bringSubviewToFront(activityIndicatorView)
@@ -54,8 +52,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             activityIndicatorView.stopAnimating()
             winePairModel.prepare(dataManager.wineList, foodType: foodType!)
             print("finished loading RIGHT AFTER view did load")
-            
-            //Defauilt view is red wine
             displayWineList()
         }
         delegate?.didFinishLoading(finishedLoading)
@@ -130,36 +126,5 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     }
 
     
-//MARK: Gesture Recognizers
-    
-    @IBAction func tapActionSparkling() {
-        print("tap tap tap")
-        typeSelected = .Sparkling
-        tableView.reloadData()
-    }
-    
-    @IBAction func tapActionWhite() {
-        print("tap tap tap")
-        typeSelected = .White
-        tableView.reloadData()
-    }
-    
-    @IBAction func tapActionRose() {
-        print("tap tap tap")
-        typeSelected = .Rose
-        tableView.reloadData()
-    }
-    
-    @IBAction func tapActionRed() {
-        print("tap tap tap")
-        typeSelected = .Red
-        tableView.reloadData()
-    }
-    
-    @IBAction func tapActionDessert() {
-        print("tap tap tap")
-        typeSelected = .Dessert
-        tableView.reloadData()
-    }
     
 }

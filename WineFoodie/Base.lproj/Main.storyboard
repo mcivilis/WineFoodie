@@ -266,12 +266,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="KCN-Bb-bEH" id="bEK-pJ-ZS7"/>
-                        <outlet property="dessertImage" destination="DwT-TT-iS6" id="Il7-Iq-QiU"/>
-                        <outlet property="redImage" destination="RrX-tE-UPl" id="hdX-4H-du7"/>
-                        <outlet property="roseImage" destination="xpp-KM-Iyr" id="BLj-Dg-rDU"/>
-                        <outlet property="sparklingImage" destination="izn-FI-ZFK" id="EwS-LH-VOM"/>
+                        <outlet property="dessertImage" destination="DwT-TT-iS6" id="mqB-Op-ZRY"/>
+                        <outlet property="redImage" destination="RrX-tE-UPl" id="jbX-mm-QDI"/>
+                        <outlet property="roseImage" destination="xpp-KM-Iyr" id="hgo-At-txx"/>
+                        <outlet property="sparklingImage" destination="izn-FI-ZFK" id="v9D-cW-K3E"/>
                         <outlet property="tableView" destination="yVy-Qk-smG" id="3Pa-Ke-mZy"/>
-                        <outlet property="whiteImage" destination="wSQ-Pb-qfu" id="wcY-fO-U5P"/>
+                        <outlet property="whiteImage" destination="wSQ-Pb-qfu" id="7bQ-Et-27P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bu-Vm-qa8" userLabel="First Responder" sceneMemberID="firstResponder"/>

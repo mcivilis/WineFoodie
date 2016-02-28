@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */; };
 		AF3C4AD71C7F92AE003A5F5F /* WinePairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */; };
 		AF3C4ADF1C7F9890003A5F5F /* dessert.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF3C4ADA1C7F9890003A5F5F /* dessert.jpg */; };
 		AF3C4AE01C7F9890003A5F5F /* rose.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF3C4ADB1C7F9890003A5F5F /* rose.jpg */; };
 		AF3C4AE11C7F9890003A5F5F /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = AF3C4ADC1C7F9890003A5F5F /* red.png */; };
 		AF3C4AE21C7F9890003A5F5F /* sparkling.png in Resources */ = {isa = PBXBuildFile; fileRef = AF3C4ADD1C7F9890003A5F5F /* sparkling.png */; };
 		AF3C4AE31C7F9890003A5F5F /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = AF3C4ADE1C7F9890003A5F5F /* white.png */; };
-		AF3C4AE81C7F9E82003A5F5F /* WineTypeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C4AE71C7F9E82003A5F5F /* WineTypeControl.swift */; };
 		AF729BC31C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF729BC21C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift */; };
 		AF7539FD1C7E75C10055D088 /* FoodDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */; };
 		AFABCE5B1C7E888400B711F3 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5A1C7E888400B711F3 /* FoodCell.swift */; };
@@ -34,13 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WinePairViewController+Setup.swift"; sourceTree = "<group>"; };
 		AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinePairViewController.swift; sourceTree = "<group>"; };
 		AF3C4ADA1C7F9890003A5F5F /* dessert.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dessert.jpg; sourceTree = "<group>"; };
 		AF3C4ADB1C7F9890003A5F5F /* rose.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rose.jpg; sourceTree = "<group>"; };
 		AF3C4ADC1C7F9890003A5F5F /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		AF3C4ADD1C7F9890003A5F5F /* sparkling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparkling.png; sourceTree = "<group>"; };
 		AF3C4ADE1C7F9890003A5F5F /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
-		AF3C4AE71C7F9E82003A5F5F /* WineTypeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WineTypeControl.swift; path = ../WineTypeControl.swift; sourceTree = "<group>"; };
 		AF729BC21C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+LCBOWineList.swift"; sourceTree = "<group>"; };
 		AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDefinitions.swift; sourceTree = "<group>"; };
 		AFABCE5A1C7E888400B711F3 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		AF3C4AD51C7F9266003A5F5F /* WinePairViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AF3C4AE71C7F9E82003A5F5F /* WineTypeControl.swift */,
 				AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */,
+				AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */,
 				AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */,
 			);
 			name = WinePairViewController;
@@ -264,7 +264,7 @@
 			files = (
 				AFCFBE651C7CC388007D360C /* DataManager+WineList.swift in Sources */,
 				AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */,
-				AF3C4AE81C7F9E82003A5F5F /* WineTypeControl.swift in Sources */,
+				AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */,
 				AFD498DD1C7BD54A0083B788 /* ModelObjects.swift in Sources */,
 				AFD498C71C7BD47F0083B788 /* MainViewController.swift in Sources */,
 				AF729BC31C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift in Sources */,
