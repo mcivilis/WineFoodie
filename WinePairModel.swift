@@ -84,13 +84,13 @@ class WinePairModel {
                 }
             }
         }
-        print("uniquePairsRepeatCount = number of times each wine pair repeats, sum should equal 10")
-        print(uniquePairsRepeatCount)
+        //print("uniquePairsRepeatCount = number of times each wine pair repeats, sum should equal 10")
+        //print(uniquePairsRepeatCount)
         var ratingCounts = Array(Set(uniquePairsRepeatCount))
         
         ratingCounts.sortInPlace()
-        print("ratingCounts = unique rating as Int")
-        print(ratingCounts)
+        //print("ratingCounts = unique rating as Int")
+        //print(ratingCounts)
         
         var ratingArray = [Float]()
         for element in ratingCounts {
@@ -98,8 +98,8 @@ class WinePairModel {
             let rating = Float(index) * (100 / Float(ratingCounts.count))
             ratingArray.append(rating)
         }
-        print("ratingArray = unique rating as Float")
-        print(ratingArray)
+        //print("ratingArray = unique rating as Float")
+        //print(ratingArray)
         
         var wineListWithRating = [WinePair]()
         for pair in wineList {
@@ -118,19 +118,8 @@ class WinePairModel {
             print(wine.country, wine.varietal, wine.matchRating)
         }
     }
-    
-    /*
-    func printPairs(wineTypeList: [String : [WinePair]]) {
-        
-        for (countryKey,pairsValue) in wineTypeList {
-            print(countryKey)
-            for pair in pairsValue {
-                print(pair.region, pair.varietal)
-            }
-        }
-    }
 
-    
+    /*
     func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
     
     var wineListDictionary = [String : [WinePair]]()

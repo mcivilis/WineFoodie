@@ -56,26 +56,31 @@ extension WinePairViewController {
     
     func tapActionSparkling() {
         wines = sparklingWines
+        wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionWhite() {
         wines = whiteWines
+        wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionRose() {
         wines = roseWines
+        wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionRed() {
         wines = redWines
+        wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionDessert() {
         wines = dessertWines
+        wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
 }

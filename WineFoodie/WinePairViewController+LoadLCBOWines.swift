@@ -18,9 +18,11 @@ extension WinePairViewController {
             dataManager.lcboWineList(cleanQueryOptions(winePair), completion: { (lcboWineList) -> Void in
                 var lcboWineListWithRating = [LCBOWine]()
                 for wine in lcboWineList {
+                    if (wine.secondaryCategory == "Red Wine") {
                     var wineWithRating = wine
                     wineWithRating.matchRating = winePair.matchRating
                     lcboWineListWithRating.append(wineWithRating)
+                    }
                 }
                 self.redWines = self.redWines + lcboWineListWithRating
                 self.wines = self.redWines
@@ -34,31 +36,68 @@ extension WinePairViewController {
         for winePair in winePairModel.whiteWineList {
             
             dataManager.lcboWineList(cleanQueryOptions(winePair), completion: { (lcboWineList) -> Void in
-                self.whiteWines = self.whiteWines + lcboWineList
+                var lcboWineListWithRating = [LCBOWine]()
+                for wine in lcboWineList {
+                    if (wine.secondaryCategory == "White Wine") {
+                    var wineWithRating = wine
+                    wineWithRating.matchRating = winePair.matchRating
+                    lcboWineListWithRating.append(wineWithRating)
+                    }
+                }
+                self.whiteWines = self.whiteWines + lcboWineListWithRating
+                self.whiteWines.sortInPlace({$0.matchRating > $1.matchRating})
             })
         }
         
         for winePair in winePairModel.roseWineList {
             
             dataManager.lcboWineList(cleanQueryOptions(winePair), completion: { (lcboWineList) -> Void in
-                self.roseWines = self.roseWines + lcboWineList
+                var lcboWineListWithRating = [LCBOWine]()
+                for wine in lcboWineList {
+                    if (wine.secondaryCategory == "Rosé Wine") {
+                    var wineWithRating = wine
+                    wineWithRating.matchRating = winePair.matchRating
+                    lcboWineListWithRating.append(wineWithRating)
+                    }
+                }
+                self.roseWines = self.roseWines + lcboWineListWithRating
+                self.roseWines.sortInPlace({$0.matchRating > $1.matchRating})
             })
         }
         
         for winePair in winePairModel.sparklingWineList {
             
             dataManager.lcboWineList(cleanQueryOptions(winePair), completion: { (lcboWineList) -> Void in
-                self.sparklingWines = self.sparklingWines + lcboWineList
+                var lcboWineListWithRating = [LCBOWine]()
+                for wine in lcboWineList {
+                    if (wine.secondaryCategory == "Sparkling Wine") {
+                    var wineWithRating = wine
+                    wineWithRating.matchRating = winePair.matchRating
+                    lcboWineListWithRating.append(wineWithRating)
+                    }
+                }
+                self.sparklingWines = self.sparklingWines + lcboWineListWithRating
+                self.sparklingWines.sortInPlace({$0.matchRating > $1.matchRating})
             })
         }
         
         for winePair in winePairModel.dessertWineList {
             
             dataManager.lcboWineList(cleanQueryOptions(winePair), completion: { (lcboWineList) -> Void in
-                self.dessertWines = self.dessertWines + lcboWineList
+                var lcboWineListWithRating = [LCBOWine]()
+                for wine in lcboWineList {
+                    if (wine.secondaryCategory == "Dessert Wine") {
+                    var wineWithRating = wine
+                    wineWithRating.matchRating = winePair.matchRating
+                    lcboWineListWithRating.append(wineWithRating)
+                    }
+                }
+                self.dessertWines = self.dessertWines + lcboWineListWithRating
+                self.dessertWines.sortInPlace({$0.matchRating > $1.matchRating})
             })
         }
     }
+    
     
     func cleanQueryOptions(winePair: WinePair) -> String {
         let charactersToRemove = NSCharacterSet.alphanumericCharacterSet().invertedSet

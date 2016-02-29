@@ -82,22 +82,24 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
         
         //downloadImageForCell(wines[indexPath.row].imageURL, indexPath: indexPath)
-        cell.name.text = wines[indexPath.row].name
-        cell.origin.text = wines[indexPath.row].origin
-        cell.varietal.text = wines[indexPath.row].varietal
-        cell.style.text = wines[indexPath.row].style
-        cell.price.text = formatWinePrice(wines[indexPath.row].currentPrice)
-        let ranking = wines[indexPath.row].matchRating
-        cell.matchRanking.text = formatMatchRanking(ranking)
-        
-        if (ranking == 1) {
-            cell.matchRanking.textColor = UIColor.greenColor()
-        } else if (ranking > 0.33){
-            cell.matchRanking.textColor = UIColor.darkGrayColor()
-        } else {
-            cell.matchRanking.textColor = UIColor.redColor()
+        if wines.count > 0 {
+            cell.name.text = wines[indexPath.row].name
+            cell.origin.text = wines[indexPath.row].origin
+            cell.varietal.text = wines[indexPath.row].varietal
+            cell.style.text = wines[indexPath.row].style
+            cell.wineType.text = wines[indexPath.row].secondaryCategory
+            cell.price.text = formatWinePrice(wines[indexPath.row].currentPrice)
+            let ranking = wines[indexPath.row].matchRating
+            cell.matchRanking.text = formatMatchRanking(ranking)
+            
+            if (ranking == 1) {
+                cell.matchRanking.textColor = UIColor.greenColor()
+            } else if (ranking > 0.33){
+                cell.matchRanking.textColor = UIColor.darkGrayColor()
+            } else {
+                cell.matchRanking.textColor = UIColor.redColor()
+            }
         }
-        
         return cell
     }
         
