@@ -32,15 +32,15 @@ class WinePair : Equatable, Hashable {
     
     var varietal : String!
     var country : String!
-    var region: String!
+    var matchRating : Float!
     var hashValue: Int{
-        return (varietal + country + region).hashValue
+        return (varietal + country).hashValue
     }
     
     init (wineRegion: String, wineVarietal: String) {
         varietal = wineVarietal
         country = WinePair.getCountry(wineRegion)
-        region = WinePair.getRegion(wineRegion)
+        matchRating = 0
     }
     
     class func getCountry(wineRegion: String) -> String {
@@ -95,5 +95,5 @@ struct  Recipe {
 }
 
 func == (lhs:WinePair, rhs:WinePair) -> Bool {
-    return ((lhs.varietal == rhs.varietal) && (lhs.country == rhs.country) && (lhs.region == rhs.region))
+    return ((lhs.varietal == rhs.varietal) && (lhs.country == rhs.country))
 }

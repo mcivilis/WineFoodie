@@ -56,11 +56,12 @@ extension WinePairViewController {
     func cleanQueryOptions(winePair: WinePair) -> String {
         let charactersToRemove = NSCharacterSet.alphanumericCharacterSet().invertedSet
         let country = winePair.country.componentsSeparatedByCharactersInSet(charactersToRemove).joinWithSeparator(" ")
-        let region = winePair.region.componentsSeparatedByCharactersInSet(charactersToRemove).joinWithSeparator(" ")
+        //let region = winePair.region.componentsSeparatedByCharactersInSet(charactersToRemove).joinWithSeparator(" ")
         let varietal = winePair.varietal.componentsSeparatedByCharactersInSet(charactersToRemove).joinWithSeparator(" ")
         let plus = "+"
         
-        return country + plus + region + plus + varietal
+        //return country + plus + region + plus + varietal
+        return country + plus + varietal
     }
 
 }

@@ -60,7 +60,9 @@ class WinePairModel {
         sparklingWineList = bestMatch(allSparkling)
         dessertWineList = bestMatch(allDessert)
         
+        print("all")
         printPairs(allRed)
+        print("best")
         printPairs(redWineList)
     }
     
@@ -70,23 +72,55 @@ class WinePairModel {
     
     func bestMatch(wineList: [WinePair]) -> [WinePair] {
         
-        let set = NSCountedSet(array: wineList)
-        var maxCount = 0
-        var bestMatch = [WinePair]()
+        let uniquePairs = Array(Set(wineList))
+        var uniquePairsRepeatCount = [Int]()
+        //print("uniquePairs = wune paris no dupes -> should be 7")
+        //printPairs(uniquePairs)
         
-        for wine in set {
-            if (maxCount < set.countForObject(wine)) {
-                maxCount = set.countForObject(wine)
-                bestMatch.removeAll()
-                bestMatch.append(wine as! WinePair)
+        for _ in uniquePairs {
+            uniquePairsRepeatCount.append(0)
+        }
+        
+        for pair in wineList {
+            for uniquePair in uniquePairs{
+                if (pair == uniquePair) {
+                    let index = uniquePairs.indexOf(uniquePair)
+                    uniquePairsRepeatCount[index!]++
+                }
             }
         }
-        return bestMatch
+        //print("uniquePairsRepeatCount = number of times each wine pair repeats, sum should equal 10")
+        //print(uniquePairsRepeatCount)
+        var ratingCounts = Array(Set(uniquePairsRepeatCount))
+        
+        ratingCounts.sortInPlace()
+        //print("ratingCounts = unique rating as Int")
+        //print(ratingCounts)
+        
+        var ratingArray = [Float]()
+        for element in ratingCounts {
+            let index = ratingCounts.indexOf(element)! + 1
+            let rating = Float(index) * (100 / Float(ratingCounts.count))
+            ratingArray.append(rating)
+        }
+        //print("ratingArray = unique rating as Float")
+        //print(ratingArray)
+        
+        var wineListWithRating = [WinePair]()
+        for pair in wineList {
+            let pairWithRating = pair 
+            let actualCount = uniquePairsRepeatCount[(uniquePairs.indexOf(pair))!]
+            let index = ratingCounts.indexOf(actualCount)
+            pairWithRating.matchRating = ratingArray[index!]
+            wineListWithRating.append(pairWithRating)
+        }
+
+        return Array(Set(wineListWithRating))
     }
     
     func printPairs(wineList: [WinePair]) {
         for wine in wineList {
-            print(wine.country, wine.region, wine.varietal)
+            print(wine.country, wine.varietal, wine.matchRating)
         }
     }
     
