@@ -26,6 +26,7 @@ struct LCBOWine {
     var imageURL: String!
     var varietal: String!
     var style: String!
+    var matchRating : Float!
 }
 
 class WinePair : Equatable, Hashable {

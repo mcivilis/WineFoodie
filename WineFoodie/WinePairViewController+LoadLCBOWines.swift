@@ -16,8 +16,15 @@ extension WinePairViewController {
         for winePair in winePairModel.redWineList {
             
             dataManager.lcboWineList(cleanQueryOptions(winePair), completion: { (lcboWineList) -> Void in
-                self.redWines = self.redWines + lcboWineList
+                var lcboWineListWithRating = [LCBOWine]()
+                for wine in lcboWineList {
+                    var wineWithRating = wine
+                    wineWithRating.matchRating = winePair.matchRating
+                    lcboWineListWithRating.append(wineWithRating)
+                }
+                self.redWines = self.redWines + lcboWineListWithRating
                 self.wines = self.redWines
+                self.wines.sortInPlace({$0.matchRating > $1.matchRating})
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
                 })

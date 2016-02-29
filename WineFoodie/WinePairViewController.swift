@@ -87,26 +87,30 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         cell.varietal.text = wines[indexPath.row].varietal
         cell.style.text = wines[indexPath.row].style
         cell.price.text = formatWinePrice(wines[indexPath.row].currentPrice)
+        let ranking = wines[indexPath.row].matchRating
+        cell.matchRanking.text = formatMatchRanking(ranking)
         
-        if (wines[indexPath.row].isVQA == true) {
-            cell.vqa.text = "VQA"
+        if (ranking == 1) {
+            cell.matchRanking.textColor = UIColor.greenColor()
+        } else if (ranking > 0.33){
+            cell.matchRanking.textColor = UIColor.darkGrayColor()
         } else {
-            cell.vqa.text = ""
+            cell.matchRanking.textColor = UIColor.redColor()
         }
-        if (wines[indexPath.row].isSeasonal == true) {
-            cell.vqa.text = "Seasonal"
-        } else {
-            cell.vqa.text = ""
-        }
+        
         return cell
     }
-    
-
         
 
 //MARK: Table View Delegate
 
 //MARK: Helpers
+    
+    func formatMatchRanking(matchRanking: Float) -> String {
+        let percent = Float(roundf(matchRanking))
+        let matchString = percent.description + "%"
+        return matchString
+    }
     
     func formatWinePrice(price: Int) -> String {
         let formatter = NSNumberFormatter()

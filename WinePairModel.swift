@@ -59,11 +59,6 @@ class WinePairModel {
         roseWineList = bestMatch(allRose)
         sparklingWineList = bestMatch(allSparkling)
         dessertWineList = bestMatch(allDessert)
-        
-        print("all")
-        printPairs(allRed)
-        print("best")
-        printPairs(redWineList)
     }
     
 
@@ -89,13 +84,13 @@ class WinePairModel {
                 }
             }
         }
-        //print("uniquePairsRepeatCount = number of times each wine pair repeats, sum should equal 10")
-        //print(uniquePairsRepeatCount)
+        print("uniquePairsRepeatCount = number of times each wine pair repeats, sum should equal 10")
+        print(uniquePairsRepeatCount)
         var ratingCounts = Array(Set(uniquePairsRepeatCount))
         
         ratingCounts.sortInPlace()
-        //print("ratingCounts = unique rating as Int")
-        //print(ratingCounts)
+        print("ratingCounts = unique rating as Int")
+        print(ratingCounts)
         
         var ratingArray = [Float]()
         for element in ratingCounts {
@@ -103,8 +98,8 @@ class WinePairModel {
             let rating = Float(index) * (100 / Float(ratingCounts.count))
             ratingArray.append(rating)
         }
-        //print("ratingArray = unique rating as Float")
-        //print(ratingArray)
+        print("ratingArray = unique rating as Float")
+        print(ratingArray)
         
         var wineListWithRating = [WinePair]()
         for pair in wineList {
