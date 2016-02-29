@@ -40,6 +40,15 @@ extension DataManager {
             var lcboWineList = [LCBOWine]()
             
             for wine in wines {
+                var include = false
+                if let stockType = wine["stock_type"] as? String {
+                    if (stockType == "LCBO") {
+                        include = true
+                    }
+                }
+                
+                if (include == true) {
+                
                 if let lcboName = wine["name"] as? String,
                 let lcboCurrentPrice = wine["price_in_cents"] as? Int,
                 let lcboRegularPrice = wine["regular_price_in_cents"] as? Int,
@@ -59,6 +68,7 @@ extension DataManager {
                     
                     let lcboWine = LCBOWine(name: lcboName, currentPrice: lcboCurrentPrice, regularPrice: lcboRegularPrice, priceSavings: lcboPriceSavings, primaryCategory: lcboPrimaryCategory, secondaryCategory: lcboSecondaryCategory, origin: lcboOrigin, inventoryCount: lcboInventoryCount, sugarContent: lcboSugarContent, sugarInGrams: lcboSugarInGrams, producerName: lcboProducerName, isSeasonal: lcboIsSeasonal, isVQA: lcboIsVQA, imageURL: lcboImageURL, varietal: lcboVarietal, style: lcboStyle)
                         lcboWineList.append(lcboWine)
+                }
                 }
             }
             completion(lcboWineList: lcboWineList)

@@ -79,8 +79,25 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel!.text = wines[indexPath.row].name
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
+        
+        //downloadImageForCell(wines[indexPath.row].imageURL, indexPath: indexPath)
+        cell.name.text = wines[indexPath.row].name
+        cell.origin.text = wines[indexPath.row].origin
+        cell.varietal.text = wines[indexPath.row].varietal
+        cell.style.text = wines[indexPath.row].style
+        cell.price.text = formatWinePrice(wines[indexPath.row].currentPrice)
+        
+        if (wines[indexPath.row].isVQA == true) {
+            cell.vqa.text = "VQA"
+        } else {
+            cell.vqa.text = ""
+        }
+        if (wines[indexPath.row].isSeasonal == true) {
+            cell.vqa.text = "Seasonal"
+        } else {
+            cell.vqa.text = ""
+        }
         return cell
     }
     
@@ -89,6 +106,32 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
 
 //MARK: Table View Delegate
 
+//MARK: Helpers
+    
+    func formatWinePrice(price: Int) -> String {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_CA")
+        return formatter.stringFromNumber(price / 100)!
+    }
+    
+    func downloadImageForCell(urlString: String, indexPath: NSIndexPath) {
+        let url = NSURL(string: urlString)
+        let urlRequest = NSURLRequest(URL: url!)
+        let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
+            if error == nil {
+                if let imageData = data {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! WineCell
+                        cell.wineImageView.image = UIImage(data: imageData)
+                        cell.wineImageView.contentMode = .ScaleAspectFit
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+        }
+        dataTask.resume()
+    }
     
     
 }

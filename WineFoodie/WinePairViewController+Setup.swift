@@ -25,6 +25,9 @@ extension WinePairViewController {
         roseWines.removeAll()
         redWines.removeAll()
         dessertWines.removeAll()
+        
+        self.tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     //MARK: Gesture Recognizers
