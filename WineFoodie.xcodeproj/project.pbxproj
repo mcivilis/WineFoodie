@@ -21,6 +21,7 @@
 		AF9C07D71C8489FE00324FA5 /* segment_header.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07D61C8489FE00324FA5 /* segment_header.png */; };
 		AF9C07DD1C849A7400324FA5 /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07DC1C849A7400324FA5 /* cell_background.png */; };
 		AF9C07DF1C849BA900324FA5 /* wine_glass_bubbles_half_full.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07DE1C849BA900324FA5 /* wine_glass_bubbles_half_full.png */; };
+		AF9C07E21C84FBD600324FA5 /* WineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C07E11C84FBD600324FA5 /* WineDetailViewController.swift */; };
 		AFABCE5B1C7E888400B711F3 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5A1C7E888400B711F3 /* FoodCell.swift */; };
 		AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */; };
 		AFBD0CB21C80DA0E004E533E /* WinePairModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */; };
@@ -52,6 +53,7 @@
 		AF9C07D61C8489FE00324FA5 /* segment_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = segment_header.png; sourceTree = "<group>"; };
 		AF9C07DC1C849A7400324FA5 /* cell_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_background.png; sourceTree = "<group>"; };
 		AF9C07DE1C849BA900324FA5 /* wine_glass_bubbles_half_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wine_glass_bubbles_half_full.png; sourceTree = "<group>"; };
+		AF9C07E11C84FBD600324FA5 /* WineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WineDetailViewController.swift; sourceTree = "<group>"; };
 		AFABCE5A1C7E888400B711F3 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodHeader.swift; sourceTree = "<group>"; };
 		AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WinePairModel.swift; path = ../WinePairModel.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 				AF729BC21C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift */,
 			);
 			name = "LCBO API";
+			sourceTree = "<group>";
+		};
+		AF9C07E01C84FBAF00324FA5 /* WineDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AF9C07E11C84FBD600324FA5 /* WineDetailViewController.swift */,
+			);
+			name = WineDetail;
 			sourceTree = "<group>";
 		};
 		AFABCE591C7E83D500B711F3 /* View Controllers */ = {
@@ -187,6 +197,7 @@
 			children = (
 				AFD498C41C7BD47F0083B788 /* AppDelegate.swift */,
 				AFABCE591C7E83D500B711F3 /* View Controllers */,
+				AF9C07E01C84FBAF00324FA5 /* WineDetail */,
 				AFCFBE631C7CBAE6007D360C /* DataManager */,
 				AFD498C81C7BD47F0083B788 /* Main.storyboard */,
 				AFD498CB1C7BD47F0083B788 /* Assets.xcassets */,
@@ -276,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9C07E21C84FBD600324FA5 /* WineDetailViewController.swift in Sources */,
 				AFCFBE651C7CC388007D360C /* DataManager+WineList.swift in Sources */,
 				AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */,
 				AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */,

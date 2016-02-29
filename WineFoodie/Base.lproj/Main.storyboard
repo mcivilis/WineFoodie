@@ -267,12 +267,12 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Hn4-v9-ETJ">
                                                     <rect key="frame" x="96" y="4" width="128" height="75"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-1v-8sO">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKg-1v-8sO">
                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="11"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN3-ez-YTR">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Origin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN3-ez-YTR">
                                                             <rect key="frame" x="0.0" y="11" width="128" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="Hh3-Dd-hD7"/>
@@ -280,7 +280,7 @@
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varietal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3h-m0-xtk">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Varietal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3h-m0-xtk">
                                                             <rect key="frame" x="0.0" y="27" width="128" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="8KW-DL-OYy"/>
@@ -288,7 +288,7 @@
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Style" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-it-zEf" userLabel="Style">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Style" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-it-zEf" userLabel="Style">
                                                             <rect key="frame" x="0.0" y="43" width="128" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="agV-ls-GYt"/>
@@ -296,12 +296,10 @@
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WineType" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXZ-5A-Wh7" userLabel="Style">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Wine type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdZ-GJ-OcH">
                                                             <rect key="frame" x="0.0" y="59" width="128" height="16"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="9Iw-l2-htl"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -366,7 +364,7 @@
                                             <outlet property="style" destination="W6b-it-zEf" id="Nax-iF-aTk"/>
                                             <outlet property="varietal" destination="W3h-m0-xtk" id="R2R-fF-Rhc"/>
                                             <outlet property="wineImageView" destination="Abf-Xp-egZ" id="yyd-Pc-dkz"/>
-                                            <outlet property="wineType" destination="dXZ-5A-Wh7" id="rom-Ld-5DO"/>
+                                            <outlet property="wineType" destination="WdZ-GJ-OcH" id="a1M-TG-aCf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -404,6 +402,108 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bu-Vm-qa8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1414" y="241"/>
+        </scene>
+        <!--Wine Detail View Controller-->
+        <scene sceneID="iAF-8K-hlN">
+            <objects>
+                <viewController id="wUO-1F-7ng" customClass="WineDetailViewController" customModule="WineFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KVK-GF-ZqL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Spk-Tl-6D8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IRF-Km-7r5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Hd-cq-n2n">
+                                <rect key="frame" x="16" y="245" width="288" height="303"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="288" placeholderIntrinsicHeight="205" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-TA-300">
+                                <rect key="frame" x="16" y="20" width="288" height="205"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6O-pg-8OZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="24"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvA-d4-h9R">
+                                        <rect key="frame" x="0.0" y="24" width="288" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="bYn-KP-M5Y"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varietal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdt-xG-za7">
+                                        <rect key="frame" x="0.0" y="40" width="288" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="vJs-Kl-kly"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Style" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orZ-nd-FaD" userLabel="Style">
+                                        <rect key="frame" x="0.0" y="56" width="288" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="0vu-Yu-a3c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wineType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34Z-vx-LMk">
+                                        <rect key="frame" x="0.0" y="72" width="288" height="19"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sugarContent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYF-7k-bPy">
+                                        <rect key="frame" x="0.0" y="91" width="288" height="19"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sugarInGrams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj2-vM-xe3">
+                                        <rect key="frame" x="0.0" y="110" width="288" height="19"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="producerName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLa-o0-bKl">
+                                        <rect key="frame" x="0.0" y="129" width="288" height="19"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="matchRating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRZ-kk-yZK">
+                                        <rect key="frame" x="0.0" y="148" width="288" height="19"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRm-nb-jkv">
+                                        <rect key="frame" x="0.0" y="167" width="288" height="19"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inventoryCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3f-Yo-pp7">
+                                        <rect key="frame" x="0.0" y="186" width="288" height="19"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Hd-cq-n2n" firstAttribute="top" secondItem="3U9-TA-300" secondAttribute="bottom" constant="20" id="WCf-Qe-53i"/>
+                            <constraint firstItem="3U9-TA-300" firstAttribute="top" secondItem="IRF-Km-7r5" secondAttribute="topMargin" constant="20" id="eWf-Dy-5ea"/>
+                            <constraint firstItem="3U9-TA-300" firstAttribute="leading" secondItem="IRF-Km-7r5" secondAttribute="leadingMargin" id="ewk-zj-kOL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Hd-cq-n2n" secondAttribute="trailing" id="goy-gk-KeA"/>
+                            <constraint firstItem="Spk-Tl-6D8" firstAttribute="top" secondItem="2Hd-cq-n2n" secondAttribute="bottom" constant="20" id="i1w-Bm-Oos"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3U9-TA-300" secondAttribute="trailing" id="qCz-6c-spT"/>
+                            <constraint firstItem="2Hd-cq-n2n" firstAttribute="leading" secondItem="IRF-Km-7r5" secondAttribute="leadingMargin" id="xDw-mD-hke"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zpi-dm-1TL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1835" y="241"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lei-sz-viW">
