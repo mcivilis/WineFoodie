@@ -54,40 +54,43 @@ class WinePairModel {
             }
         }
         
-        allRed = Array(Set(allRed))
-        allWhite = Array(Set(allWhite))
-        allRose = Array(Set(allRose))
-        allSparkling = Array(Set(allSparkling))
-        allDessert = Array(Set(allDessert))
+        redWineList = bestMatch(allRed)
+        whiteWineList = bestMatch(allWhite)
+        roseWineList = bestMatch(allRose)
+        sparklingWineList = bestMatch(allSparkling)
+        dessertWineList = bestMatch(allDessert)
         
-        redWineList = allRed
-        whiteWineList = allWhite
-        roseWineList = allRose
-        sparklingWineList = allSparkling
-        dessertWineList = allDessert
-        
-//        redWineList = groupedDictionary(allRed)
-//        whiteWineList = groupedDictionary(allWhite)
-//        roseWineList = groupedDictionary(allRose)
-//        sparklingWineList = groupedDictionary(allSparkling)
-//        dessertWineList = groupedDictionary(allDessert)
+        printPairs(allRed)
+        printPairs(redWineList)
     }
     
-    //MARK: Helper
+
+
+//MARK: Helpers
     
-//    func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
-//        
-//        var wineListDictionary = [String : [WinePair]]()
-//        for winePair in allWinePairs {
-//            if wineListDictionary[winePair.country] == nil {
-//                wineListDictionary[winePair.country] = []
-//            }
-//            wineListDictionary[winePair.country]?.append(winePair)
-//        }
-//        return wineListDictionary
-//        
-//    }
+    func bestMatch(wineList: [WinePair]) -> [WinePair] {
+        
+        let set = NSCountedSet(array: wineList)
+        var maxCount = 0
+        var bestMatch = [WinePair]()
+        
+        for wine in set {
+            if (maxCount < set.countForObject(wine)) {
+                maxCount = set.countForObject(wine)
+                bestMatch.removeAll()
+                bestMatch.append(wine as! WinePair)
+            }
+        }
+        return bestMatch
+    }
     
+    func printPairs(wineList: [WinePair]) {
+        for wine in wineList {
+            print(wine.country, wine.region, wine.varietal)
+        }
+    }
+    
+    /*
     func printPairs(wineTypeList: [String : [WinePair]]) {
         
         for (countryKey,pairsValue) in wineTypeList {
@@ -97,5 +100,19 @@ class WinePairModel {
             }
         }
     }
+
+    
+    func groupedDictionary(allWinePairs: [WinePair]) -> [String : [WinePair]] {
+    
+    var wineListDictionary = [String : [WinePair]]()
+    for winePair in allWinePairs {
+    if wineListDictionary[winePair.country] == nil {
+    wineListDictionary[winePair.country] = []
+    }
+    wineListDictionary[winePair.country]?.append(winePair)
+    }
+    return wineListDictionary
+    
+    } */
 
 }

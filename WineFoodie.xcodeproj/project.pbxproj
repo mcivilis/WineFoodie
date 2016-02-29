@@ -19,7 +19,8 @@
 		AF729BC31C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF729BC21C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift */; };
 		AF7539FD1C7E75C10055D088 /* FoodDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */; };
 		AF9C07D71C8489FE00324FA5 /* segment_header.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07D61C8489FE00324FA5 /* segment_header.png */; };
-		AF9C07D91C848EEE00324FA5 /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07D81C848EEE00324FA5 /* cell_background.png */; };
+		AF9C07DD1C849A7400324FA5 /* cell_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07DC1C849A7400324FA5 /* cell_background.png */; };
+		AF9C07DF1C849BA900324FA5 /* wine_glass_bubbles_half_full.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07DE1C849BA900324FA5 /* wine_glass_bubbles_half_full.png */; };
 		AFABCE5B1C7E888400B711F3 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5A1C7E888400B711F3 /* FoodCell.swift */; };
 		AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */; };
 		AFBD0CB21C80DA0E004E533E /* WinePairModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */; };
@@ -49,7 +50,8 @@
 		AF729BC21C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+LCBOWineList.swift"; sourceTree = "<group>"; };
 		AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDefinitions.swift; sourceTree = "<group>"; };
 		AF9C07D61C8489FE00324FA5 /* segment_header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = segment_header.png; sourceTree = "<group>"; };
-		AF9C07D81C848EEE00324FA5 /* cell_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_background.png; sourceTree = "<group>"; };
+		AF9C07DC1C849A7400324FA5 /* cell_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_background.png; sourceTree = "<group>"; };
+		AF9C07DE1C849BA900324FA5 /* wine_glass_bubbles_half_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wine_glass_bubbles_half_full.png; sourceTree = "<group>"; };
 		AFABCE5A1C7E888400B711F3 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodHeader.swift; sourceTree = "<group>"; };
 		AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WinePairModel.swift; path = ../WinePairModel.swift; sourceTree = "<group>"; };
@@ -94,7 +96,8 @@
 		AF3C4AE41C7F98A4003A5F5F /* images */ = {
 			isa = PBXGroup;
 			children = (
-				AF9C07D81C848EEE00324FA5 /* cell_background.png */,
+				AF9C07DE1C849BA900324FA5 /* wine_glass_bubbles_half_full.png */,
+				AF9C07DC1C849A7400324FA5 /* cell_background.png */,
 				AF9C07D61C8489FE00324FA5 /* segment_header.png */,
 				AF3C4ADA1C7F9890003A5F5F /* dessert.jpg */,
 				AF3C4ADB1C7F9890003A5F5F /* rose.jpg */,
@@ -253,11 +256,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF3C4ADF1C7F9890003A5F5F /* dessert.jpg in Resources */,
+				AF9C07DF1C849BA900324FA5 /* wine_glass_bubbles_half_full.png in Resources */,
 				AF3C4AE01C7F9890003A5F5F /* rose.jpg in Resources */,
 				AFD498CF1C7BD47F0083B788 /* LaunchScreen.storyboard in Resources */,
 				AF3C4AE11C7F9890003A5F5F /* red.png in Resources */,
 				AF3C4AE21C7F9890003A5F5F /* sparkling.png in Resources */,
-				AF9C07D91C848EEE00324FA5 /* cell_background.png in Resources */,
+				AF9C07DD1C849A7400324FA5 /* cell_background.png in Resources */,
 				AF3C4AE31C7F9890003A5F5F /* white.png in Resources */,
 				AFD498CC1C7BD47F0083B788 /* Assets.xcassets in Resources */,
 				AF9C07D71C8489FE00324FA5 /* segment_header.png in Resources */,
