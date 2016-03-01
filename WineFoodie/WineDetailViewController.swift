@@ -12,6 +12,7 @@ import MapKit
 
 class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
+    @IBOutlet var imageView: UIImageView!
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var originLabel: UILabel!
@@ -32,6 +33,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    downloadWineImage(currentWine.imageURL)
     configureLocation()
     
     }
@@ -85,5 +87,21 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
             }
         })
     }
+    
+    func downloadWineImage(urlString: String) {
+        let url = NSURL(string: urlString)
+        let urlRequest = NSURLRequest(URL: url!)
+        let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
+            if error == nil {
+                if let imageData = data {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.imageView.image = UIImage(data: imageData)
+                    })
+                }
+            }
+        }
+        dataTask.resume()
+    }
+
 
 }

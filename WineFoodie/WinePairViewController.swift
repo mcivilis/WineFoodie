@@ -81,7 +81,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
         
-        downloadImageForCell(wines[indexPath.row].imageURL, indexPath: indexPath)
+        downloadImageForCell(wines[indexPath.row].imageThumbURL, indexPath: indexPath)
         if wines.count > 0 {
             cell.name.text = wines[indexPath.row].name
             cell.origin.text = wines[indexPath.row].origin

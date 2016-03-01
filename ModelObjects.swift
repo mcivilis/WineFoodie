@@ -23,6 +23,7 @@ struct LCBOWine {
     var producerName: String!
     var isSeasonal: Bool!
     var isVQA: Bool!
+    var imageThumbURL: String!
     var imageURL: String!
     var varietal: String!
     var style: String!
