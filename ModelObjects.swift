@@ -8,8 +8,22 @@
 
 import Foundation
 
+struct LCBOStore {
+    var id: Int!
+    var name: String!
+    var address: String!
+    var city: String!
+    var postalCode: String!
+    var telephone: String!
+    var latitude: Double!
+    var longitude: Double!
+    var hasParking: Bool!
+    var distanceInMeters: Int!
+    var quantity: Int!
+
+}
+
 struct LCBOWine {
-    
     var name : String!
     var currentPrice: Int!
     var regularPrice: Int!

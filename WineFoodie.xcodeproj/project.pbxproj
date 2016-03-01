@@ -24,6 +24,7 @@
 		AF9C07E21C84FBD600324FA5 /* WineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C07E11C84FBD600324FA5 /* WineDetailViewController.swift */; };
 		AF9C07E41C8505B600324FA5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9C07E31C8505B600324FA5 /* MapKit.framework */; };
 		AF9C07E61C85F5E000324FA5 /* iconLCBO-Open.png in Resources */ = {isa = PBXBuildFile; fileRef = AF9C07E51C85F5E000324FA5 /* iconLCBO-Open.png */; };
+		AF9C07EA1C8613BA00324FA5 /* DataManager+StoreLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C07E91C8613BA00324FA5 /* DataManager+StoreLocations.swift */; };
 		AFABCE5B1C7E888400B711F3 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5A1C7E888400B711F3 /* FoodCell.swift */; };
 		AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */; };
 		AFBD0CB21C80DA0E004E533E /* WinePairModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */; };
@@ -58,6 +59,8 @@
 		AF9C07E11C84FBD600324FA5 /* WineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WineDetailViewController.swift; sourceTree = "<group>"; };
 		AF9C07E31C8505B600324FA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF9C07E51C85F5E000324FA5 /* iconLCBO-Open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iconLCBO-Open.png"; path = "../../../../Downloads/iconLCBO-Open.png"; sourceTree = "<group>"; };
+		AF9C07E91C8613BA00324FA5 /* DataManager+StoreLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+StoreLocations.swift"; sourceTree = "<group>"; };
+		AF9C07EB1C8632FD00324FA5 /* Toronto.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Toronto.gpx; sourceTree = "<group>"; };
 		AFABCE5A1C7E888400B711F3 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodHeader.swift; sourceTree = "<group>"; };
 		AFBD0CB11C80DA0E004E533E /* WinePairModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WinePairModel.swift; path = ../WinePairModel.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				AF729BC21C7F6C92003A1EE0 /* DataManager+LCBOWineList.swift */,
+				AF9C07E91C8613BA00324FA5 /* DataManager+StoreLocations.swift */,
 			);
 			name = "LCBO API";
 			sourceTree = "<group>";
@@ -186,6 +190,7 @@
 		AFD498B81C7BD47F0083B788 = {
 			isa = PBXGroup;
 			children = (
+				AF9C07EB1C8632FD00324FA5 /* Toronto.gpx */,
 				AF9C07E31C8505B600324FA5 /* MapKit.framework */,
 				AFD498C31C7BD47F0083B788 /* WineFoodie */,
 				AFD498C21C7BD47F0083B788 /* Products */,
@@ -310,6 +315,7 @@
 				AFD498D71C7BD4930083B788 /* DataManager.swift in Sources */,
 				AFCFBEE71C7CF863007D360C /* SearchOptions.swift in Sources */,
 				AFABCE5B1C7E888400B711F3 /* FoodCell.swift in Sources */,
+				AF9C07EA1C8613BA00324FA5 /* DataManager+StoreLocations.swift in Sources */,
 				AF2E64281C83AD4E00079BA2 /* WineCell.swift in Sources */,
 				AFD498C51C7BD47F0083B788 /* AppDelegate.swift in Sources */,
 				AFCFBEEB1C7D2BD3007D360C /* DataManager+Session.swift in Sources */,

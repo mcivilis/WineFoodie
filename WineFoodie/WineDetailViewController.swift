@@ -30,6 +30,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     var initialLocationSet = false
     var locationManager = CLLocationManager()
     var postalCode : String!
+    var storeLocations: [LCBOStore]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,13 +53,25 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
             let userRegion = MKCoordinateRegionMake((userLocation?.coordinate)!, MKCoordinateSpanMake(0.1, 0.1))
             mapView.setRegion(userRegion, animated: true)
             getPostalCodeForLocation(userLocation!)
-            //loadStoreLocations()
+            loadNearbyStores(userLocation!)
             initialLocationSet = true
         }
     }
     
 //MARK: MK Map View Delegate
-    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if (annotation.isEqual(mapView.userLocation)) {
+            return nil;
+        }
+        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier("Stores")
+        
+        if (pinView == nil) {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Stores")
+        }
+        pinView?.image = UIImage(named: "iconLCBO-Open")
+        
+     return pinView
+    }
     
 //MARK: Configure location
     
@@ -101,6 +114,22 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
             }
         }
         dataTask.resume()
+    }
+    
+    func loadNearbyStores(userLocation:CLLocation) {
+        
+        let lat = Double(userLocation.coordinate.latitude)
+        let lon = Double(userLocation.coordinate.longitude)
+        DataManager().storeLocations(lat, longitude: lon, productID: currentWine.code, completion: { (lcboStoreList) -> Void in
+            self.storeLocations = lcboStoreList
+            for store in lcboStoreList {
+                let marker = MKPointAnnotation()
+                marker.coordinate = CLLocationCoordinate2DMake(store.latitude, store.longitude)
+                marker.title = store.name
+                marker.subtitle = "Current inventory: " + store.quantity.description
+                self.mapView.addAnnotation(marker)
+            }
+        })
     }
 
 
