@@ -67,5 +67,7 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Find LCBO locations near you.</string>
 </dict>
 </plist>

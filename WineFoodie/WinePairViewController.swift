@@ -81,7 +81,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
         
-        //downloadImageForCell(wines[indexPath.row].imageURL, indexPath: indexPath)
+        downloadImageForCell(wines[indexPath.row].imageURL, indexPath: indexPath)
         if wines.count > 0 {
             cell.name.text = wines[indexPath.row].name
             cell.origin.text = wines[indexPath.row].origin
@@ -114,9 +114,10 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             
             let navController = segue.destinationViewController as! UINavigationController
             let wineDetailViewController = navController.topViewController as! WineDetailViewController
-            
+
             if let indexPath = tableView.indexPathForSelectedRow {
                 print("Seque. Selected wine = ",wines[indexPath.row].name)
+                wineDetailViewController.currentWine = wines[indexPath.row]
             }
         }
     }
@@ -144,10 +145,11 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             if error == nil {
                 if let imageData = data {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        let cell = self.tableView.cellForRowAtIndexPath(indexPath) as! WineCell
-                        cell.wineImageView.image = UIImage(data: imageData)
-                        cell.wineImageView.contentMode = .ScaleAspectFit
-                        self.tableView.reloadData()
+                        
+                        if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? WineCell {
+                            cell.wineImageView.image = UIImage(data: imageData)
+                            cell.wineImageView.contentMode = .ScaleAspectFit
+                        }
                     })
                 }
             }
