@@ -105,6 +105,22 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         
 
 //MARK: Table View Delegate
+    
+//MARK: Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showWineDetail" {
+            
+            let navController = segue.destinationViewController as! UINavigationController
+            let wineDetailViewController = navController.topViewController as! WineDetailViewController
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+                print("Seque. Selected wine = ",wines[indexPath.row].name)
+            }
+        }
+    }
+
 
 //MARK: Helpers
     
