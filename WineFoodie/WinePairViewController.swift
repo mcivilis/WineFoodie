@@ -217,6 +217,9 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         }
         sortAlert.addAction(inventory)
         
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        sortAlert.addAction(cancel)
+        
         self.presentViewController(sortAlert, animated: true, completion: nil)
     }
 
