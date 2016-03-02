@@ -37,12 +37,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     @IBOutlet var dessertLabel: UILabel!
     var wineTypeLabels = [UILabel]!()
     
-//    var redActivity: UIActivityIndicatorView!
-//    var whiteActivity: UIActivityIndicatorView!
-//    var roseActivity: UIActivityIndicatorView!
-//    var sparklingActivity: UIActivityIndicatorView!
-//    var dessertActivity: UIActivityIndicatorView!
-    
     var delegate : WinePairViewControllerDelegate?
     var foodType : Foods?
     var dataManager : DataManager!
@@ -54,6 +48,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     var redWines = [LCBOWine]()
     var dessertWines = [LCBOWine]()
     var finishedLoading = false
+    var initialView = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -25,11 +25,12 @@ extension WinePairViewController {
                     }
                 }
                 self.redWines = self.redWines + lcboWineListWithRating
-                self.wines = self.redWines
+                if (self.initialView == true) {
+                   self.wines = self.redWines
+                }
                 self.wines.sortInPlace({$0.matchRating > $1.matchRating})
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
-                    self.redActivity.stopAnimating()
                 })
             })
         }
@@ -47,6 +48,9 @@ extension WinePairViewController {
                 }
                 self.whiteWines = self.whiteWines + lcboWineListWithRating
                 self.whiteWines.sortInPlace({$0.matchRating > $1.matchRating})
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
             })
         }
         
@@ -63,6 +67,9 @@ extension WinePairViewController {
                 }
                 self.roseWines = self.roseWines + lcboWineListWithRating
                 self.roseWines.sortInPlace({$0.matchRating > $1.matchRating})
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
             })
         }
         
@@ -79,6 +86,9 @@ extension WinePairViewController {
                 }
                 self.sparklingWines = self.sparklingWines + lcboWineListWithRating
                 self.sparklingWines.sortInPlace({$0.matchRating > $1.matchRating})
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
             })
         }
         
@@ -95,6 +105,9 @@ extension WinePairViewController {
                 }
                 self.dessertWines = self.dessertWines + lcboWineListWithRating
                 self.dessertWines.sortInPlace({$0.matchRating > $1.matchRating})
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.tableView.reloadData()
+                })
             })
         }
     }

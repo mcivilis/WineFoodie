@@ -67,9 +67,9 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
         var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier("Stores")
         
         if (pinView == nil) {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "Stores")
+            pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: "Stores")
         }
-        pinView?.image = UIImage(named: "iconLCBO-Open")
+        pinView?.image = UIImage(named: "iconLCBO")
         
      return pinView
     }

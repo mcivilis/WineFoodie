@@ -464,6 +464,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Hd-cq-n2n">
                                 <rect key="frame" x="0.0" y="64" width="320" height="284"/>
+                                <connections>
+                                    <outlet property="delegate" destination="wUO-1F-7ng" id="Xtc-jh-nsJ"/>
+                                </connections>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="288" placeholderIntrinsicHeight="205" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-TA-300">
                                 <rect key="frame" x="16" y="358" width="148" height="190"/>

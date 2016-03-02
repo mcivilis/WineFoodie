@@ -15,7 +15,6 @@ extension WinePairViewController {
     
     func prepareProperties() {
         saveLabels()
-        wines = redWines
         selectCurrentLabel(redLabel)
         
         delegate?.didFinishLoading(finishedLoading)
@@ -37,17 +36,6 @@ extension WinePairViewController {
     func saveLabels() {
         wineTypeLabels = [sparklingLabel, whiteLabel, roseLabel, redLabel, dessertLabel]
     }
-    
-//    func wineTypeLoadingActivity() {
-//        redActivity = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
-//        redActivity.hidesWhenStopped = true
-//        let redX = redImage.frame.origin.x + redImage.frame.size.width / 2
-//        let redY = redImage.frame.origin.y + redImage.frame.size.height / 2
-//        redActivity.frame.origin = CGPoint(x: redX, y: redY)
-//        view.addSubview(redActivity)
-//        view.bringSubviewToFront(redActivity)
-//        redActivity.startAnimating()
-//    }
     
     func selectCurrentLabel(currentLabel: UILabel) {
         for label in wineTypeLabels {
@@ -87,6 +75,7 @@ extension WinePairViewController {
         wines = sparklingWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
+        initialView = false
     }
     
     func tapActionWhite() {
@@ -94,6 +83,7 @@ extension WinePairViewController {
         wines = whiteWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
+        initialView = false
     }
     
     func tapActionRose() {
@@ -101,6 +91,7 @@ extension WinePairViewController {
         wines = roseWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
+        initialView = false
     }
     
     func tapActionRed() {
@@ -108,6 +99,7 @@ extension WinePairViewController {
         wines = redWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
+        initialView = false
     }
     
     func tapActionDessert() {
@@ -115,5 +107,6 @@ extension WinePairViewController {
         wines = dessertWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
+        initialView = false
     }
 }
