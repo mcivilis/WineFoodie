@@ -30,6 +30,15 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     @IBOutlet var whiteImage: UIImageView!
     @IBOutlet var sparklingImage: UIImageView!
     
+    @IBOutlet var sparklingLabel: UILabel!
+    @IBOutlet var whiteLabel: UILabel!
+    @IBOutlet var roseLabel: UILabel!
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var dessertLabel: UILabel!
+    var wineTypeLabels = [UILabel]!()
+    
+    
+    
     var delegate : WinePairViewControllerDelegate?
     var foodType : Foods?
     var dataManager : DataManager!

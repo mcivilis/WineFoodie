@@ -36,6 +36,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLocation()
+        configureLabels()
         downloadWineImage(currentWine.imageURL)
     }
     

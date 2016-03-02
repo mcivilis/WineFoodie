@@ -14,6 +14,9 @@ extension WinePairViewController {
     //MARK: Initial Setup
     
     func prepareProperties() {
+        saveLabels()
+        selectCurrentLabel(redLabel)
+        
         delegate?.didFinishLoading(finishedLoading)
         dataManager.delegate = self
         view.bringSubviewToFront(activityIndicatorView)
@@ -28,6 +31,19 @@ extension WinePairViewController {
         
         self.tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    func saveLabels() {
+        wineTypeLabels = [sparklingLabel, whiteLabel, roseLabel, redLabel, dessertLabel]
+    }
+    
+    func selectCurrentLabel(currentLabel: UILabel) {
+        for label in wineTypeLabels {
+            label.textColor = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 1.0)
+            if (label.isEqual(currentLabel)) {
+                label.textColor = UIColor(red: 125/255, green: 44/255, blue: 95/255, alpha: 1.0)
+            }
+        }
     }
     
     //MARK: Gesture Recognizers
@@ -55,30 +71,35 @@ extension WinePairViewController {
     }
     
     func tapActionSparkling() {
+        selectCurrentLabel(sparklingLabel)
         wines = sparklingWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionWhite() {
+        selectCurrentLabel(whiteLabel)
         wines = whiteWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionRose() {
+        selectCurrentLabel(roseLabel)
         wines = roseWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionRed() {
+        selectCurrentLabel(redLabel)
         wines = redWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()
     }
     
     func tapActionDessert() {
+        selectCurrentLabel(dessertLabel)
         wines = dessertWines
         wines.sortInPlace({$0.matchRating > $1.matchRating})
         tableView.reloadData()

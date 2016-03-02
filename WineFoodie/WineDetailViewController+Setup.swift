@@ -21,4 +21,23 @@ extension WineDetailViewController {
         locationManager.distanceFilter = 100;
     }
     
+    func configureLabels() {
+        nameLabel.text = currentWine.name
+        originLabel.text = currentWine.origin
+        varietalLabel.text = currentWine.varietal
+        styleLabel.text = currentWine.style
+        wineTypeLabel.text = currentWine.secondaryCategory
+        sugarContentLabel.text = currentWine.sugarContent
+        sugarInGramsLabel.text = currentWine.sugarInGrams.description + " grams sugar / liter"
+        producerNameLabel.text = currentWine.producerName
+        matchRatingLabel.text = "Food Match = " + formatMatchRanking(currentWine.matchRating)
+        
+    }
+    
+    func formatMatchRanking(matchRanking: Float) -> String {
+        let percent = Float(roundf(matchRanking))
+        let matchString = percent.description + "%"
+        return matchString
+    }
+
 }
