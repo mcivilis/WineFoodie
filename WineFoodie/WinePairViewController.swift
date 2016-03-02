@@ -101,13 +101,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             let ranking = wines[indexPath.row].matchRating
             cell.matchRanking.text = formatMatchRanking(ranking)
             
-            if (ranking == 1) {
-                cell.matchRanking.textColor = UIColor.greenColor()
-            } else if (ranking > 0.33){
-                cell.matchRanking.textColor = UIColor.darkGrayColor()
-            } else {
-                cell.matchRanking.textColor = UIColor.redColor()
-            }
         }
         return cell
     }

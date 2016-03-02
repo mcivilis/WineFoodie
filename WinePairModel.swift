@@ -29,6 +29,7 @@ class WinePairModel {
         var allWhite = [WinePair]()
         var allRose = [WinePair]()
         var allDessert = [WinePair]()
+        var allOther = [WinePair]()
         var keywordFound = false
         let foodDefinitions = FoodDefinitions()
         
@@ -41,6 +42,11 @@ class WinePairModel {
                     }
                 }
             }
+            
+            //REMOVE THIS
+            keywordFound = true
+            //REMOVE THIS
+            
             if keywordFound {
                 let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
                 switch wine.type {
@@ -49,7 +55,7 @@ class WinePairModel {
                 case "Rosé Wine"         : allRose.append(winePair)
                 case "Sparkling Wine"    : allSparkling.append(winePair)
                 case "Dessert/Fortified" : allDessert.append(winePair)
-                default                  : print("Unexpected wine type found")
+                default                  : allOther.append(winePair)
                 }
             }
         }

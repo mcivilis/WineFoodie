@@ -16,7 +16,7 @@ let wineListAPI = "http://api.snooth.com/wines/"
 let detailWineAPI = "http://api.snooth.com/wine/"
 let snoothAPIKey = "?akey=" + "exv5m69z4qivba6bcrroro20p0vxwucryz1xou81qv9vcf21"
 
-let wineListDefaultOptions = "&n=10" + "&s=qpr" //max n = 100
+let wineListDefaultOptions = "&n=75" + "&s=qpr" //max n = 100
 let wineType = ["&t=wine","&t=dessert","&t=sparkling"]
 let wineColor = ["&color=red","&color=white","&color=rose"]
 

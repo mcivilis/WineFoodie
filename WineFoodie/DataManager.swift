@@ -27,8 +27,8 @@ class DataManager {
                 callCount++
                 wine.recipes = recipeList
                 wine.foods = self.pairFood(recipeList)
-                print(callCount)
-                print(self.wineList.count)
+                //print(callCount)
+                //print(self.wineList.count)
                 self.delegate!.didUpdateRecepes(callCount)
             })
         }

@@ -9,84 +9,80 @@
 import Foundation
 
 let groupedFoods = [
-    "Meat"     : ["Beef", "Pork", "Veal", "Lamb", "Poultry", "Duck"],
-    "Seafood"  : ["Salmon", "Whitefish", "Tuna", "Shellfish"],
-    "Cheese"   : ["Goat Cheese", "Roquefort", "Camembert", "Brie", "Blue Cheese", "Gouda", "Parmigiano"]
+    "Meat": ["Beef","Lamb","Pork","Meatloaf","Prosciutto","Ham"],
+    "Poultry": ["Chicken","Duck","Turkey"],
+    "Shellfish": ["Oyster","Scallops","Shrimp","Mussels","Lobster"],
+    "Fish": ["Salmon","Tuna","Cod","Tilapia","Catfish"],
+    "Pasta & Risotto": ["Pesto","Tomato Sauce","Bolognese","Lasagna","Risotto"]
 ]
 
 enum Foods : String {
     //Meat
-    case Beef       = "Beef"
-    case Pork       = "Pork"
-    case Veal       = "Veal"
-    case Lamb       = "Lamb"
-    case Poultry    = "Poultry"
-    case Duck       = "Duck"
+    case Beef = "Beef"
+    case Lamb = "Lamb"
+    case Pork = "Pork"
+    case Meatloaf = "Meatloaf"
+    case Prosciutto = "Prosciutto"
+    case Ham = "Ham"
     
-    //Seafood
-    case Salmon     = "Salmon"
-    case WhiteFish  = "White Fish"
-    case Tuna       = "Tuna"
-    case Shellfish  = "Shellfish"
+    //Poultry
+    case Chicken = "Chicken"
+    case Duck = "Duck"
+    case Turkey = "Turkey"
     
-    //Cheese
-    case GoatCheese = "Goat Cheese"
-    case Roquefort  = "Roquefort"
-    case Camembert  = "Camembert"
-    case Brie       = "Brie"
-    case BlueCheese = "Blue Cheese"
-    case Gouda      = "Gouda"
-    case Parmigiano = "Parmigiano"
+    //Fish
+    case Salmon = "Salmon"
+    case Tuna = "Tuna"
+    case Cod = "Cod"
+    case Tilapia = "Tilapia"
+    case Catfish = "Catfish"
     
+    //Shellfish
+    case Oyster = "Oyster"
+    case Scallops = "Scallops"
+    case Shrimp = "Shrimp"
+    case Mussels = "Mussels"
+    case Lobster = "Lobster"
     
+    //Pasta & Risotto
+    case Pesto = "Pesto"
+    case TomatoSauce = "Tomato Sauce"
+    case Bolognese = "Bolognese"
+    case Lasagna = "Lasagna"
+    case Risotto = "Risotto"
 }
 
 //Recipe search keywords
 
-let foods =
-   ["Beef",                                                     //Food = Beef
-    "Pork",                                                     //Food = Pork
-    "Veal",                                                     //Food = Veal
-    "Lamb",                                                     //Food = Lamb
-    "Chicken","Turkey",                                         //Food = Poultry
-    "Duck",                                                     //Food = Duck
-    "Salmon",                                                   //Food = Salmon
-    "Basa", "Cod", "Tilapia",                                   //Food = WhiteFish
-    "Tuna",                                                     //Food = Tuna
-    "Shrimp", "Oysters", "Mussels","Prawns", "Lobster",         //Food = Shellfish
-    "Goat Cheese",                                              //Food = Goat Cheese
-    "Roquefort",                                                //Food = Roquefort
-    "Camembert",                                                //Food = Camembert
-    "Brie",                                                     //Food = Brie
-    "Blue Cheese",                                              //Food = Blue Cheese
-    "Gouda",                                                    //Food = Gouda
-    "Parmigiano"]                                               //Food = Parmigiano
-
-
-
+let foods = [
+        "Salmon",
+        "Tuna",
+        "Cod",
+        "Tilapia",
+        "Catfish",
+        "Beef",
+        "Lamb",
+        "Pork",
+        "Meatloaf",
+        "Prosciutto",
+        "Ham",
+        "Chicken",
+        "Duck",
+        "Turkey",
+        "Pesto",
+        "Tomato Sauce",
+        "Bolognese",
+        "Lasagna",
+        "Risotto",
+        "Oyster",
+        "Scallops",
+        "Shrimp",
+        "Mussels",
+        "Lobster"]
 
 class FoodDefinitions {
-    
-    func keywordsforFood(food: Foods) -> [String] {
-        switch food {
-        case .Beef          : return ["Beef"]
-        case .Pork          : return ["Pork"]
-        case .Veal          : return ["Veal"]
-        case .Lamb          : return ["Lamb"]
-        case .Poultry       : return ["Chicken","Turkey"]
-        case .Duck          : return ["Duck"]
-        case .Salmon        : return ["Salmon"]
-        case .WhiteFish     : return ["Basa", "Cod", "Tilapia"]
-        case .Tuna          : return ["Tuna"]
-        case .Shellfish     : return ["Shrimp", "Oysters", "Mussels","Prawns", "Lobster"]
-        case .GoatCheese    : return ["Goat cheese"]
-        case .Roquefort     : return ["Roquefort"]
-        case .Camembert     : return ["Camembert"]
-        case .Brie          : return ["Brie"]
-        case .BlueCheese    : return ["Blue Cheese"]
-        case .Gouda         : return ["Gouda"]
-        case .Parmigiano    : return ["Parmigiano"]
+        func keywordsforFood(food: Foods) -> [String] {
+        return [food.rawValue]
         }
-    }
-    
 }
+    

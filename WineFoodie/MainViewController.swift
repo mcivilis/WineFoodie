@@ -22,6 +22,7 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dataManager.delegate = self
         if finishedLoading == false {
             dataManager.loadWines()
@@ -91,13 +92,11 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
         if segue.identifier == "showWinePairs" {
             let winePairController = (segue.destinationViewController as! WinePairViewController)
             
-            if let indexPath = collectionView.indexPathsForSelectedItems()?.first {
-                let foodInSection = sectionFoods[sectionNames[indexPath.section]] as [String]!
-                if let foodType = Foods(rawValue: foodInSection[indexPath.row]) {
-                    winePairController.foodType = foodType
-                    print(foodType)
-                }
-            }
+            let indexPath = collectionView.indexPathsForSelectedItems()?.first
+            let foodInSection = sectionFoods[sectionNames[indexPath!.section]] as [String]!
+            let foodType = Foods(rawValue: foodInSection[indexPath!.row])
+            winePairController.foodType = foodType
+            print(foodType)
             
             if finishedLoading {
                 winePairController.finishedLoading = true
