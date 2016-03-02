@@ -8,13 +8,20 @@
 
 import Foundation
 
-let groupedFoods = [
-    "Meat": ["Beef","Lamb","Pork","Meatloaf","Prosciutto","Ham"],
-    "Poultry": ["Chicken","Duck","Turkey"],
-    "Shellfish": ["Oyster","Scallops","Shrimp","Mussels","Lobster"],
-    "Fish": ["Salmon","Tuna","Cod","Tilapia","Catfish"],
-    "Pasta & Risotto": ["Pesto","Tomato Sauce","Bolognese","Lasagna","Risotto"]
-]
+let sectionNames = ["Meat", "Poultry", "Fish", "Shellfish", "Pasta & Risotto"]
+
+let sectionFoods = [["Beef","Lamb","Pork","Meatloaf","Prosciutto","Ham"],           //Meat
+                    ["Chicken","Duck","Turkey"],                                    //Poultry
+                    ["Salmon","Tuna","Cod","Tilapia","Catfish"],                    //Fish
+                    ["Oyster","Scallops","Shrimp","Mussels","Lobster"],             //Shellfish
+                    ["Pesto","Tomato Sauce","Bolognese","Lasagna","Risotto"]]       //Pasta & Risotto
+
+//Recipe search keywords
+let foods = ["Beef","Lamb","Pork","Meatloaf","Prosciutto","Ham",
+    "Chicken","Duck","Turkey",
+    "Salmon","Tuna","Cod","Tilapia","Catfish",
+    "Oyster","Scallops","Shrimp","Mussels","Lobster",
+    "Pesto","Tomato Sauce","Bolognese","Lasagna","Risotto"]
 
 enum Foods : String {
     //Meat
@@ -51,34 +58,6 @@ enum Foods : String {
     case Lasagna = "Lasagna"
     case Risotto = "Risotto"
 }
-
-//Recipe search keywords
-
-let foods = [
-        "Salmon",
-        "Tuna",
-        "Cod",
-        "Tilapia",
-        "Catfish",
-        "Beef",
-        "Lamb",
-        "Pork",
-        "Meatloaf",
-        "Prosciutto",
-        "Ham",
-        "Chicken",
-        "Duck",
-        "Turkey",
-        "Pesto",
-        "Tomato Sauce",
-        "Bolognese",
-        "Lasagna",
-        "Risotto",
-        "Oyster",
-        "Scallops",
-        "Shrimp",
-        "Mussels",
-        "Lobster"]
 
 class FoodDefinitions {
         func keywordsforFood(food: Foods) -> [String] {

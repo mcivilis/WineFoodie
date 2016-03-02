@@ -15,6 +15,7 @@ extension WinePairViewController {
     
     func prepareProperties() {
         saveLabels()
+        wines = redWines
         selectCurrentLabel(redLabel)
         
         delegate?.didFinishLoading(finishedLoading)
@@ -36,6 +37,17 @@ extension WinePairViewController {
     func saveLabels() {
         wineTypeLabels = [sparklingLabel, whiteLabel, roseLabel, redLabel, dessertLabel]
     }
+    
+//    func wineTypeLoadingActivity() {
+//        redActivity = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+//        redActivity.hidesWhenStopped = true
+//        let redX = redImage.frame.origin.x + redImage.frame.size.width / 2
+//        let redY = redImage.frame.origin.y + redImage.frame.size.height / 2
+//        redActivity.frame.origin = CGPoint(x: redX, y: redY)
+//        view.addSubview(redActivity)
+//        view.bringSubviewToFront(redActivity)
+//        redActivity.startAnimating()
+//    }
     
     func selectCurrentLabel(currentLabel: UILabel) {
         for label in wineTypeLabels {

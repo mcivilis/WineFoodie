@@ -37,7 +37,11 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     @IBOutlet var dessertLabel: UILabel!
     var wineTypeLabels = [UILabel]!()
     
-    
+//    var redActivity: UIActivityIndicatorView!
+//    var whiteActivity: UIActivityIndicatorView!
+//    var roseActivity: UIActivityIndicatorView!
+//    var sparklingActivity: UIActivityIndicatorView!
+//    var dessertActivity: UIActivityIndicatorView!
     
     var delegate : WinePairViewControllerDelegate?
     var foodType : Foods?
@@ -53,8 +57,8 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         prepareProperties()
+        //wineTypeLoadingActivity()
         configureGestures()
                 
         if finishedLoading {
@@ -91,7 +95,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
         
         downloadImageForCell(wines[indexPath.row].imageThumbURL, indexPath: indexPath)
-        if wines.count > 0 {
+        
             cell.name.text = wines[indexPath.row].name
             cell.origin.text = wines[indexPath.row].origin
             cell.varietal.text = wines[indexPath.row].varietal
@@ -100,8 +104,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             cell.price.text = formatWinePrice(wines[indexPath.row].currentPrice)
             let ranking = wines[indexPath.row].matchRating
             cell.matchRanking.text = formatMatchRanking(ranking)
-            
-        }
+         
         return cell
     }
         
@@ -147,10 +150,11 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             if error == nil {
                 if let imageData = data {
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        
                         if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? WineCell {
-                            cell.wineImageView.image = UIImage(data: imageData)
-                            cell.wineImageView.contentMode = .ScaleAspectFit
+                            if (self.tableView.visibleCells.contains(cell) == true) {
+                                cell.wineImageView.image = UIImage(data: imageData)
+                                cell.wineImageView.contentMode = .ScaleAspectFit
+                            }
                         }
                     })
                 }

@@ -16,8 +16,8 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
     
     var dataManager = DataManager()
-    var sectionFoods = groupedFoods
-    var sectionNames = Array(groupedFoods.keys)
+    //var sectionFoods = groupedFoods
+    //var sectionNames = Array(groupedFoods.keys)
     var finishedLoading = false
     
     override func viewDidLoad() {
@@ -54,14 +54,14 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
 //MARK: Collection View Data Source
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let foodInSection = sectionFoods[sectionNames[section]] as [String]!
-        return foodInSection.count
+        let foodsInSection = sectionFoods[section]
+        return foodsInSection.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! FoodCell
-        let foodInSection = sectionFoods[sectionNames[indexPath.section]] as [String]!
-        cell.foodLabel.text = foodInSection[indexPath.row]
+        let foodsInSection = sectionFoods[indexPath.section]
+        cell.foodLabel.text = foodsInSection[indexPath.row]
         return cell
     }
     
@@ -93,10 +93,11 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
             let winePairController = (segue.destinationViewController as! WinePairViewController)
             
             let indexPath = collectionView.indexPathsForSelectedItems()?.first
-            let foodInSection = sectionFoods[sectionNames[indexPath!.section]] as [String]!
-            let foodType = Foods(rawValue: foodInSection[indexPath!.row])
+            let foodsInSection = sectionFoods[indexPath!.section]
+            let foodType = Foods(rawValue: foodsInSection[indexPath!.row])
+            
             winePairController.foodType = foodType
-            print(foodType)
+            print(foodType?.rawValue)
             
             if finishedLoading {
                 winePairController.finishedLoading = true

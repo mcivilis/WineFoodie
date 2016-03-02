@@ -29,6 +29,7 @@ extension WinePairViewController {
                 self.wines.sortInPlace({$0.matchRating > $1.matchRating})
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
+                    self.redActivity.stopAnimating()
                 })
             })
         }

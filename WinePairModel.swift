@@ -43,10 +43,6 @@ class WinePairModel {
                 }
             }
             
-            //REMOVE THIS
-            keywordFound = true
-            //REMOVE THIS
-            
             if keywordFound {
                 let winePair = WinePair(wineRegion: wine.region, wineVarietal: wine.varietal)
                 switch wine.type {
@@ -121,7 +117,9 @@ class WinePairModel {
     
     func printPairs(wineList: [WinePair]) {
         for wine in wineList {
+            if (wine.matchRating) == nil {
             print(wine.country, wine.varietal, wine.matchRating)
+            }
         }
     }
 
