@@ -16,11 +16,18 @@ enum wineGroup : String {
     case Dessert
 }
 
+enum SortOptions : String {
+    case Match
+    case Price
+    case Sugar
+    case Inventory
+}
+
 protocol WinePairViewControllerDelegate {
     func didFinishLoading(status: Bool)
 }
 
-class WinePairViewController: UIViewController, DataManagerDelegate, UITableViewDataSource, UITableViewDelegate {
+class WinePairViewController: UIViewController, DataManagerDelegate, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
@@ -29,14 +36,14 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     @IBOutlet var roseImage: UIImageView!
     @IBOutlet var whiteImage: UIImageView!
     @IBOutlet var sparklingImage: UIImageView!
-    
     @IBOutlet var sparklingLabel: UILabel!
     @IBOutlet var whiteLabel: UILabel!
     @IBOutlet var roseLabel: UILabel!
     @IBOutlet var redLabel: UILabel!
     @IBOutlet var dessertLabel: UILabel!
-    var wineTypeLabels = [UILabel]!()
+    @IBOutlet var sortOrder: UIBarButtonItem!
     
+    var wineTypeLabels = [UILabel]!()
     var delegate : WinePairViewControllerDelegate?
     var foodType : Foods?
     var dataManager : DataManager!
@@ -48,7 +55,9 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     var redWines = [LCBOWine]()
     var dessertWines = [LCBOWine]()
     var finishedLoading = false
-    var initialView = true
+    var initialView : Bool!
+    var sortAscending = false
+    var sortOption = SortOptions.Match
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,14 +104,14 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
             cell.origin.text = wines[indexPath.row].origin
             cell.varietal.text = wines[indexPath.row].varietal
             cell.style.text = wines[indexPath.row].style
-            cell.wineType.text = wines[indexPath.row].secondaryCategory
+            cell.sugarContent.text = wines[indexPath.row].sugarContent
             cell.price.text = formatWinePrice(wines[indexPath.row].currentPrice)
             let ranking = wines[indexPath.row].matchRating
             cell.matchRanking.text = formatMatchRanking(ranking)
+            cell.inventory.text = wines[indexPath.row].inventoryCount.description
          
         return cell
     }
-        
 
 //MARK: Table View Delegate
     
@@ -157,6 +166,99 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         }
         dataTask.resume()
     }
+//MARK: IB Actions
+    @IBAction func sortOrder(sender: UIBarButtonItem) {
+        sortAscending = !sortAscending
+        if (sortAscending == true) {
+            sortOrder.title = "⇧"
+        } else {
+            sortOrder.title = "⇩"
+        }
+        sort()
+    }
     
+    @IBAction func sortAction(sender: UIBarButtonItem) {
+            sortOptions()
+        }
     
+    func sortOptions() {
+        let sortAlert = UIAlertController(title: "Sort by", message: nil, preferredStyle: .ActionSheet)
+        
+        let price = UIAlertAction(title: "Price", style: .Default) { (UIAlertAction) -> Void in
+            self.sortOption = .Price
+            self.sort()
+        }
+        sortAlert.addAction(price)
+        
+        let matchRating = UIAlertAction(title: "Match Rating", style: .Default) { (UIAlertAction) -> Void in
+            self.sortOption = .Match
+            self.sort()
+        }
+        sortAlert.addAction(matchRating)
+        
+        let sugarContent = UIAlertAction(title: "Sugar Content", style: .Default) { (UIAlertAction) -> Void in
+            self.sortOption = .Sugar
+            self.sort()
+        }
+        sortAlert.addAction(sugarContent)
+        
+        let inventory = UIAlertAction(title: "Number in Stock", style: .Default) { (UIAlertAction) -> Void in
+            self.sortOption = .Inventory
+            self.sort()
+        }
+        sortAlert.addAction(inventory)
+        
+        self.presentViewController(sortAlert, animated: true, completion: nil)
+    }
+
+//MARK: Sort Actions
+    
+    func sort() {
+        switch sortOption {
+        case .Match     : sortByMatchRating()
+        case .Price     : sortByPrice()
+        case .Sugar     : sortBySugarContent()
+        case .Inventory : sortByInvenoryAvailable()
+        }
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            self.tableView.reloadData()
+        }
+    }
+    
+    func sortByPrice() {
+        print("sort by price")
+        if (sortAscending == true) {
+            self.wines.sortInPlace({$0.currentPrice > $1.currentPrice})
+        } else {
+            self.wines.sortInPlace({$1.currentPrice > $0.currentPrice})
+        }
+    }
+    
+    func sortByMatchRating() {
+        print("match rating")
+        if (sortAscending == true) {
+            self.wines.sortInPlace({$0.matchRating > $1.matchRating})
+        } else {
+            self.wines.sortInPlace({$1.matchRating > $0.matchRating})
+        }
+    }
+    
+    func sortBySugarContent() {
+        print("sugar content")
+        if (sortAscending == true) {
+            self.wines.sortInPlace({$0.sugarInGrams > $1.sugarInGrams})
+        } else {
+            self.wines.sortInPlace({$1.sugarInGrams > $0.sugarInGrams})
+        }
+    }
+    
+    func sortByInvenoryAvailable() {
+        print("inventory")
+        if (sortAscending == true) {
+            self.wines.sortInPlace({$0.inventoryCount > $1.inventoryCount})
+            
+        } else {
+            self.wines.sortInPlace({$1.inventoryCount > $0.inventoryCount})
+        }
+    }
 }

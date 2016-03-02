@@ -14,6 +14,7 @@ extension WinePairViewController {
     //MARK: Initial Setup
     
     func prepareProperties() {
+        initialView = true
         saveLabels()
         selectCurrentLabel(redLabel)
         
