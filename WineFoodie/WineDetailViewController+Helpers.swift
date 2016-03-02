@@ -54,6 +54,7 @@ extension WineDetailViewController {
         
         let lat = Double(userLocation.coordinate.latitude)
         let lon = Double(userLocation.coordinate.longitude)
+        
         DataManager().storeLocations(lat, longitude: lon, productID: currentWine.code, completion: { (lcboStoreList) -> Void in
             self.storeLocations = lcboStoreList
             dispatch_async(dispatch_get_main_queue(), { () -> Void in

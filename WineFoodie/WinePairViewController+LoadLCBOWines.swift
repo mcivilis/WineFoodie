@@ -28,7 +28,7 @@ extension WinePairViewController {
                 if (self.initialView == true) {
                    self.wines = self.redWines
                 }
-                self.sort()
+                self.sortByMatchRating()
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.tableView.reloadData()
                 })
@@ -47,10 +47,7 @@ extension WinePairViewController {
                     }
                 }
                 self.whiteWines = self.whiteWines + lcboWineListWithRating
-                self.sort()
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
-                })
+                self.sortByMatchRating()
             })
         }
         
@@ -66,10 +63,7 @@ extension WinePairViewController {
                     }
                 }
                 self.roseWines = self.roseWines + lcboWineListWithRating
-                self.sort()
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
-                })
+                self.sortByMatchRating()
             })
         }
         
@@ -85,10 +79,7 @@ extension WinePairViewController {
                     }
                 }
                 self.sparklingWines = self.sparklingWines + lcboWineListWithRating
-                self.sort()
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
-                })
+                self.sortByMatchRating()
             })
         }
         
@@ -104,10 +95,7 @@ extension WinePairViewController {
                     }
                 }
                 self.dessertWines = self.dessertWines + lcboWineListWithRating
-                self.sort()
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.tableView.reloadData()
-                })
+                self.sortByMatchRating()
             })
         }
     }

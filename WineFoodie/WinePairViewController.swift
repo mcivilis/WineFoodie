@@ -96,6 +96,7 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
         print("wines count", wines.count, "indexpath", indexPath.row)
         print("sparkling count", sparklingWines.count)
@@ -104,17 +105,19 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
         print("red count", redWines.count)
         print("dessert count", dessertWines.count)
         
-        downloadImageForCell(wines[indexPath.row].imageThumbURL, indexPath: indexPath)
+        let currentWine = wines[indexPath.row]
+        
+        downloadImageForCell(currentWine.imageThumbURL, indexPath: indexPath)
 
-            cell.name.text = wines[indexPath.row].name
-            cell.origin.text = wines[indexPath.row].origin
-            cell.varietal.text = wines[indexPath.row].varietal
-            cell.style.text = wines[indexPath.row].style
-            cell.sugarContent.text = wines[indexPath.row].sugarContent
-            cell.price.text = formatWinePrice(wines[indexPath.row].currentPrice)
-            let ranking = wines[indexPath.row].matchRating
+            cell.name.text = currentWine.name
+            cell.origin.text = currentWine.origin
+            cell.varietal.text = currentWine.varietal
+            cell.style.text = currentWine.style
+            cell.sugarContent.text = currentWine.sugarContent
+            cell.price.text = formatWinePrice(currentWine.currentPrice)
+            let ranking = currentWine.matchRating
             cell.matchRanking.text = formatMatchRanking(ranking)
-            cell.inventory.text = wines[indexPath.row].inventoryCount.description
+            cell.inventory.text = currentWine.inventoryCount.description
          
         return cell
     }
