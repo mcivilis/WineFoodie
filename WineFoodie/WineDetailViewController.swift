@@ -73,4 +73,21 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
         
      return pinView
     }
+
+    //MARK: Segue
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "storeList" {
+            
+            let navController = segue.destinationViewController as! UINavigationController
+            let storeListViewController = navController.topViewController as! StoreListViewController
+            //storeListViewController.modalPresentationStyle = .Custom
+            //storeListViewController.modalTransitionStyle = .FlipHorizontal
+            storeListViewController.storeLocations = storeLocations
+        }
+    }
+    
+
+
 }

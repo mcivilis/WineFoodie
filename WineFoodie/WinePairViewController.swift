@@ -97,9 +97,15 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
+        print("wines count", wines.count, "indexpath", indexPath.row)
+        print("sparkling count", sparklingWines.count)
+        print("white count", whiteWines.count)
+        print("rose count", roseWines.count)
+        print("red count", redWines.count)
+        print("dessert count", dessertWines.count)
         
         downloadImageForCell(wines[indexPath.row].imageThumbURL, indexPath: indexPath)
-        
+
             cell.name.text = wines[indexPath.row].name
             cell.origin.text = wines[indexPath.row].origin
             cell.varietal.text = wines[indexPath.row].varietal
@@ -226,7 +232,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     }
     
     func sortByPrice() {
-        print("sort by price")
         if (sortAscending == true) {
             self.wines.sortInPlace({$0.currentPrice > $1.currentPrice})
         } else {
@@ -235,7 +240,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     }
     
     func sortByMatchRating() {
-        print("match rating")
         if (sortAscending == true) {
             self.wines.sortInPlace({$0.matchRating > $1.matchRating})
         } else {
@@ -244,7 +248,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     }
     
     func sortBySugarContent() {
-        print("sugar content")
         if (sortAscending == true) {
             self.wines.sortInPlace({$0.sugarInGrams > $1.sugarInGrams})
         } else {
@@ -253,7 +256,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     }
     
     func sortByInvenoryAvailable() {
-        print("inventory")
         if (sortAscending == true) {
             self.wines.sortInPlace({$0.inventoryCount > $1.inventoryCount})
             
