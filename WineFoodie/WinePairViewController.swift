@@ -62,7 +62,6 @@ class WinePairViewController: UIViewController, DataManagerDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareProperties()
-        //wineTypeLoadingActivity()
         configureGestures()
                 
         if finishedLoading {

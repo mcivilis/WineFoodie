@@ -16,6 +16,8 @@ class StoreListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

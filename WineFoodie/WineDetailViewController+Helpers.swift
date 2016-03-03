@@ -21,7 +21,6 @@ extension WineDetailViewController {
             } else {
                 let placemark = placemarks![0] as CLPlacemark
                 self.postalCode = placemark.postalCode
-                print(self.postalCode)
             }
         })
     }
@@ -63,7 +62,7 @@ extension WineDetailViewController {
                     let marker = MKPointAnnotation()
                     marker.coordinate = CLLocationCoordinate2DMake(store.latitude, store.longitude)
                     marker.title = store.name
-                    marker.subtitle = "Current inventory: " + store.quantity.description
+                    marker.subtitle = "Number available: " + store.quantity.description
                     self.mapView.addAnnotation(marker)
                 }
             })
