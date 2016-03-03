@@ -37,6 +37,21 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView = UIScrollView(frame: self.imageView.frame)
+        scrollView.delegate = self
+        let scrollViewFrame = scrollView.frame
+        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
+        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
+        let minScale = min(scaleWidth, scaleHeight);
+        scrollView.minimumZoomScale = minScale;
+        
+        scrollView.maximumZoomScale = 1.0
+        scrollView.zoomScale = minScale;
+    
+        
+        
+        
+        
         configureLocation()
         configureLabels()
         downloadWineImage(currentWine.imageURL)
@@ -94,9 +109,11 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     }
 
 
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return self.img
+    }
+    
     @IBAction func tapActionZoomImage(sender: UITapGestureRecognizer) {
-        scrollView = UIScrollView(frame: self.imageView.frame)
-        scrollView.delegate = self
         
         img = UIImageView(image: imageView.image)
         img.frame = self.imageView.bounds
@@ -106,6 +123,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
         view.addSubview(scrollView)
         view.bringSubviewToFront(scrollView)
         scrollView.backgroundColor = .whiteColor()
+        scrollView.userInteractionEnabled = true
         
         UIView.animateWithDuration(0.3) { () -> Void in
             self.scrollView.frame = self.view.frame
@@ -121,7 +139,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
         
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             self.scrollView.frame = self.imageView.frame
-            self.img.frame = self.imageView.frame
+            self.img.frame = self.imageView.bounds
             }) { (Bool) -> Void in
                 self.imageView.image = self.img.image
                 self.view.bringSubviewToFront(self.imageView)
