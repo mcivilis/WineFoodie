@@ -17,18 +17,5 @@ extension WinePairViewController {
         self.tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-    
-    func saveLabels() {
-        wineGroupLabels = [sparklingLabel, whiteLabel, roseLabel, redLabel, dessertLabel]
-    }
-    
-    func selectCurrentLabel(currentLabel: UILabel) {
-        for label in wineGroupLabels {
-            label.textColor = kWineFoodieGray
-            if (label.isEqual(currentLabel)) {
-                label.textColor = kWineFoodieBurgundy
-            }
-        }
-    }
 
 }

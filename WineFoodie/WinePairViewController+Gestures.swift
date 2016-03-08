@@ -5,7 +5,7 @@
 //  Created by Maria Civilis on 2016-03-04.
 //  Copyright © 2016 mcivilis. All rights reserved.
 //
-/*
+
 import Foundation
 import UIKit
 
@@ -34,45 +34,54 @@ extension WinePairViewController {
     }
     
     func tapActionSparkling() {
+        if (wineGroupHasMatch(.Sparkling)) {
         selectCurrentLabel(sparklingLabel)
-        wines = sparklingWines
-        wines.sortInPlace({$0.matchRating > $1.matchRating})
-        tableView.reloadData()
-        initialView = false
+        currentWineGroup = .Sparkling
+        loadWines()
+        } else {
+            alertNoWinePairsFoundForType(.Sparkling)
+        }
     }
     
     func tapActionWhite() {
-        selectCurrentLabel(whiteLabel)
-        wines = whiteWines
-        wines.sortInPlace({$0.matchRating > $1.matchRating})
-        tableView.reloadData()
-        initialView = false
+        if (wineGroupHasMatch(.White)) {
+            selectCurrentLabel(whiteLabel)
+            currentWineGroup = .White
+            loadWines()
+        } else {
+            alertNoWinePairsFoundForType(.White)
+        }
     }
     
     func tapActionRose() {
-        selectCurrentLabel(roseLabel)
-        wines = roseWines
-        wines.sortInPlace({$0.matchRating > $1.matchRating})
-        tableView.reloadData()
-        initialView = false
+        if (wineGroupHasMatch(.Rose)) {
+            selectCurrentLabel(roseLabel)
+            currentWineGroup = .Rose
+            loadWines()
+        } else {
+            alertNoWinePairsFoundForType(.Rose)
+        }
     }
     
     func tapActionRed() {
-        selectCurrentLabel(redLabel)
-        wines = redWines
-        wines.sortInPlace({$0.matchRating > $1.matchRating})
-        tableView.reloadData()
-        initialView = false
+        if (wineGroupHasMatch(.Red)) {
+            selectCurrentLabel(redLabel)
+            currentWineGroup = .Red
+            loadWines()
+        } else {
+            alertNoWinePairsFoundForType(.Red)
+        }
     }
     
     func tapActionDessert() {
-        selectCurrentLabel(dessertLabel)
-        wines = dessertWines
-        wines.sortInPlace({$0.matchRating > $1.matchRating})
-        tableView.reloadData()
-        initialView = false
+        if (wineGroupHasMatch(.Dessert)) {
+            selectCurrentLabel(dessertLabel)
+            currentWineGroup = .Dessert
+            loadWines()
+        } else {
+            alertNoWinePairsFoundForType(.Dessert)
+        }
     }
     
 }
 
-*/

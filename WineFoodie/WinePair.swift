@@ -13,7 +13,7 @@ enum WineGroup : String {
     case White      = "White Wine"
     case Rose       = "Rosé Wine"
     case Sparkling  = "Sparkling Wine"
-    case Dessert    = "Dessert"
+    case Dessert    = "Dessert Wine"
 }
 
 class WinePair : Equatable, Hashable {

@@ -22,13 +22,14 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet var dessertImage: UIImageView!
     @IBOutlet var redImage: UIImageView!
+    @IBOutlet var redLabel: UILabel!
     @IBOutlet var roseImage: UIImageView!
+    @IBOutlet var roseLabel: UILabel!
     @IBOutlet var whiteImage: UIImageView!
+    @IBOutlet var whiteLabel: UILabel!
     @IBOutlet var sparklingImage: UIImageView!
     @IBOutlet var sparklingLabel: UILabel!
-    @IBOutlet var whiteLabel: UILabel!
-    @IBOutlet var roseLabel: UILabel!
-    @IBOutlet var redLabel: UILabel!
+    
     @IBOutlet var dessertLabel: UILabel!
     @IBOutlet var sortOrder: UIBarButtonItem!
     var wineGroupLabels = [UILabel]!()
@@ -36,7 +37,7 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     var dataManager = DataManager()
     var winePairs: [WinePair]!
     var wines : [LCBOWine]?
-    var currentWineGroup = WineGroup.White
+    var currentWineGroup = WineGroup.Red
     
     //refactor - > create a sort manager class
     var sortAscending = false
@@ -45,6 +46,7 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        configureGestures()
         loadWines()
     }
     

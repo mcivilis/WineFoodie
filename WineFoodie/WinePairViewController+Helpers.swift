@@ -11,6 +11,19 @@ import UIKit
 
 extension WinePairViewController {
     
+    func saveLabels() {
+        wineGroupLabels = [sparklingLabel, whiteLabel, roseLabel, redLabel, dessertLabel]
+    }
+    
+    func selectCurrentLabel(currentLabel: UILabel) {
+        for label in wineGroupLabels {
+            label.textColor = kWineFoodieGray
+            if (label.isEqual(currentLabel)) {
+                label.textColor = kWineFoodieBurgundy
+            }
+        }
+    }
+    
     func formatMatchRanking(matchRanking: Float) -> String {
         let percent = Float(roundf(matchRanking))
         let matchString = percent.description + "%"
@@ -42,6 +55,23 @@ extension WinePairViewController {
             }
         }
         dataTask.resume()
+    }
+    
+    func wineGroupHasMatch(wineGroup: WineGroup) -> Bool {
+        var wineGroupHasMatch = false
+        for winePair in winePairs {
+            if (winePair.group == wineGroup) {
+                wineGroupHasMatch = true
+            }
+        }
+        return wineGroupHasMatch
+    }
+    
+    func alertNoWinePairsFoundForType(wineGroup: WineGroup) {
+        let alert = UIAlertController(title: "Sorry, no \(wineGroup.rawValue) pairs found.", message: "Please try one of the other wine types.", preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(ok)
+        presentViewController(alert, animated: true, completion: nil)
     }
 
 }

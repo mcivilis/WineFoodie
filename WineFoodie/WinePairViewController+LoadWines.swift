@@ -12,6 +12,8 @@ extension WinePairViewController {
     
     func loadWines() {
         wines = [LCBOWine]()
+        view.bringSubviewToFront(activityIndicatorView)
+        activityIndicatorView.startAnimating()
         
         for winePair in winePairs {
             if (winePair.group == currentWineGroup) {
@@ -22,12 +24,14 @@ extension WinePairViewController {
                         self.wines = lcboWineList
                     }
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        if (self.activityIndicatorView.isAnimating()) {
+                            self.activityIndicatorView.stopAnimating()
+                        }
                         self.tableView.reloadData()
                     })
                 })
             }
         }
-        
     }
     
 }
