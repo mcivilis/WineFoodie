@@ -28,6 +28,7 @@ extension WinePairViewController {
                             self.activityIndicatorView.stopAnimating()
                         }
                         self.tableView.reloadData()
+                        self.sortByMatchRating()
                     })
                 })
             }

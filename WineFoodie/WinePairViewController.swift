@@ -38,8 +38,6 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     var winePairs: [WinePair]!
     var wines : [LCBOWine]?
     var currentWineGroup = WineGroup.Red
-    
-    //refactor - > create a sort manager class
     var sortAscending = false
     var sortOption = SortOptions.Match
     

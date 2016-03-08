@@ -6,7 +6,7 @@
 //  Copyright © 2016 mcivilis. All rights reserved.
 //
 
-/*
+
 
 import Foundation
 import UIKit
@@ -76,36 +76,35 @@ extension WinePairViewController {
     
     func sortByPrice() {
         if (sortAscending == true) {
-            self.wines.sortInPlace({$0.currentPrice > $1.currentPrice})
+            wines!.sortInPlace({$0.currentPrice > $1.currentPrice})
         } else {
-            self.wines.sortInPlace({$1.currentPrice > $0.currentPrice})
+            wines!.sortInPlace({$1.currentPrice > $0.currentPrice})
         }
     }
     
     func sortByMatchRating() {
         if (sortAscending == true) {
-            self.wines.sortInPlace({$0.matchRating > $1.matchRating})
+            wines!.sortInPlace({$0.matchRating > $1.matchRating})
         } else {
-            self.wines.sortInPlace({$1.matchRating > $0.matchRating})
+            wines!.sortInPlace({$1.matchRating > $0.matchRating})
         }
     }
     
     func sortBySugarContent() {
         if (sortAscending == true) {
-            self.wines.sortInPlace({$0.sugarInGrams > $1.sugarInGrams})
+            wines!.sortInPlace({$0.sugarInGrams > $1.sugarInGrams})
         } else {
-            self.wines.sortInPlace({$1.sugarInGrams > $0.sugarInGrams})
+            wines!.sortInPlace({$1.sugarInGrams > $0.sugarInGrams})
         }
     }
     
     func sortByInvenoryAvailable() {
         if (sortAscending == true) {
-            self.wines.sortInPlace({$0.inventoryCount > $1.inventoryCount})
+            wines!.sortInPlace({$0.inventoryCount > $1.inventoryCount})
             
         } else {
-            self.wines.sortInPlace({$1.inventoryCount > $0.inventoryCount})
+            wines!.sortInPlace({$1.inventoryCount > $0.inventoryCount})
         }
     }
 }
 
-*/
