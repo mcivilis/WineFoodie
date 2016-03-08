@@ -8,49 +8,19 @@
 
 import UIKit
 
-class MainViewController: UIViewController, DataManagerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, WinePairViewControllerDelegate {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
     
 //MARK: Properties
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
     
-    var dataManager = DataManager()
-    //var sectionFoods = groupedFoods
-    //var sectionNames = Array(groupedFoods.keys)
-    var finishedLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataManager.delegate = self
-        if finishedLoading == false {
-            dataManager.loadWines()
-            print("Started loading snooth model")
-        }
-        
     }
     
-//MARK: WinePair View Controller Delegate
-    
-    func didFinishLoading(status: Bool) {
-        finishedLoading = status
-    }
-
-//MARK: Data Manager Delegate
-
-    func didUpdateWineListWithOptions(optionsUpdated: Int) {
-        if optionsUpdated == dataManager.queryOptions().count {
-            self.dataManager.loadRecipes()
-        }
-    }
-
-    func didUpdateRecepes(recipesUpdated: Int) {
-        if (recipesUpdated == dataManager.wineList.count) {
-            finishedLoading = true
-        }
-    }
-
 //MARK: Collection View Data Source
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -79,11 +49,6 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
         return reusableview
     }
     
-    
-    
-//MARK: Collection View Delegate
-    
-
 
 // MARK: - Segues
     
@@ -95,28 +60,11 @@ class MainViewController: UIViewController, DataManagerDelegate, UICollectionVie
             let indexPath = collectionView.indexPathsForSelectedItems()?.first
             let foodsInSection = sectionFoods[indexPath!.section]
             let foodType = Foods(rawValue: foodsInSection[indexPath!.row])
-            
-            winePairController.foodType = foodType
+
+            winePairController.winePairs = [WinePairTest1, WinePairTest2, WinePairTest3]
             print(foodType?.rawValue)
             
-            if finishedLoading {
-                winePairController.finishedLoading = true
-            }
-            
-            winePairController.dataManager = dataManager
-            winePairController.delegate = self
         }
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }

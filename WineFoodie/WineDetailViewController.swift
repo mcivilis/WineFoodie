@@ -23,9 +23,6 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     @IBOutlet var sugarInGramsLabel: UILabel!
     @IBOutlet var producerNameLabel: UILabel!
     @IBOutlet var matchRatingLabel: UILabel!
-    //@IBOutlet var storeLabel: UILabel!
-    //@IBOutlet var inventoryCountLabel: UILabel!
-    //@IBOutlet var mapActivityIndicator: UIActivityIndicatorView!
     
     var currentWine: LCBOWine!
     var initialLocationSet = false

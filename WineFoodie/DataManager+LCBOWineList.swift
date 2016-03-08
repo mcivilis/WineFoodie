@@ -10,9 +10,9 @@ import Foundation
 
 extension DataManager {
     
-    func lcboWineList (queryOptions: String, completion: (lcboWineList: [LCBOWine]) -> Void) {
+    func lcboWineList (winePair: WinePair, completion: (lcboWineList: [LCBOWine]) -> Void) {
         
-        let url = lcboProductsAPI + lcboQueryParameters + lcboAPIKey + lcboSort + lcboQueryCommand + queryOptions
+        let url = lcboProductsAPI + lcboQueryParameters + lcboAPIKey + lcboSort + lcboQueryCommand + prepareWinePairString(winePair)
         
         let lcboProductURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
         
@@ -41,10 +41,9 @@ extension DataManager {
             
             for wine in wines {
                 var include = false
-                if let stockType = wine["stock_type"] as? String,
-                   let category = wine["primary_category"] as? String,
+                if let category = wine["primary_category"] as? String,
                    let subCategory = wine["secondary_category"] as? String {
-                    if (stockType == "LCBO" && category == "Wine" && (subCategory == "Rosé Wine" || subCategory == "White Wine" || subCategory == "Red Wine" || subCategory == "Dessert Wine" || subCategory == "Sparkling Wine")) {
+                    if (category == "Wine" && (subCategory == "Rosé Wine" || subCategory == "White Wine" || subCategory == "Red Wine" || subCategory == "Dessert Wine" || subCategory == "Sparkling Wine")) {
                         include = true
                     }
                 }
