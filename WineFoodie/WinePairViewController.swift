@@ -34,6 +34,7 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var sortOrder: UIBarButtonItem!
     var wineGroupLabels = [UILabel]!()
     
+    var closestStoreID : Int!
     var dataManager = DataManager()
     var winePairs: [WinePair]!
     var wines = [LCBOWine]()
@@ -55,7 +56,6 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
             self.activityIndicatorView.stopAnimating()
             self.wines = self.dataManager.wineList
             self.tableView.reloadData()
-            self.sortByMatchRating()
         }
     }
     

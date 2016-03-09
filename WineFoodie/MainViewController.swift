@@ -7,18 +7,30 @@
 //
 
 import UIKit
+import MapKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate {
     
 //MARK: Properties
     
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
-    
+    let locationManager = CLLocationManager()
+    let dataManager = DataManager()
+    var closestStoreID = 511 //Defaults to King & Spadina store location
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureLocation()
+    }
+    
+    func configureLocation() {
+        locationManager.delegate = self;
+        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        locationManager.distanceFilter = 100;
     }
     
 //MARK: Collection View Data Source
@@ -60,11 +72,25 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let indexPath = collectionView.indexPathsForSelectedItems()?.first
             let foodsInSection = sectionFoods[indexPath!.section]
             let foodType = Foods(rawValue: foodsInSection[indexPath!.row])
-
-            winePairController.winePairs = [WinePairTest1, WinePairTest2, WinePairTest3]
             print(foodType?.rawValue)
-            
+            winePairController.winePairs = [WinePairTest1, WinePairTest2, WinePairTest3]
+            winePairController.closestStoreID = closestStoreID
         }
     }
-
+    
+//MARK: CLLocation Manager Delegate
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if (status == CLAuthorizationStatus.AuthorizedWhenInUse) {
+            self.locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let lon = locationManager.location?.coordinate.longitude
+        let lat = locationManager.location?.coordinate.latitude
+        dataManager.closestStore(lat!, longitude: lon!) { (lcboStoreCode) -> Void in
+            self.closestStoreID = lcboStoreCode
+        }
+    }
 }

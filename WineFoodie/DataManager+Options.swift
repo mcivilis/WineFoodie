@@ -10,19 +10,13 @@ import Foundation
 
 let kAPI_KEY = "?access_key=" + "MDpkZTFhZmYyNi1kOThlLTExZTUtYmZiNy02M2I1YzUwOTAwNjI6WUpVd0xQckJEVVdEWDBLVGJNeWFTZkpUOXVRQmhTU2x6WDMw"
 let kPRODUCTS_API = "http://lcboapi.com/products"
-let kPRODUCTS_OPTIONS = "?where_not=is_dead"
+let kPRODUCTS_OPTIONS = "?where_not=is_dead&order=inventory_count.desc&per_page=100"
 let kSTORES_API = "http://lcboapi.com/stores"
 let kSTORES_OPTIONS = "&order=distance_in_meters.desc"
 let kSTORES_PER_PAGE = "&per_page=20"
 
 
 extension DataManager {
-
-//WINES URL
-    func lcboWinesURLForPage(winePair: WinePair, page:Int) -> String {
-        let page = "?page=" + page.description
-        return kPRODUCTS_API + page + kAPI_KEY + kPRODUCTS_OPTIONS + "&q=" + prepareWinePairString(winePair)
-    }
     
     func lcboWinesURL(winePair: WinePair) -> String {
         return kPRODUCTS_API + kAPI_KEY + kPRODUCTS_OPTIONS + "&q=" + prepareWinePairString(winePair)
@@ -35,13 +29,15 @@ extension DataManager {
         let plus = "+"
         return wineGroup + plus + varietal + plus + country
     }
-    
-//STORES URL
+
     func lcboStoresURL(latitude: Double, longitude: Double, productID: Int) -> String {
         return kSTORES_API + "?lat=" + latitude.description + "&" + "lon=" + longitude.description  + "&product_id=" + productID.description + kSTORES_OPTIONS + kSTORES_PER_PAGE
     }
-    
-//INVENTORY URL
+
+    func lcboClosestStoreURL(latitude: Double, longitude: Double) -> String {
+        return kSTORES_API + "?lat=" + latitude.description + "&" + "lon=" + longitude.description  + "&product_id=" + kSTORES_OPTIONS
+    }
+
     func lcboInventoryURL(storeID: Int, productID: Int) -> String {
         return kSTORES_API + "/" + storeID.description + "/products/" + productID.description + "/inventory"
     }

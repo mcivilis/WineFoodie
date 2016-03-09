@@ -23,7 +23,7 @@ struct LCBOStore {
     
 }
 
-struct LCBOWine {
+struct LCBOWine : Equatable {
     var name : String!
     var currentPrice: Int!
     var regularPrice: Int!
@@ -44,3 +44,8 @@ struct LCBOWine {
     var matchRating : Float!
     var code: Int!
 }
+
+func == (lhs:LCBOWine, rhs:LCBOWine) -> Bool {
+    return (lhs.code == rhs.code)
+}
+

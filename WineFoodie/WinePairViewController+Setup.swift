@@ -14,8 +14,9 @@ extension WinePairViewController {
     func setup() {
         saveLabels()
         selectCurrentLabel(redLabel)
-        self.dataManager.delegate = self
-        self.tableView.estimatedRowHeight = 44
+        dataManager.delegate = self
+        dataManager.closestStoreID = self.closestStoreID
+        tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
