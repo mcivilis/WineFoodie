@@ -12,9 +12,7 @@ extension DataManager {
     
     func storeLocations (latitude: Double, longitude: Double, productID: Int, completion: (lcboStoreList: [LCBOStore]) -> Void) {
         
-        let url = lcboStoresAPI + "?lat=" + latitude.description + "&" + "lon=" + longitude.description + storesPerPage  + "&product_id=" + productID.description
-        print(url)
-        
+        let url = lcboStoresURL(latitude, longitude: longitude, productID: productID)
         let lcboStoreURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
         
         loadDataFromURL(lcboStoreURL!) { (data, error) -> Void in

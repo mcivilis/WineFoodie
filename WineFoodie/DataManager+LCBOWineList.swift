@@ -8,14 +8,59 @@
 
 import Foundation
 
+protocol DataManagerProtocol {
+    func didUpdateWineList()
+}
+
 extension DataManager {
+    func lcboWineList (winePair: WinePair) {
+        pager(winePair) { (pages) -> Void in
+            var counter = 0
+            for page in 1...pages {
+                self.pageWineList(winePair, page: page, completion: { (pageWineList) -> Void in
+                    counter++
+                    self.delegate!.didUpdateWineList()
+                    self.wineList = self.wineList + pageWineList
+                })
+            }
+        }
+    }
     
-    func lcboWineList (winePair: WinePair, completion: (lcboWineList: [LCBOWine]) -> Void) {
+    func pager (winePair: WinePair, completion: (pages: Int) -> Void) {
+        let url = lcboWinesURL(winePair)
+        let pagerURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
         
-        let url = lcboProductsAPI + lcboQueryParameters + lcboAPIKey + lcboSort + lcboQueryCommand + prepareWinePairString(winePair)
-        
+        loadDataFromURL(pagerURL!) { (data, error) -> Void in
+            guard error == nil else {
+                print(error)
+                return
+            }
+            typealias Payload = [String: AnyObject]
+            var json: Payload!
+            
+            do {
+                json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as? Payload
+            } catch {
+                print(error)
+                return
+            }
+            
+            guard let pager = json["pager"] as? Payload
+                else {
+                    print("No page data found")
+                    return
+            }
+            if let numberOfPages = pager["total_pages"] as? Int {
+                completion(pages: numberOfPages)
+            } else {
+                completion(pages: 1)
+            }
+        }
+    }
+    
+    func pageWineList (winePair: WinePair, page: Int, completion: (pageWineList: [LCBOWine]) -> Void) {
+        let url = lcboWinesURLForPage(winePair, page: page)
         let lcboProductURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
-        
         loadDataFromURL(lcboProductURL!) { (data, error) -> Void in
             guard error == nil else {
                 print(error)
@@ -74,7 +119,7 @@ extension DataManager {
                 }
                 }
             }
-            completion(lcboWineList: lcboWineList)
+            completion(pageWineList: lcboWineList)
         }
     }
 }

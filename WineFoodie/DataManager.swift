@@ -10,6 +10,9 @@ import Foundation
 
 class DataManager {
     
+    var delegate: DataManagerProtocol?
+    var wineList = [LCBOWine]()
+    
     func loadDataFromURL(url: NSURL, completion:(data: NSData?, error: NSError?) -> Void) {
         let session = NSURLSession.sharedSession()
         let loadDataTask = session.dataTaskWithURL(url) { (data, response, error) -> Void in

@@ -16,7 +16,7 @@ enum SortOptions : String {
     case Inventory
 }
 
-class WinePairViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+class WinePairViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, DataManagerProtocol {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
@@ -36,7 +36,7 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     
     var dataManager = DataManager()
     var winePairs: [WinePair]!
-    var wines : [LCBOWine]?
+    var wines = [LCBOWine]()
     var currentWineGroup = WineGroup.Red
     var sortAscending = false
     var sortOption = SortOptions.Match
@@ -48,33 +48,41 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
         loadWines()
     }
     
+//MARK: Data Manager Delegate
+    
+    func didUpdateWineList() {
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            self.activityIndicatorView.stopAnimating()
+            self.wines = self.dataManager.wineList
+            self.tableView.reloadData()
+            self.sortByMatchRating()
+        }
+    }
+    
 //MARK: Table View Data Source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rows = 0
-        if let wineCount = wines?.count {
-            rows = wineCount
-        }
-        return rows
+        return wines.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
         
-        if let currentWine = wines?[indexPath.row] {
-            downloadImageForCell(currentWine.imageThumbURL, indexPath: indexPath)
-            
-            cell.name.text = currentWine.name
-            cell.origin.text = currentWine.origin
-            cell.varietal.text = currentWine.varietal
-            cell.style.text = currentWine.style
-            cell.sugarContent.text = currentWine.sugarContent
-            cell.price.text = formatWinePrice(currentWine.currentPrice)
-            let ranking = currentWine.matchRating
-            cell.matchRanking.text = formatMatchRanking(ranking)
-            cell.inventory.text = currentWine.inventoryCount.description
-        }
+        
+        let currentWine = wines[indexPath.row]
+        downloadImageForCell(currentWine.imageThumbURL, indexPath: indexPath)
+        
+        cell.name.text = currentWine.name
+        cell.origin.text = currentWine.origin
+        cell.varietal.text = currentWine.varietal
+        cell.style.text = currentWine.style
+        cell.sugarContent.text = currentWine.sugarContent
+        cell.price.text = formatWinePrice(currentWine.currentPrice)
+        let ranking = currentWine.matchRating
+        cell.matchRanking.text = formatMatchRanking(ranking)
+        cell.inventory.text = currentWine.inventoryCount.description
+        
         return cell
     }
     
@@ -87,8 +95,8 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
             let navController = segue.destinationViewController as! UINavigationController
             let wineDetailViewController = navController.topViewController as! WineDetailViewController
 
-            if let indexPath = tableView.indexPathForSelectedRow,
-                   wine = wines?[indexPath.row] {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let wine = wines[indexPath.row]
                 print("Seque. Selected wine = ",wine.name)
                 wineDetailViewController.currentWine = wine
             }

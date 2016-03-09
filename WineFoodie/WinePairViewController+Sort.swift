@@ -73,37 +73,36 @@ extension WinePairViewController {
             self.tableView.reloadData()
         }
     }
-    
+
     func sortByPrice() {
         if (sortAscending == true) {
-            wines!.sortInPlace({$0.currentPrice > $1.currentPrice})
+            wines.sortInPlace({$0.currentPrice > $1.currentPrice})
         } else {
-            wines!.sortInPlace({$1.currentPrice > $0.currentPrice})
+            wines.sortInPlace({$1.currentPrice > $0.currentPrice})
         }
     }
     
     func sortByMatchRating() {
-        if (sortAscending == true) {
-            wines!.sortInPlace({$0.matchRating > $1.matchRating})
+        if (sortAscending != true) {
+            wines.sortInPlace({$0.matchRating > $1.matchRating})
         } else {
-            wines!.sortInPlace({$1.matchRating > $0.matchRating})
+            wines.sortInPlace({$1.matchRating > $0.matchRating})
         }
     }
     
     func sortBySugarContent() {
         if (sortAscending == true) {
-            wines!.sortInPlace({$0.sugarInGrams > $1.sugarInGrams})
+            wines.sortInPlace({$0.sugarInGrams > $1.sugarInGrams})
         } else {
-            wines!.sortInPlace({$1.sugarInGrams > $0.sugarInGrams})
+            wines.sortInPlace({$1.sugarInGrams > $0.sugarInGrams})
         }
     }
     
     func sortByInvenoryAvailable() {
         if (sortAscending == true) {
-            wines!.sortInPlace({$0.inventoryCount > $1.inventoryCount})
-            
+            wines.sortInPlace({$0.inventoryCount > $1.inventoryCount})
         } else {
-            wines!.sortInPlace({$1.inventoryCount > $0.inventoryCount})
+            wines.sortInPlace({$1.inventoryCount > $0.inventoryCount})
         }
     }
 }
