@@ -10,7 +10,6 @@ import UIKit
 
 
 enum SortOptions : String {
-    case Match
     case Price
     case Sugar
     case Inventory
@@ -34,13 +33,12 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var sortOrder: UIBarButtonItem!
     var wineGroupLabels = [UILabel]!()
     
-    var closestStoreID : Int!
     var dataManager = DataManager()
     var winePairs: [WinePair]!
     var wines = [LCBOWine]()
     var currentWineGroup = WineGroup.Red
     var sortAscending = false
-    var sortOption = SortOptions.Match
+    var sortOption = SortOptions.Inventory
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,10 +76,28 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.varietal.text = currentWine.varietal
         cell.style.text = currentWine.style
         cell.sugarContent.text = currentWine.sugarContent
+        cell.stock.text = currentWine.inventoryCount.description + " in stock"
         cell.price.text = formatWinePrice(currentWine.currentPrice)
-        let ranking = currentWine.matchRating
-        cell.matchRanking.text = formatMatchRanking(ranking)
-        cell.inventory.text = currentWine.inventoryCount.description
+        if (currentWine.stockType == "VINTAGES") {
+            cell.vintage.text = "Vintage"
+        } else {
+            cell.vintage.text = ""
+        }
+        if (currentWine.isVQA == true) {
+            cell.vqa.text = "VQA"
+        } else {
+            cell.vqa.text = ""
+        }
+        if (currentWine.isKosher == true) {
+            cell.kosher.text = "Kosher"
+        } else {
+            cell.kosher.text = ""
+        }
+        if (currentWine.isSeasonal == true) {
+            cell.seasonal.text = "Seasonal"
+        } else {
+            cell.seasonal.text = ""
+        }
         
         return cell
     }
@@ -97,7 +113,6 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
 
             if let indexPath = tableView.indexPathForSelectedRow {
                 let wine = wines[indexPath.row]
-                print("Seque. Selected wine = ",wine.name)
                 wineDetailViewController.currentWine = wine
             }
         }

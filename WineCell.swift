@@ -17,9 +17,12 @@ class WineCell: UITableViewCell {
     @IBOutlet var varietal: UILabel!
     @IBOutlet var style: UILabel!
     @IBOutlet var sugarContent: UILabel!
+    @IBOutlet var stock: UILabel!
     @IBOutlet var price: UILabel!
-    @IBOutlet var matchRanking: UILabel!
-    @IBOutlet var inventory: UILabel!
+    @IBOutlet var vintage: UILabel!
+    @IBOutlet var vqa: UILabel!
+    @IBOutlet var kosher: UILabel!
+    @IBOutlet var seasonal: UILabel!
     
     
     

@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 import MapKit
 
+let kWineFoodieBurgundy = UIColor(red: 125/255, green: 44/255, blue: 95/255, alpha: 1.0)
+let kWineFoodieGray = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 1.0)
+
 class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet var imageView: UIImageView!
@@ -34,23 +37,9 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView = UIScrollView(frame: self.imageView.frame)
-        scrollView.delegate = self
-        let scrollViewFrame = scrollView.frame
-        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
-        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
-        let minScale = min(scaleWidth, scaleHeight);
-        scrollView.minimumZoomScale = minScale;
-        
-        scrollView.maximumZoomScale = 1.0
-        scrollView.zoomScale = minScale;
-    
-        
-        
-        
-        
         configureLocation()
         configureLabels()
+        configureScrollView()
         downloadWineImage(currentWine.imageURL)
     }
     
@@ -75,7 +64,6 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     
 //MARK: MK Map View Delegate
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        print("selected")
         view.annotation?.coordinate
     }
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -108,55 +96,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
 
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return self.img
-    }
-    
-    @IBAction func tapActionZoomImage(sender: UITapGestureRecognizer) {
-        
-        img = UIImageView(image: imageView.image)
-        img.frame = self.imageView.bounds
-        scrollView.addSubview(img)
-        img.contentMode = .ScaleAspectFit
-        img.clipsToBounds = true
-        view.addSubview(scrollView)
-        view.bringSubviewToFront(scrollView)
-        scrollView.backgroundColor = .whiteColor()
-        scrollView.userInteractionEnabled = true
-        
-        UIView.animateWithDuration(0.3) { () -> Void in
-            self.scrollView.frame = self.view.frame
-            self.img.frame = self.view.frame
-        }
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped"))
-        img.userInteractionEnabled = true
-        img.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    func imageTapped() {
-        
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.scrollView.frame = self.imageView.frame
-            self.img.frame = self.imageView.bounds
-            }) { (Bool) -> Void in
-                self.imageView.image = self.img.image
-                self.view.bringSubviewToFront(self.imageView)
-        }
-    }
-
-    
-//
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        if segue.identifier == "storeList" {
-//            
-//            let navController = segue.destinationViewController as! UINavigationController
-//            let storeListViewController = navController.topViewController as! StoreListViewController
-//            //storeListViewController.modalPresentationStyle = .Custom
-//            //storeListViewController.modalTransitionStyle = .FlipHorizontal
-//            storeListViewController.storeLocations = storeLocations
-//        }
-//    }
-    
+    }    
 
 
 }

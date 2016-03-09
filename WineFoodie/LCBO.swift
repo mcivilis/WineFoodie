@@ -41,8 +41,9 @@ struct LCBOWine : Equatable {
     var imageURL: String!
     var varietal: String!
     var style: String!
-    var matchRating : Float!
     var code: Int!
+    var stockType: String!
+    var isKosher: Bool!
 }
 
 func == (lhs:LCBOWine, rhs:LCBOWine) -> Bool {

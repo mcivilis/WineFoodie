@@ -36,12 +36,6 @@ extension WinePairViewController {
         }
         sortAlert.addAction(price)
         
-        let matchRating = UIAlertAction(title: "Match Rating", style: .Default) { (UIAlertAction) -> Void in
-            self.sortOption = .Match
-            self.sort()
-        }
-        sortAlert.addAction(matchRating)
-        
         let sugarContent = UIAlertAction(title: "Sugar Content", style: .Default) { (UIAlertAction) -> Void in
             self.sortOption = .Sugar
             self.sort()
@@ -64,7 +58,6 @@ extension WinePairViewController {
     
     func sort() {
         switch sortOption {
-        case .Match     : sortByMatchRating()
         case .Price     : sortByPrice()
         case .Sugar     : sortBySugarContent()
         case .Inventory : sortByInvenoryAvailable()
@@ -79,14 +72,6 @@ extension WinePairViewController {
             wines.sortInPlace({$0.currentPrice > $1.currentPrice})
         } else {
             wines.sortInPlace({$1.currentPrice > $0.currentPrice})
-        }
-    }
-    
-    func sortByMatchRating() {
-        if (sortAscending != true) {
-            wines.sortInPlace({$0.matchRating > $1.matchRating})
-        } else {
-            wines.sortInPlace({$1.matchRating > $0.matchRating})
         }
     }
     

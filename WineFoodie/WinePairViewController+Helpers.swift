@@ -24,12 +24,6 @@ extension WinePairViewController {
         }
     }
     
-    func formatMatchRanking(matchRanking: Float) -> String {
-        let percent = Float(roundf(matchRanking))
-        let matchString = percent.description + "%"
-        return matchString
-    }
-    
     func formatWinePrice(price: Int) -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle

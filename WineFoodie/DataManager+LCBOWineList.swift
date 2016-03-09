@@ -68,9 +68,11 @@ extension DataManager {
                     let lcboImageURL = wine["image_url"] as? String,
                     let lcboVarietal = wine["varietal"] as? String,
                     let lcboStyle = wine["style"] as? String!,
-                    let lcboCode = wine["id"] as? Int! {
+                    let lcboCode = wine["id"] as? Int!,
+                    let lcboStockType = wine["stock_type"] as? String,
+                    let lcboIsKosher = wine["is_kosher"] as? Bool {
                         
-                        let lcboWine = LCBOWine(name: lcboName, currentPrice: lcboCurrentPrice, regularPrice: lcboRegularPrice, priceSavings: lcboPriceSavings, primaryCategory: lcboPrimaryCategory, secondaryCategory: lcboSecondaryCategory, origin: lcboOrigin, inventoryCount: lcboInventoryCount, sugarContent: lcboSugarContent, sugarInGrams: lcboSugarInGrams, producerName: lcboProducerName, isSeasonal: lcboIsSeasonal, isVQA: lcboIsVQA, imageThumbURL: lcboImageThumbURL, imageURL: lcboImageURL, varietal: lcboVarietal, style: lcboStyle, matchRating: 0, code: lcboCode)
+                        let lcboWine = LCBOWine(name: lcboName, currentPrice: lcboCurrentPrice, regularPrice: lcboRegularPrice, priceSavings: lcboPriceSavings, primaryCategory: lcboPrimaryCategory, secondaryCategory: lcboSecondaryCategory, origin: lcboOrigin, inventoryCount: lcboInventoryCount, sugarContent: lcboSugarContent, sugarInGrams: lcboSugarInGrams, producerName: lcboProducerName, isSeasonal: lcboIsSeasonal, isVQA: lcboIsVQA, imageThumbURL: lcboImageThumbURL, imageURL: lcboImageURL, varietal: lcboVarietal, style: lcboStyle, code: lcboCode, stockType: lcboStockType, isKosher: lcboIsKosher)
                         wineList.append(lcboWine)
                 }
              completion(wineListForPair: wineList)

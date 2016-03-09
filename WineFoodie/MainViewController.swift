@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, CLLocationManagerDelegate {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
 //MARK: Properties
     
@@ -21,16 +21,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureLocation()
-    }
-    
-    func configureLocation() {
-        locationManager.delegate = self;
-        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined) {
-            locationManager.requestWhenInUseAuthorization()
-        }
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        locationManager.distanceFilter = 100;
     }
     
 //MARK: Collection View Data Source
@@ -74,23 +64,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let foodType = Foods(rawValue: foodsInSection[indexPath!.row])
             print(foodType?.rawValue)
             winePairController.winePairs = [WinePairTest1, WinePairTest2, WinePairTest3]
-            winePairController.closestStoreID = closestStoreID
+
         }
     }
     
-//MARK: CLLocation Manager Delegate
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if (status == CLAuthorizationStatus.AuthorizedWhenInUse) {
-            self.locationManager.startUpdatingLocation()
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let lon = locationManager.location?.coordinate.longitude
-        let lat = locationManager.location?.coordinate.latitude
-        dataManager.closestStore(lat!, longitude: lon!) { (lcboStoreCode) -> Void in
-            self.closestStoreID = lcboStoreCode
-        }
-    }
+
 }

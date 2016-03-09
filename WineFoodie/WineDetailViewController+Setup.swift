@@ -30,14 +30,18 @@ extension WineDetailViewController {
         sugarContentLabel.text = currentWine.sugarContent
         sugarInGramsLabel.text = currentWine.sugarInGrams.description + " grams sugar / liter"
         producerNameLabel.text = currentWine.producerName
-        matchRatingLabel.text = "Food Match = " + formatMatchRanking(currentWine.matchRating)
-        
     }
     
-    func formatMatchRanking(matchRanking: Float) -> String {
-        let percent = Float(roundf(matchRanking))
-        let matchString = percent.description + "%"
-        return matchString
+    func configureScrollView() {
+        scrollView = UIScrollView(frame: self.imageView.frame)
+        scrollView.delegate = self
+        let scrollViewFrame = scrollView.frame
+        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
+        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
+        let minScale = min(scaleWidth, scaleHeight);
+        scrollView.minimumZoomScale = minScale;
+        scrollView.maximumZoomScale = 1.0
+        scrollView.zoomScale = minScale;
     }
 
 }
