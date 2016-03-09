@@ -8,10 +8,16 @@
 
 import Foundation
 
+protocol DataManagerProtocol {
+    func didUpdateWineList()
+    func didUpdateInventory()
+}
+
 class DataManager {
     
     var delegate: DataManagerProtocol?
     var wineList = [LCBOWine]()
+    var storeInventory = [Int : Int]()
     
     func loadDataFromURL(url: NSURL, completion:(data: NSData?, error: NSError?) -> Void) {
         let session = NSURLSession.sharedSession()

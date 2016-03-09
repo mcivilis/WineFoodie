@@ -8,9 +8,7 @@
 
 import Foundation
 
-protocol DataManagerProtocol {
-    func didUpdateWineList()
-}
+
 
 extension DataManager {
     func lcboWineList (winePair: WinePair) {
