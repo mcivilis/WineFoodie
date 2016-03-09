@@ -62,7 +62,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let indexPath = collectionView.indexPathsForSelectedItems()?.first
             let foodsInSection = sectionFoods[indexPath!.section]
             let foodType = Foods(rawValue: foodsInSection[indexPath!.row])
-            print(foodType?.rawValue)
             winePairController.winePairs = [WinePairTest1, WinePairTest2, WinePairTest3]
 
         }
