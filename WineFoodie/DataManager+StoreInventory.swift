@@ -10,14 +10,14 @@ import Foundation
 
 extension DataManager {
     
-    func storeInventory (latitude: Double, longitude: Double, productID: Int) {
+    func storeInventory(storeID: Int, productID: Int, completion: (storeInventory: Int) -> Void) {
         
-        let url = lcboStoresURL(latitude, longitude: longitude, productID: productID)
+        let url = lcboInventoryURL(storeID, productID: productID)
         let lcboStoreURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
         
         loadDataFromURL(lcboStoreURL!) { (data, error) -> Void in
             guard error == nil else {
-                print(error)
+                completion(storeInventory: 0)
                 return
             }
             
@@ -27,23 +27,19 @@ extension DataManager {
             do {
                 json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as? Payload
             } catch {
-                print(error)
+                completion(storeInventory: 0)
                 return
             }
-            guard let stores = json["result"] as? [Payload]
+            guard let store = json["result"] as? Payload
                 else {
-                    print("No stores found")
+                    completion(storeInventory: 0)
                     return
             }
-            var inventory = 0
-            for store in stores {
-                if let storeQuantity = store["quantity"] as? Int {
-                   inventory = inventory + storeQuantity
-                    if (self.storeInventory.count == stores.count) {
-                        self.delegate?.didUpdateInventory()
-                        self.storeInventory[productID] = inventory
-                    }
-                }
+            
+            if let quantity = store["quantity"] as? Int {
+                completion(storeInventory: quantity)
+            } else {
+                completion(storeInventory: 0)
             }
         }
     }

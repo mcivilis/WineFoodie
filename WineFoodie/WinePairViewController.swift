@@ -59,10 +59,6 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
-    func didUpdateInventory() {
-        //something 
-    }
-    
 //MARK: Table View Data Source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

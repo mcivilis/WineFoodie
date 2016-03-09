@@ -10,7 +10,6 @@ import Foundation
 
 protocol DataManagerProtocol {
     func didUpdateWineList()
-    func didUpdateInventory()
 }
 
 class DataManager {
