@@ -1,0 +1,6 @@
+framework module Pods_WineFoodie {
+  umbrella header "Pods-WineFoodie-umbrella.h"
+
+  export *
+  module * { export * }
+}

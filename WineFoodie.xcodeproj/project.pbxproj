@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3445D73FF3471439DF2E2AB4 /* Pods_WineFoodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F098870387C103981B4A3A0 /* Pods_WineFoodie.framework */; };
+		AF1604FC1C91BD28003886E6 /* FoodPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1604FB1C91BD28003886E6 /* FoodPair.swift */; };
 		AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */; };
 		AF2E64281C83AD4E00079BA2 /* WineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E64271C83AD4E00079BA2 /* WineCell.swift */; };
 		AF3C4AD71C7F92AE003A5F5F /* WinePairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */; };
@@ -45,6 +47,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E051312E095605F00F4C7EB /* Pods-WineFoodie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WineFoodie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WineFoodie/Pods-WineFoodie.debug.xcconfig"; sourceTree = "<group>"; };
+		3F098870387C103981B4A3A0 /* Pods_WineFoodie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WineFoodie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F1FF076D82701B4CAADE20 /* Pods-WineFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WineFoodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-WineFoodie/Pods-WineFoodie.release.xcconfig"; sourceTree = "<group>"; };
+		AF1604FB1C91BD28003886E6 /* FoodPair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodPair.swift; sourceTree = "<group>"; };
 		AF2E64211C83620F00079BA2 /* WinePairViewController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WinePairViewController+Setup.swift"; sourceTree = "<group>"; };
 		AF2E64271C83AD4E00079BA2 /* WineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WineCell.swift; path = ../WineCell.swift; sourceTree = "<group>"; };
 		AF3C4AD61C7F92AE003A5F5F /* WinePairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinePairViewController.swift; sourceTree = "<group>"; };
@@ -91,12 +97,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9C07E41C8505B600324FA5 /* MapKit.framework in Frameworks */,
+				3445D73FF3471439DF2E2AB4 /* Pods_WineFoodie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11D446FE54BFE8D6B3632E99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E051312E095605F00F4C7EB /* Pods-WineFoodie.debug.xcconfig */,
+				93F1FF076D82701B4CAADE20 /* Pods-WineFoodie.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		485F1FABEF406C275689166C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F098870387C103981B4A3A0 /* Pods_WineFoodie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF3C4AD51C7F9266003A5F5F /* WinePairViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +188,7 @@
 				AF6C47751C8F15140007C4DD /* LCBO.swift */,
 				AF6C47771C8F151C0007C4DD /* WinePair.swift */,
 				AF7539FC1C7E75C10055D088 /* FoodDefinitions.swift */,
+				AF1604FB1C91BD28003886E6 /* FoodPair.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -186,6 +211,8 @@
 				AF9C07E31C8505B600324FA5 /* MapKit.framework */,
 				AFD498C31C7BD47F0083B788 /* WineFoodie */,
 				AFD498C21C7BD47F0083B788 /* Products */,
+				11D446FE54BFE8D6B3632E99 /* Pods */,
+				485F1FABEF406C275689166C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFD498D31C7BD47F0083B788 /* Build configuration list for PBXNativeTarget "WineFoodie" */;
 			buildPhases = (
+				B72A57271F4BFBB0B4D042F3 /* Check Pods Manifest.lock */,
 				AFD498BD1C7BD47F0083B788 /* Sources */,
 				AFD498BE1C7BD47F0083B788 /* Frameworks */,
 				AFD498BF1C7BD47F0083B788 /* Resources */,
+				79BED69F7EEDC233D20021CA /* Embed Pods Frameworks */,
+				9E3484BF9C58FC8CA2B3BB02 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +322,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		79BED69F7EEDC233D20021CA /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WineFoodie/Pods-WineFoodie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E3484BF9C58FC8CA2B3BB02 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WineFoodie/Pods-WineFoodie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B72A57271F4BFBB0B4D042F3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFD498BD1C7BD47F0083B788 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -304,6 +382,7 @@
 				AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */,
 				AF6C477E1C8F1DDE0007C4DD /* WinePairViewController+Helpers.swift in Sources */,
 				AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */,
+				AF1604FC1C91BD28003886E6 /* FoodPair.swift in Sources */,
 				AF6C47781C8F151C0007C4DD /* WinePair.swift in Sources */,
 				AF9C07ED1C863AE200324FA5 /* WineDetailViewController+Helpers.swift in Sources */,
 				AFD498C71C7BD47F0083B788 /* MainViewController.swift in Sources */,
@@ -429,6 +508,7 @@
 		};
 		AFD498D41C7BD47F0083B788 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E051312E095605F00F4C7EB /* Pods-WineFoodie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WineFoodie/Info.plist;
@@ -440,6 +520,7 @@
 		};
 		AFD498D51C7BD47F0083B788 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93F1FF076D82701B4CAADE20 /* Pods-WineFoodie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = WineFoodie/Info.plist;
