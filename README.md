@@ -26,3 +26,5 @@ Detailed information from LCBO API.
 
 ####Find wine near you
 Using LCBO API locate the wine in stores near you and show inventory.
+
+![alt tag](https://github.com/mcivilis/WineFoodie/blob/master/Screenshots/screen_shot1.png)
