@@ -27,4 +27,14 @@ Detailed information from LCBO API.
 ####Find wine near you
 Using LCBO API locate the wine in stores near you and show inventory.
 
+Select food group
 ![alt tag](https://github.com/mcivilis/WineFoodie/blob/master/Screenshots/screen_shot1.png)
+
+Explore wine pairs available at LCBO
+![alt tag](https://github.com/mcivilis/WineFoodie/blob/master/Screenshots/screen_shot2.png)
+
+Find nearby LCBO locations carrying selected wine
+![alt tag](https://github.com/mcivilis/WineFoodie/blob/master/Screenshots/screen_shot3.png)
+
+Show selected store in Apple maps
+![alt tag](https://github.com/mcivilis/WineFoodie/blob/master/Screenshots/screen_shot4.png)
