@@ -4,6 +4,6 @@
 use_frameworks!
 
 target 'WineFoodie' do
-pod 'Firebase', '>= 2.5.0'
+pod 'Firebase'
 end
 
