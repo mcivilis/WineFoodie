@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>443757985920-e6ht8s25j92c7ebi2sl2at1pph18q8hj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.443757985920-e6ht8s25j92c7ebi2sl2at1pph18q8hj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDxmuCTDUXq2KCLJEXMECUyXl65swDlieM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>443757985920</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.wineFoodie.ios</string>
+	<key>PROJECT_ID</key>
+	<string>project-1178698203956649354</string>
+	<key>STORAGE_BUCKET</key>
+	<string>project-1178698203956649354.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:443757985920:ios:31d5fd8c1b51b217</string>
+	<key>DATABASE_URL</key>
+	<string>https://project-1178698203956649354.firebaseio.com</string>
+</dict>
+</plist>
