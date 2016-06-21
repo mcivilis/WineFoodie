@@ -37,6 +37,7 @@
 		AF9C07ED1C863AE200324FA5 /* WineDetailViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C07EC1C863AE200324FA5 /* WineDetailViewController+Helpers.swift */; };
 		AF9C07F11C863B8300324FA5 /* WineDetailViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C07F01C863B8300324FA5 /* WineDetailViewController+Setup.swift */; };
 		AF9C07F31C863D4A00324FA5 /* WineDetailViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9C07F21C863D4A00324FA5 /* WineDetailViewController+Actions.swift */; };
+		AFA844AF1D18E035007E48BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFA844AE1D18E035007E48BC /* GoogleService-Info.plist */; };
 		AFABCE5B1C7E888400B711F3 /* FoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5A1C7E888400B711F3 /* FoodCell.swift */; };
 		AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */; };
 		AFD498C51C7BD47F0083B788 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498C41C7BD47F0083B788 /* AppDelegate.swift */; };
@@ -81,6 +82,7 @@
 		AF9C07EC1C863AE200324FA5 /* WineDetailViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WineDetailViewController+Helpers.swift"; sourceTree = "<group>"; };
 		AF9C07F01C863B8300324FA5 /* WineDetailViewController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WineDetailViewController+Setup.swift"; sourceTree = "<group>"; };
 		AF9C07F21C863D4A00324FA5 /* WineDetailViewController+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WineDetailViewController+Actions.swift"; sourceTree = "<group>"; };
+		AFA844AE1D18E035007E48BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		AFABCE5A1C7E888400B711F3 /* FoodCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCell.swift; sourceTree = "<group>"; };
 		AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodHeader.swift; sourceTree = "<group>"; };
 		AFD498C11C7BD47F0083B788 /* WineFoodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WineFoodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +241,7 @@
 				AF3C4AE41C7F98A4003A5F5F /* images */,
 				AFD498CD1C7BD47F0083B788 /* LaunchScreen.storyboard */,
 				AFD498D01C7BD47F0083B788 /* Info.plist */,
+				AFA844AE1D18E035007E48BC /* GoogleService-Info.plist */,
 			);
 			path = WineFoodie;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				AF805CA71C91E043000BE11D /* wine_glass_bubbles_half_full.png in Resources */,
 				AFD498CA1C7BD47F0083B788 /* Main.storyboard in Resources */,
 				AF805CA01C91E043000BE11D /* cell_background.png in Resources */,
+				AFA844AF1D18E035007E48BC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
