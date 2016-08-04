@@ -8,17 +8,26 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-//MARK: Properties
-    
+    // MARK: Outlets
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var flowLayout: UICollectionViewFlowLayout!
+
+    // MARK: Constants
     let locationManager = CLLocationManager()
     let dataManager = DataManager()
+    
+    //MARK: Properties
     var closestStoreID = 511 //Defaults to King & Spadina store location
     
+    //MARK: Firebase properties
+    let ref = FIRDatabaseReference()
+    //Firebase(url: "https://winefoodie-68a08.firebaseio.com/")
+    
+    // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }

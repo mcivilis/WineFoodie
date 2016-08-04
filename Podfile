@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'WineFoodie' do
 pod 'Firebase'
+pod 'Firebase/Database'
 end
 
