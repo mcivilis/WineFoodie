@@ -8,37 +8,17 @@
 
 import Foundation
 
-enum WineGroup : String {
-    case Red        = "Red Wine"
-    case White      = "White Wine"
-    case Rose       = "Rosé Wine"
-    case Sparkling  = "Sparkling Wine"
-    case Dessert    = "Dessert Wine"
-}
-
-class WinePair : Equatable, Hashable {
+extension WinePair : JSONParselable {
     
-    var group : WineGroup!
-    var varietal : String!
-    var country : String!
-    var matchRating : Float!
-    
-    var hashValue: Int{
-        return (group.rawValue + varietal + country + matchRating.description).hashValue
-    }
-    
-    init (wineGroup: WineGroup, wineVarietal: String!, wineCountry: String!, wineMatchRating: Float!) {
-        group = wineGroup
-        varietal = wineVarietal
-        country = wineCountry
-        matchRating = wineMatchRating
+    static func withJSON(json: [String : AnyObject]) -> WinePair? {
+        guard
+            let group = string(json, key: "group"),
+            varietal = string(json, key: "varietal"),
+            country = string(json, key: "country"),
+            matchRating = float(json, key: "match_rating")
+            else {
+                return nil
+        }
+        return WinePair(wineGroup: wineGroup(group), wineVarietal: varietal, wineCountry: country, wineMatchRating: matchRating)
     }
 }
-
-func == (lhs:WinePair, rhs:WinePair) -> Bool {
-    return ((lhs.varietal == rhs.varietal) && (lhs.country == rhs.country))
-}
-
-let WinePairTest1 = WinePair(wineGroup: .Red, wineVarietal: "merlot", wineCountry: "usa", wineMatchRating: 0.0)
-let WinePairTest2 = WinePair(wineGroup: .Rose, wineVarietal: "zinfandel", wineCountry: "usa", wineMatchRating: 0.0)
-let WinePairTest3 = WinePair(wineGroup: .White, wineVarietal: "chardonnay", wineCountry: "usa", wineMatchRating: 0.0)

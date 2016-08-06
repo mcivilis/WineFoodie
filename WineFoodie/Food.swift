@@ -2,18 +2,28 @@
 //  Food.swift
 //  WineFoodie
 //
-//  Created by Masha on 2016-08-03.
+//  Created by Masha on 2016-08-06.
 //  Copyright © 2016 mcivilis. All rights reserved.
 //
 
 import Foundation
 
-class Food {
-    var name: String?
-    var winePairs: [WinePair]?
+extension Food : JSONParselable {
     
-    init(foodName: String, foodWinePairs:[WinePair]) {
-        name = foodName
-        winePairs = foodWinePairs
+    static func withJSON(json: [String : AnyObject]) -> Food? {
+        guard
+            let name = string(json, key: "name")
+            else {
+                return nil
+        }
+        
+        let winePairDicts = json["wine_pairs"] as? [[String:AnyObject]]
+        func sanitizedWinePairs(dicts: [[String:AnyObject]]?) -> [WinePair] {
+            guard let dicts = dicts else {
+                return [WinePair]()
+            }
+            return dicts.flatMap { WinePair.withJSON($0) }
+        }
+        return Food(name: name, winePairs: sanitizedWinePairs(winePairDicts))
     }
 }

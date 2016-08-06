@@ -22,14 +22,18 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //MARK: Properties
     var closestStoreID = 511 //Defaults to King & Spadina store location
-    
-    //MARK: Firebase properties
-    let ref = FIRDatabaseReference()
-    //Firebase(url: "https://winefoodie-68a08.firebaseio.com/")
+    var rootRef: FIRDatabaseReference!
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rootRef = FIRDatabase.database().reference()
+        let foodCategoriesRef = rootRef.child("FoodCategories")
+        
+        foodCategoriesRef.observeEventType(.Value) { (snap: FIRDataSnapshot) in
+            print(snap.value)
+        }
     }
     
 //MARK: Collection View Data Source
@@ -71,6 +75,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             let indexPath = collectionView.indexPathsForSelectedItems()?.first
             let foodsInSection = sectionFoods[indexPath!.section]
             let foodType = Foods(rawValue: foodsInSection[indexPath!.row])
+            
+            let WinePairTest1 = WinePair(wineGroup: .Red, wineVarietal: "merlot", wineCountry: "usa", wineMatchRating: 0.0)
+            let WinePairTest2 = WinePair(wineGroup: .Rose, wineVarietal: "zinfandel", wineCountry: "usa", wineMatchRating: 0.0)
+            let WinePairTest3 = WinePair(wineGroup: .White, wineVarietal: "chardonnay", wineCountry: "usa", wineMatchRating: 0.0)
+
             winePairController.winePairs = [WinePairTest1, WinePairTest2, WinePairTest3]
 
         }
