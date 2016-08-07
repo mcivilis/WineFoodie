@@ -51,6 +51,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
                     
                     if let jsonFoodCategory = category as? [String : AnyObject] {
                         winePairingModel.append(FoodCategory.withJSON(jsonFoodCategory)!)
+                        dispatch_async(dispatch_get_main_queue(), { 
+                            self.collectionView.reloadData()
+                        })
                     }
                 }
             }
@@ -69,26 +72,25 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 //MARK: Collection View Data Source
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let foodsInSection = sectionFoods[section]
-        return foodsInSection.count
+        return winePairingModel[section].foods.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! FoodCell
-        let foodsInSection = sectionFoods[indexPath.section]
-        cell.foodLabel.text = foodsInSection[indexPath.row]
+        let food = winePairingModel[indexPath.section].foods[indexPath.row]
+        cell.foodLabel.text = food.name
         return cell
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return sectionNames.count
+        return winePairingModel.count
     }
     
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         var reusableview : UICollectionReusableView!
         if (kind == UICollectionElementKindSectionHeader) {
             let header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", forIndexPath: indexPath) as! FoodHeader
-            header.headerLabel.text = sectionNames[indexPath.section]
+            header.headerLabel.text = winePairingModel[indexPath.section].name
             reusableview = header;
         }
         return reusableview
