@@ -22,18 +22,48 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     //MARK: Properties
     var closestStoreID = 511 //Defaults to King & Spadina store location
-    var rootRef: FIRDatabaseReference!
+    var winePairingModel = [FoodCategory]()
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        rootRef = FIRDatabase.database().reference()
-        let foodCategoriesRef = rootRef.child("FoodCategories")
-        
-        foodCategoriesRef.observeEventType(.Value) { (snap: FIRDataSnapshot) in
-            print(snap.value)
+        let storage = FIRStorage.storage()
+        let winePairingModelRef = storage.referenceForURL("gs://winefoodie-68a08.appspot.com/WinePairingModel/WinePairingModel.json")
+    
+        winePairingModelRef.dataWithMaxSize(300000) { (data, error) in
+            if let foodCategoryData = data {
+                self.saveWinePairingModel(foodCategoryData)
+            } else {
+                //handle error
+                print(error)
+            }
         }
+    }
+    
+    func saveWinePairingModel (data: NSData) {
+        
+        do {
+            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+            print(json)
+            if let foodCategories = json as? [AnyObject] {
+                
+                for category in foodCategories {
+                    
+                    if let jsonFoodCategory = category as? [String : AnyObject] {
+                        winePairingModel.append(FoodCategory.withJSON(jsonFoodCategory)!)
+                    }
+                }
+            }
+            // Fully-packaged, type-safe, valid instance of Wine Pairing Model, with nested models
+            print(winePairingModel)
+        } catch {
+            print(error)
+        }
+        
+        
+        
+        
+
     }
     
 //MARK: Collection View Data Source

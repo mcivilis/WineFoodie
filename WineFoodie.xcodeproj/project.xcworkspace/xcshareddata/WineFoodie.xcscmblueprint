@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3183DB494E08AA6662F50643CB728F2EF70773FD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2683B78469401BDD8C96BB9C0B2AABAE3BE3409B" : 0,
+    "3183DB494E08AA6662F50643CB728F2EF70773FD" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "64B486C7-F8A0-4CA2-8812-1BB4B3DDC48E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2683B78469401BDD8C96BB9C0B2AABAE3BE3409B" : "JSONToObject\/",
+    "3183DB494E08AA6662F50643CB728F2EF70773FD" : "WineFoodie\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WineFoodie",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WineFoodie.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mcivilis\/JSONToObject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2683B78469401BDD8C96BB9C0B2AABAE3BE3409B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mcivilis\/WineFoodie.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3183DB494E08AA6662F50643CB728F2EF70773FD"
+    }
+  ]
+}
