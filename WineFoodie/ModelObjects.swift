@@ -87,7 +87,6 @@ struct LCBOStore {
     var hasParking: Bool!
     var distanceInMeters: Int!
     var quantity: Int!
-    
 }
 
 struct LCBOWine : Equatable {
