@@ -10,12 +10,12 @@ import Foundation
 
 extension WinePair : JSONParselable {
     
-    static func withJSON(json: [String : AnyObject]) -> WinePair? {
+    static func withJSON(_ json: [String : AnyObject]) -> WinePair? {
         guard
             let group = string(json, key: "group"),
-            varietal = string(json, key: "varietal"),
-            country = string(json, key: "country"),
-            matchRating = float(json, key: "match_rating")
+            let varietal = string(json, key: "varietal"),
+            let country = string(json, key: "country"),
+            let matchRating = float(json, key: "match_rating")
             else {
                 return nil
         }

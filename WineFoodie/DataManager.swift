@@ -17,16 +17,16 @@ class DataManager {
     var delegate: DataManagerProtocol?
     var wineList = [LCBOWine]()
     
-    func loadDataFromURL(url: NSURL, completion:(data: NSData?, error: NSError?) -> Void) {
-        let session = NSURLSession.sharedSession()
-        let loadDataTask = session.dataTaskWithURL(url) { (data, response, error) -> Void in
+    func loadDataFromURL(_ url: URL, completion:@escaping (_ data: Data?, _ error: NSError?) -> Void) {
+        let session = URLSession.shared
+        let loadDataTask = session.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
             if let error = error {
                 print(error);
-                completion(data: nil, error: error)
+                completion(nil, error as NSError?)
             } else {
-                completion(data: data, error: nil)
+                completion(data, nil)
             }
-        }
+        }) 
         loadDataTask.resume()
     }
    

@@ -10,7 +10,7 @@ import Foundation
 
 extension FoodCategory : JSONParselable {
     
-    static func withJSON(json: [String : AnyObject]) -> FoodCategory? {
+    static func withJSON(_ json: [String : AnyObject]) -> FoodCategory? {
         guard
             let name = string(json, key: "name")
             else {
@@ -18,7 +18,7 @@ extension FoodCategory : JSONParselable {
         }
         
         let foodDicts = json["foods"] as? [[String:AnyObject]]
-        func sanitizedFoods(dicts: [[String:AnyObject]]?) -> [Food] {
+        func sanitizedFoods(_ dicts: [[String:AnyObject]]?) -> [Food] {
             guard let dicts = dicts else {
                 return [Food]()
             }

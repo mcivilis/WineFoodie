@@ -18,27 +18,27 @@ let kSTORES_PER_PAGE = "&per_page=20"
 
 extension DataManager {
     
-    func lcboWinesURL(winePair: WinePair) -> String {
+    func lcboWinesURL(_ winePair: WinePair) -> String {
         return kPRODUCTS_API + kAPI_KEY + kPRODUCTS_OPTIONS + "&q=" + prepareWinePairString(winePair)
     }
     
-    func prepareWinePairString(winePair: WinePair) -> String {
+    func prepareWinePairString(_ winePair: WinePair) -> String {
         let wineGroup = winePair.group.rawValue
         let varietal = winePair.varietal
         let country = winePair.country
         let plus = "+"
-        return wineGroup + plus + varietal + plus + country
+        return wineGroup + plus + varietal! + plus + country!
     }
 
-    func lcboStoresURL(latitude: Double, longitude: Double, productID: Int) -> String {
+    func lcboStoresURL(_ latitude: Double, longitude: Double, productID: Int) -> String {
         return kSTORES_API + "?lat=" + latitude.description + "&" + "lon=" + longitude.description  + "&product_id=" + productID.description + kSTORES_OPTIONS + kSTORES_PER_PAGE
     }
 
-    func lcboClosestStoreURL(latitude: Double, longitude: Double) -> String {
+    func lcboClosestStoreURL(_ latitude: Double, longitude: Double) -> String {
         return kSTORES_API + "?lat=" + latitude.description + "&" + "lon=" + longitude.description  + "&product_id=" + kSTORES_OPTIONS
     }
 
-    func lcboInventoryURL(storeID: Int, productID: Int) -> String {
+    func lcboInventoryURL(_ storeID: Int, productID: Int) -> String {
         return kSTORES_API + "/" + storeID.description + "/products/" + productID.description + "/inventory"
     }
     

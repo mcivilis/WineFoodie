@@ -16,29 +16,21 @@ protocol WinePairLoaderDelegate {
 
 class WinePairLoader {
     
+    static let sharedInstance : WinePairLoader = {
+        let instance = WinePairLoader()
+        return instance
+    }()
+    
     var delegate: WinePairLoaderDelegate?
-    
-    class var sharedInstance: WinePairLoader {
-        
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: WinePairLoader? = nil
-        }
-        
-        dispatch_once(&Static.onceToken) {
-            Static.instance = WinePairLoader()
-        }
-        return Static.instance!
-    }
-    
+
     func load() {
         
         let storage = FIRStorage.storage()
-        let winePairingModelRef = storage.referenceForURL("gs://winefoodie-68a08.appspot.com/WinePairingModel/WinePairingModel.json")
+        let winePairingModelRef = storage.reference(forURL: "gs://winefoodie-68a08.appspot.com/WinePairingModel/WinePairingModel.json")
         
-        winePairingModelRef.dataWithMaxSize(300000) { (data, error) in
+        winePairingModelRef.data(withMaxSize: 300000) { (data, error) in
             if let foodCategoryData = data {
-                self.mapJSON(foodCategoryData)
+                self.mapJSON(data: (foodCategoryData as NSData) as Data)
             } else {
                 if let userInfo = error?.userInfo[NSLocalizedDescriptionKey] {
                     self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
@@ -47,10 +39,10 @@ class WinePairLoader {
         }
     }
     
-    func mapJSON (data: NSData) {
+    func mapJSON (data: Data) {
         
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+            let json = try JSONSerialization.jsonObject(with: data as Data, options: JSONSerialization.ReadingOptions())
             
             var winePairingModel = [FoodCategory]()
             if let foodCategories = json as? [AnyObject] {
@@ -59,14 +51,14 @@ class WinePairLoader {
                     
                     if let jsonFoodCategory = category as? [String : AnyObject] {
                         winePairingModel.append(FoodCategory.withJSON(jsonFoodCategory)!)
-                        dispatch_async(dispatch_get_main_queue(), {
-                            self.delegate?.didLoadWinePairs(winePairingModel)
-                        })
+                        DispatchQueue.main.async {
+                            self.delegate?.didLoadWinePairs(foodCategories: winePairingModel)
+                        }
                     }
                 }
             }
         } catch {
-            if let userInfo = error?.userInfo[NSLocalizedDescriptionKey] {
+            if let userInfo = error.userInfo[NSLocalizedDescriptionKey] {
                 self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
             }
         }

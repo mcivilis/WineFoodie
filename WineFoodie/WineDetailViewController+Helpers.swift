@@ -12,7 +12,7 @@ import MapKit
 
 extension WineDetailViewController {
     
-    func getPostalCodeForLocation(location: CLLocation) {
+    func getPostalCodeForLocation(_ location: CLLocation) {
         
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error)->Void in
             if (error != nil) {
@@ -25,37 +25,37 @@ extension WineDetailViewController {
         })
     }
     
-    func downloadWineImage(urlString: String) {
-        let url = NSURL(string: urlString)
-        let urlRequest = NSURLRequest(URL: url!)
-        let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
+    func downloadWineImage(_ urlString: String) {
+        let url = URL(string: urlString)
+        let urlRequest = URLRequest(url: url!)
+        let dataTask = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) -> Void in
             if error == nil {
                 if let imageData = data {
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    DispatchQueue.main.async(execute: { () -> Void in
                         self.imageView.image = UIImage(data: imageData)
                     })
                 }
             }
-        }
+        }) 
         dataTask.resume()
     }
     
-    func loadNearbyStores(userLocation:CLLocation) {
+    func loadNearbyStores(_ userLocation:CLLocation) {
         
-        let mapLoadActivity = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
+        let mapLoadActivity = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         mapLoadActivity.hidesWhenStopped = true
         let activityX = mapView.frame.origin.x + mapView.frame.size.width / 2
         let activityY = mapView.frame.origin.y + mapView.frame.size.height / 2
         mapLoadActivity.frame.origin = CGPoint(x: activityX, y: activityY)
         view.addSubview(mapLoadActivity)
-        view.bringSubviewToFront(mapLoadActivity)
+        view.bringSubview(toFront: mapLoadActivity)
         mapLoadActivity.startAnimating()
         
         let lat = Double(userLocation.coordinate.latitude)
         let lon = Double(userLocation.coordinate.longitude)
         DataManager().storeLocations(lat, longitude: lon, productID: currentWine.code, completion: { (lcboStoreList) -> Void in
             self.storeLocations = lcboStoreList
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            DispatchQueue.main.async(execute: { () -> Void in
                 mapLoadActivity.stopAnimating()
                 for store in lcboStoreList {
                     let marker = MKPointAnnotation()

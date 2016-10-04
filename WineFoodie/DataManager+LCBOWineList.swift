@@ -11,7 +11,7 @@ import Foundation
 
 
 extension DataManager {
-    func lcboWineList (winePair: WinePair) {
+    func lcboWineList (_ winePair: WinePair) {
         var counter = 0
         wines(winePair) { (wineListForPair) -> Void in
             for wine in wineListForPair {
@@ -19,7 +19,7 @@ extension DataManager {
                 if (!(self.wineList.contains(wine))) {
                     self.wineList.append(wine)
                 }
-                counter++
+                counter += 1
                 if (counter == wineListForPair.count) {
                     self.delegate?.didUpdateWineList()
                 }
@@ -28,9 +28,9 @@ extension DataManager {
     }
     
     
-    func wines (winePair: WinePair, completion: (wineListForPair: [LCBOWine]) -> Void) {
+    func wines (_ winePair: WinePair, completion: @escaping (_ wineListForPair: [LCBOWine]) -> Void) {
         let url = lcboWinesURL(winePair)
-        let lcboProductURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+        let lcboProductURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
         loadDataFromURL(lcboProductURL!) { (data, error) -> Void in
             guard error == nil else {
                 print(error)
@@ -40,7 +40,7 @@ extension DataManager {
             var json: Payload!
             
             do {
-                json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as? Payload
+                json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? Payload
             } catch {
                 print(error)
                 return

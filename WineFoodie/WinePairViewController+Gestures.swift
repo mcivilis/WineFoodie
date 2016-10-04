@@ -12,24 +12,24 @@ import UIKit
 extension WinePairViewController {
     
     func configureGestures() {
-        let tapGestureSparkling = UITapGestureRecognizer(target:self, action:Selector("tapActionSparkling"))
-        sparklingImage.userInteractionEnabled = true
+        let tapGestureSparkling = UITapGestureRecognizer(target:self, action:#selector(WinePairViewController.tapActionSparkling))
+        sparklingImage.isUserInteractionEnabled = true
         sparklingImage.addGestureRecognizer(tapGestureSparkling)
         
-        let tapGestureWhite = UITapGestureRecognizer(target: self, action: Selector("tapActionWhite"))
-        whiteImage.userInteractionEnabled = true
+        let tapGestureWhite = UITapGestureRecognizer(target: self, action: #selector(WinePairViewController.tapActionWhite))
+        whiteImage.isUserInteractionEnabled = true
         whiteImage.addGestureRecognizer(tapGestureWhite)
         
-        let tapGestureRose = UITapGestureRecognizer(target: self, action: Selector("tapActionRose"))
-        roseImage.userInteractionEnabled = true
+        let tapGestureRose = UITapGestureRecognizer(target: self, action: #selector(WinePairViewController.tapActionRose))
+        roseImage.isUserInteractionEnabled = true
         roseImage.addGestureRecognizer(tapGestureRose)
         
-        let tapGestureRed = UITapGestureRecognizer(target: self, action: Selector("tapActionRed"))
-        redImage.userInteractionEnabled = true
+        let tapGestureRed = UITapGestureRecognizer(target: self, action: #selector(WinePairViewController.tapActionRed))
+        redImage.isUserInteractionEnabled = true
         redImage.addGestureRecognizer(tapGestureRed)
         
-        let tapGestureDessert = UITapGestureRecognizer(target: self, action: Selector("tapActionDessert"))
-        dessertImage.userInteractionEnabled = true
+        let tapGestureDessert = UITapGestureRecognizer(target: self, action: #selector(WinePairViewController.tapActionDessert))
+        dessertImage.isUserInteractionEnabled = true
         dessertImage.addGestureRecognizer(tapGestureDessert)
     }
     

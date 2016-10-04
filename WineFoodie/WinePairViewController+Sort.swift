@@ -13,7 +13,7 @@ import UIKit
 
 extension WinePairViewController {
  
-    @IBAction func sortOrder(sender: UIBarButtonItem) {
+    @IBAction func sortOrder(_ sender: UIBarButtonItem) {
         sortAscending = !sortAscending
         if (sortAscending == true) {
             sortOrder.title = "⇧"
@@ -23,35 +23,35 @@ extension WinePairViewController {
         sort()
     }
     
-    @IBAction func sortAction(sender: UIBarButtonItem) {
+    @IBAction func sortAction(_ sender: UIBarButtonItem) {
         sortOptions()
     }
     
     func sortOptions() {
-        let sortAlert = UIAlertController(title: "Sort by", message: nil, preferredStyle: .ActionSheet)
+        let sortAlert = UIAlertController(title: "Sort by", message: nil, preferredStyle: .actionSheet)
         
-        let price = UIAlertAction(title: "Price", style: .Default) { (UIAlertAction) -> Void in
+        let price = UIAlertAction(title: "Price", style: .default) { (UIAlertAction) -> Void in
             self.sortOption = .Price
             self.sort()
         }
         sortAlert.addAction(price)
         
-        let sugarContent = UIAlertAction(title: "Sugar Content", style: .Default) { (UIAlertAction) -> Void in
+        let sugarContent = UIAlertAction(title: "Sugar Content", style: .default) { (UIAlertAction) -> Void in
             self.sortOption = .Sugar
             self.sort()
         }
         sortAlert.addAction(sugarContent)
         
-        let inventory = UIAlertAction(title: "Number in Stock", style: .Default) { (UIAlertAction) -> Void in
+        let inventory = UIAlertAction(title: "Number in Stock", style: .default) { (UIAlertAction) -> Void in
             self.sortOption = .Inventory
             self.sort()
         }
         sortAlert.addAction(inventory)
         
-        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         sortAlert.addAction(cancel)
         
-        self.presentViewController(sortAlert, animated: true, completion: nil)
+        self.present(sortAlert, animated: true, completion: nil)
     }
     
     //MARK: Sort Actions
@@ -62,32 +62,32 @@ extension WinePairViewController {
         case .Sugar     : sortBySugarContent()
         case .Inventory : sortByInvenoryAvailable()
         }
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.async { () -> Void in
             self.tableView.reloadData()
         }
     }
 
     func sortByPrice() {
         if (sortAscending == true) {
-            wines.sortInPlace({$0.currentPrice > $1.currentPrice})
+            wines.sort(by: {$0.currentPrice > $1.currentPrice})
         } else {
-            wines.sortInPlace({$1.currentPrice > $0.currentPrice})
+            wines.sort(by: {$1.currentPrice > $0.currentPrice})
         }
     }
     
     func sortBySugarContent() {
         if (sortAscending == true) {
-            wines.sortInPlace({$0.sugarInGrams > $1.sugarInGrams})
+            wines.sort(by: {$0.sugarInGrams > $1.sugarInGrams})
         } else {
-            wines.sortInPlace({$1.sugarInGrams > $0.sugarInGrams})
+            wines.sort(by: {$1.sugarInGrams > $0.sugarInGrams})
         }
     }
     
     func sortByInvenoryAvailable() {
         if (sortAscending == true) {
-            wines.sortInPlace({$0.inventoryCount > $1.inventoryCount})
+            wines.sort(by: {$0.inventoryCount > $1.inventoryCount})
         } else {
-            wines.sortInPlace({$1.inventoryCount > $0.inventoryCount})
+            wines.sort(by: {$1.inventoryCount > $0.inventoryCount})
         }
     }
 }

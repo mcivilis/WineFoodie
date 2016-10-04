@@ -13,7 +13,7 @@ extension WinePairViewController {
     func loadWines() {
         dataManager = DataManager()
         dataManager.delegate = self
-        view.bringSubviewToFront(activityIndicatorView)
+        view.bringSubview(toFront: activityIndicatorView)
         activityIndicatorView.startAnimating()
         
         for winePair in winePairs {

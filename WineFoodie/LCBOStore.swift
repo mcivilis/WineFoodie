@@ -10,19 +10,19 @@ import Foundation
 
 extension LCBOStore : JSONParselable {
     
-    static func withJSON(json: [String : AnyObject]) -> LCBOStore? {
+    static func withJSON(_ json: [String : AnyObject]) -> LCBOStore? {
         guard
             let id = int(json, key: "id"),
-            name = string(json, key: "name"),
-            address = string(json, key: "address_line_1"),
-            city = string(json, key: "city"),
-            postalCode = string(json, key: "postal_code"),
-            telephone = string(json, key: "telephone"),
-            latitude = double(json, key: "latitude"),
-            longitude = double(json, key: "longitude"),
-            hasParking = bool(json, key: "has_parking"),
-            distanceInMeters = int(json, key: "distance_in_meters"),
-            quantity = int(json, key: "quantity")
+            let name = string(json, key: "name"),
+            let address = string(json, key: "address_line_1"),
+            let city = string(json, key: "city"),
+            let postalCode = string(json, key: "postal_code"),
+            let telephone = string(json, key: "telephone"),
+            let latitude = double(json, key: "latitude"),
+            let longitude = double(json, key: "longitude"),
+            let hasParking = bool(json, key: "has_parking"),
+            let distanceInMeters = int(json, key: "distance_in_meters"),
+            let quantity = int(json, key: "quantity")
             else {
                 return nil
         }

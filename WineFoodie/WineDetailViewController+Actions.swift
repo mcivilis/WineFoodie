@@ -11,43 +11,43 @@ import UIKit
 
 extension WineDetailViewController {
     
-    @IBAction func doneButton(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true) { () -> Void in
+    @IBAction func doneButton(_ sender: UIBarButtonItem) {
+        dismiss(animated: true) { () -> Void in
             self.initialLocationSet = false
         }
     }
 
-    @IBAction func tapActionZoomImage(sender: UITapGestureRecognizer) {
+    @IBAction func tapActionZoomImage(_ sender: UITapGestureRecognizer) {
         
         img = UIImageView(image: imageView.image)
         img.frame = self.imageView.bounds
         scrollView.addSubview(img)
-        img.contentMode = .ScaleAspectFit
+        img.contentMode = .scaleAspectFit
         img.clipsToBounds = true
         view.addSubview(scrollView)
-        view.bringSubviewToFront(scrollView)
-        scrollView.backgroundColor = .whiteColor()
-        scrollView.userInteractionEnabled = true
+        view.bringSubview(toFront: scrollView)
+        scrollView.backgroundColor = .white()
+        scrollView.isUserInteractionEnabled = true
         
-        UIView.animateWithDuration(0.3) { () -> Void in
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.scrollView.frame = self.view.frame
             self.img.frame = self.view.frame
-        }
+        }) 
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("imageTapped"))
-        img.userInteractionEnabled = true
+        let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(WineDetailViewController.imageTapped))
+        img.isUserInteractionEnabled = true
         img.addGestureRecognizer(tapGestureRecognizer)
     }
     
     func imageTapped() {
         
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
             self.scrollView.frame = self.imageView.frame
             self.img.frame = self.imageView.bounds
-            }) { (Bool) -> Void in
+            }, completion: { (Bool) -> Void in
                 self.imageView.image = self.img.image
-                self.view.bringSubviewToFront(self.imageView)
-        }
+                self.view.bringSubview(toFront: self.imageView)
+        }) 
     }
 
 }

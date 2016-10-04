@@ -15,8 +15,8 @@ extension WinePairViewController {
         wineGroupLabels = [sparklingLabel, whiteLabel, roseLabel, redLabel, dessertLabel]
     }
     
-    func selectCurrentLabel(currentLabel: UILabel) {
-        for label in wineGroupLabels {
+    func selectCurrentLabel(_ currentLabel: UILabel) {
+        for label in wineGroupLabels! {
             label.textColor = kWineFoodieGray
             if (label.isEqual(currentLabel)) {
                 label.textColor = kWineFoodieBurgundy
@@ -24,34 +24,34 @@ extension WinePairViewController {
         }
     }
     
-    func formatWinePrice(price: Int) -> String {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        formatter.locale = NSLocale(localeIdentifier: "en_CA")
-        return formatter.stringFromNumber(price / 100)!
+    func formatWinePrice(_ price: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        formatter.locale = Locale(identifier: "en_CA")
+        return formatter.string(from: price / 100)!
     }
     
-    func downloadImageForCell(urlString: String, indexPath: NSIndexPath) {
-        let url = NSURL(string: urlString)
-        let urlRequest = NSURLRequest(URL: url!)
-        let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(urlRequest) { (data, response, error) -> Void in
+    func downloadImageForCell(_ urlString: String, indexPath: IndexPath) {
+        let url = URL(string: urlString)
+        let urlRequest = URLRequest(url: url!)
+        let dataTask = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) -> Void in
             if error == nil {
                 if let imageData = data {
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                        if let cell = self.tableView.cellForRowAtIndexPath(indexPath) as? WineCell {
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        if let cell = self.tableView.cellForRow(at: indexPath) as? WineCell {
                             if (self.tableView.visibleCells.contains(cell) == true) {
                                 cell.wineImageView.image = UIImage(data: imageData)
-                                cell.wineImageView.contentMode = .ScaleAspectFit
+                                cell.wineImageView.contentMode = .scaleAspectFit
                             }
                         }
                     })
                 }
             }
-        }
+        }) 
         dataTask.resume()
     }
     
-    func wineGroupHasMatch(wineGroup: WineGroup) -> Bool {
+    func wineGroupHasMatch(_ wineGroup: WineGroup) -> Bool {
         var wineGroupHasMatch = false
         for winePair in winePairs {
             if (winePair.group == wineGroup) {
@@ -61,11 +61,11 @@ extension WinePairViewController {
         return wineGroupHasMatch
     }
     
-    func alertNoWinePairsFoundForType(wineGroup: WineGroup) {
-        let alert = UIAlertController(title: "Sorry, no \(wineGroup.rawValue) pairs found.", message: "Please try one of the other wine types.", preferredStyle: .Alert)
-        let ok = UIAlertAction(title: "OK", style: .Default, handler: nil)
+    func alertNoWinePairsFoundForType(_ wineGroup: WineGroup) {
+        let alert = UIAlertController(title: "Sorry, no \(wineGroup.rawValue) pairs found.", message: "Please try one of the other wine types.", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
 }

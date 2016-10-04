@@ -10,10 +10,10 @@ import Foundation
 
 extension DataManager {
     
-    func storeLocations (latitude: Double, longitude: Double, productID: Int, completion: (lcboStoreList: [LCBOStore]) -> Void) {
+    func storeLocations (_ latitude: Double, longitude: Double, productID: Int, completion: @escaping (_ lcboStoreList: [LCBOStore]) -> Void) {
         
         let url = lcboStoresURL(latitude, longitude: longitude, productID: productID)
-        let lcboStoreURL = NSURL(string: url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+        let lcboStoreURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
         
         loadDataFromURL(lcboStoreURL!) { (data, error) -> Void in
             guard error == nil else {
@@ -25,7 +25,7 @@ extension DataManager {
             var json: Payload!
             
             do {
-                json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions()) as? Payload
+                json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? Payload
             } catch {
                 print(error)
                 return

@@ -31,7 +31,7 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet var dessertLabel: UILabel!
     @IBOutlet var sortOrder: UIBarButtonItem!
-    var wineGroupLabels = [UILabel]!()
+    var wineGroupLabels = [UILabel]()
     
     var dataManager = DataManager()
     var winePairs: [WinePair]!
@@ -50,7 +50,7 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
 //MARK: Data Manager Delegate
     
     func didUpdateWineList() {
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+        DispatchQueue.main.async { () -> Void in
             self.activityIndicatorView.stopAnimating()
             self.wines = self.dataManager.wineList
             self.tableView.reloadData()
@@ -59,16 +59,16 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     
 //MARK: Table View Data Source
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return wines.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! WineCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! WineCell
         
         
-        let currentWine = wines[indexPath.row]
+        let currentWine = wines[(indexPath as NSIndexPath).row]
         downloadImageForCell(currentWine.imageThumbURL, indexPath: indexPath)
         
         cell.name.text = currentWine.name
@@ -104,15 +104,15 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     
 //MARK: Segue
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showWineDetail" {
             
-            let navController = segue.destinationViewController as! UINavigationController
+            let navController = segue.destination as! UINavigationController
             let wineDetailViewController = navController.topViewController as! WineDetailViewController
 
             if let indexPath = tableView.indexPathForSelectedRow {
-                let wine = wines[indexPath.row]
+                let wine = wines[(indexPath as NSIndexPath).row]
                 wineDetailViewController.currentWine = wine
             }
         }

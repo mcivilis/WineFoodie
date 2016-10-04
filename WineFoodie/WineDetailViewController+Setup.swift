@@ -14,7 +14,7 @@ extension WineDetailViewController {
     func configureLocation() {
         mapView.delegate = self;
         locationManager.delegate = self;
-        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined) {
+        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined) {
             locationManager.requestWhenInUseAuthorization()
         }
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;

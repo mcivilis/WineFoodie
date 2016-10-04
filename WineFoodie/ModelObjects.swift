@@ -58,7 +58,7 @@ func == (lhs:WinePair, rhs:WinePair) -> Bool {
     return ((lhs.varietal == rhs.varietal) && (lhs.country == rhs.country))
 }
 
-func wineGroup(group: String) -> WineGroup {
+func wineGroup(_ group: String) -> WineGroup {
     
     if group == "red" {
         return .Red

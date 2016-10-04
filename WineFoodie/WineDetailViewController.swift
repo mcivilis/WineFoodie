@@ -45,13 +45,13 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     
 //MARK: CLLocation Manager Delegate
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if (status == CLAuthorizationStatus.AuthorizedWhenInUse) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if (status == CLAuthorizationStatus.authorizedWhenInUse) {
             self.locationManager.startUpdatingLocation()
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (initialLocationSet == false) {
             let userLocation = locationManager.location
             let userRegion = MKCoordinateRegionMake((userLocation?.coordinate)!, MKCoordinateSpanMake(0.04, 0.04))
@@ -63,21 +63,21 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     }
     
 //MARK: MK Map View Delegate
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         view.annotation?.coordinate
     }
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifyer = "Stores"
         if (annotation.isEqual(mapView.userLocation)) {
             return nil;
         }
-        var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifyer)
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: identifyer)
         if (pinView == nil) {
             pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifyer)
         }
         pinView?.canShowCallout = true
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        btn.setBackgroundImage(UIImage(named: "mapIcon"), forState: .Normal)
+        btn.setBackgroundImage(UIImage(named: "mapIcon"), for: UIControlState())
         btn.tintColor = kWineFoodieBurgundy
         pinView!.rightCalloutAccessoryView = btn
         pinView?.image = UIImage(named: "iconLCBO")
@@ -85,16 +85,16 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
      return pinView
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let coordinate = view.annotation?.coordinate
         let placemark = MKPlacemark(coordinate: coordinate!, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = (view.annotation?.title)!
-        MKMapItem.openMapsWithItems([mapItem], launchOptions: nil)
+        MKMapItem.openMaps(with: [mapItem], launchOptions: nil)
     }
 
 
-    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.img
     }    
 
