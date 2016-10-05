@@ -26,16 +26,17 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        WinePairLoader.sharedInstance.load(delegate: self)
     }
     
     //MARK: Wine Pair Loader Delegate
     func didLoadWinePairs(foodCategories: [FoodCategory]) {
-//success
-}
-func didFinishWithError(errorToDisplay: String) {
-//error
-}
+        winePairingModel = foodCategories;
+        self.collectionView.reloadData()
+    }
+    func didFinishWithError(errorToDisplay: String) {
+        //TODO: Handle error
+    }
 
     
     //MARK: Collection View Data Source

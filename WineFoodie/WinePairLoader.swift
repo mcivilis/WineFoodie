@@ -21,9 +21,11 @@ class WinePairLoader {
         return instance
     }()
     
-    var delegate: WinePairLoaderDelegate?
+    var winePairLoaderDelegate: WinePairLoaderDelegate?
 
-    func load() {
+    func load(delegate: WinePairLoaderDelegate) {
+        
+        winePairLoaderDelegate = delegate
         
         let storage = FIRStorage.storage()
         let winePairingModelRef = storage.reference(forURL: "gs://winefoodie-68a08.appspot.com/WinePairingModel/WinePairingModel.json")
@@ -32,9 +34,10 @@ class WinePairLoader {
             if let foodCategoryData = data {
                 self.mapJSON(data: (foodCategoryData as NSData) as Data)
             } else {
-//                if let userInfo = error?.userInfo[NSLocalizedDescriptionKey] {
-//                    self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
-//                }
+                //TODO: handle error
+                //if let userInfo = error?.userInfo[NSLocalizedDescriptionKey] {
+                //    self.winePairLoaderDelegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
+                //}
             }
         }
     }
@@ -52,15 +55,16 @@ class WinePairLoader {
                     if let jsonFoodCategory = category as? [String : AnyObject] {
                         winePairingModel.append(FoodCategory.withJSON(jsonFoodCategory)!)
                         DispatchQueue.main.async {
-                            self.delegate?.didLoadWinePairs(foodCategories: winePairingModel)
+                            self.winePairLoaderDelegate?.didLoadWinePairs(foodCategories: winePairingModel)
                         }
                     }
                 }
             }
         } catch {
-//            if let userInfo = error.userInfo[NSLocalizedDescriptionKey] {
-//                self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
-//            }
+            //TODO: handle error
+            //if let userInfo = error.userInfo[NSLocalizedDescriptionKey] {
+            //    self.winePairLoaderDelegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
+            //}
         }
     }
     
