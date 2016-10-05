@@ -50,7 +50,6 @@
 		C7D811601D56793B00564C72 /* ModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D8115F1D56793B00564C72 /* ModelObjects.swift */; };
 		C7D811661D56894300564C72 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D811651D56894300564C72 /* Food.swift */; };
 		C7D811681D568D2800564C72 /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D811671D568D2800564C72 /* FoodCategory.swift */; };
-		C7D8116A1D56991800564C72 /* winefoodie-68a08-export.json in Resources */ = {isa = PBXBuildFile; fileRef = C7D811691D56991800564C72 /* winefoodie-68a08-export.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,7 +100,6 @@
 		C7D8115F1D56793B00564C72 /* ModelObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObjects.swift; sourceTree = "<group>"; };
 		C7D811651D56894300564C72 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		C7D811671D568D2800564C72 /* FoodCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
-		C7D811691D56991800564C72 /* winefoodie-68a08-export.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "winefoodie-68a08-export.json"; path = "../../../Downloads/winefoodie-68a08-export.json"; sourceTree = "<group>"; };
 		FD2293189D45697B74EDF94C /* Pods-WineFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WineFoodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-WineFoodie/Pods-WineFoodie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				AFD498C61C7BD47F0083B788 /* MainViewController.swift */,
-				C7D811691D56991800564C72 /* winefoodie-68a08-export.json */,
 				AFABCE5A1C7E888400B711F3 /* FoodCell.swift */,
 				AFABCE5C1C7E8B7300B711F3 /* FoodHeader.swift */,
 			);
@@ -344,7 +341,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF805C971C91E00A000BE11D /* iconLCBO.png in Resources */,
-				C7D8116A1D56991800564C72 /* winefoodie-68a08-export.json in Resources */,
 				AFD498CF1C7BD47F0083B788 /* LaunchScreen.storyboard in Resources */,
 				AF805CA51C91E043000BE11D /* sparkling.png in Resources */,
 				AF805CA11C91E043000BE11D /* dessert.jpg in Resources */,
