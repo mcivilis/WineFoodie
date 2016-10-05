@@ -56,7 +56,7 @@ extension DataManager {
                         lcboStoreList.append(lcboStore)
                 }
             }
-            completion(lcboStoreList: lcboStoreList)
+            completion(lcboStoreList)
         }
     }
     

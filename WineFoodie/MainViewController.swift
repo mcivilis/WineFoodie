@@ -30,10 +30,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     //MARK: Wine Pair Loader Delegate
-    func didLoadWinePairs(_ foodCategories: [FoodCategory]) {
+    func didLoadWinePairs(foodCategories: [FoodCategory]) {
 //success
 }
-func didFinishWithError(_ errorToDisplay: String) {
+func didFinishWithError(errorToDisplay: String) {
 //error
 }
 

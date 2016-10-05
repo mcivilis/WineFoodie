@@ -75,7 +75,7 @@ extension DataManager {
                         let lcboWine = LCBOWine(name: lcboName, currentPrice: lcboCurrentPrice, regularPrice: lcboRegularPrice, priceSavings: lcboPriceSavings, primaryCategory: lcboPrimaryCategory, secondaryCategory: lcboSecondaryCategory, origin: lcboOrigin, inventoryCount: lcboInventoryCount, sugarContent: lcboSugarContent, sugarInGrams: lcboSugarInGrams, producerName: lcboProducerName, isSeasonal: lcboIsSeasonal, isVQA: lcboIsVQA, imageThumbURL: lcboImageThumbURL, imageURL: lcboImageURL, varietal: lcboVarietal, style: lcboStyle, code: lcboCode, stockType: lcboStockType, isKosher: lcboIsKosher)
                         wineList.append(lcboWine)
                 }
-             completion(wineListForPair: wineList)
+             completion(wineList)
             }
             
         }

@@ -26,7 +26,7 @@ extension WineDetailViewController {
         img.clipsToBounds = true
         view.addSubview(scrollView)
         view.bringSubview(toFront: scrollView)
-        scrollView.backgroundColor = .white()
+        scrollView.backgroundColor = .white
         scrollView.isUserInteractionEnabled = true
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in

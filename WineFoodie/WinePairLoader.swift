@@ -32,9 +32,9 @@ class WinePairLoader {
             if let foodCategoryData = data {
                 self.mapJSON(data: (foodCategoryData as NSData) as Data)
             } else {
-                if let userInfo = error?.userInfo[NSLocalizedDescriptionKey] {
-                    self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
-                }
+//                if let userInfo = error?.userInfo[NSLocalizedDescriptionKey] {
+//                    self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
+//                }
             }
         }
     }
@@ -58,9 +58,9 @@ class WinePairLoader {
                 }
             }
         } catch {
-            if let userInfo = error.userInfo[NSLocalizedDescriptionKey] {
-                self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
-            }
+//            if let userInfo = error.userInfo[NSLocalizedDescriptionKey] {
+//                self.delegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
+//            }
         }
     }
     

@@ -16,7 +16,7 @@ extension WinePairViewController {
     }
     
     func selectCurrentLabel(_ currentLabel: UILabel) {
-        for label in wineGroupLabels! {
+        for label in wineGroupLabels {
             label.textColor = kWineFoodieGray
             if (label.isEqual(currentLabel)) {
                 label.textColor = kWineFoodieBurgundy
@@ -28,7 +28,11 @@ extension WinePairViewController {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         formatter.locale = Locale(identifier: "en_CA")
-        return formatter.string(from: price / 100)!
+        return formatter.string(from: divide(num1: price, num2: 100))!
+    }
+    
+    func divide(num1: Int, num2: Int) -> NSNumber {
+        return NSNumber.init(value: (Double(num1) / Double(num2)))
     }
     
     func downloadImageForCell(_ urlString: String, indexPath: IndexPath) {
