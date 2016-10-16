@@ -94,8 +94,8 @@
 		AFD498CE1C7BD47F0083B788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFD498D01C7BD47F0083B788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFD498D61C7BD4930083B788 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		C73B8BEE1DB3C5A3004F3D9B /* bottle_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle_ornament.png; sourceTree = "<group>"; };
-		C73B8BEF1DB3C5A3004F3D9B /* wine_glass_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wine_glass_ornament.png; sourceTree = "<group>"; };
+		C73B8BEE1DB3C5A3004F3D9B /* bottle_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament.png; path = Images/bottle_ornament.png; sourceTree = "<group>"; };
+		C73B8BEF1DB3C5A3004F3D9B /* wine_glass_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wine_glass_ornament.png; path = Images/wine_glass_ornament.png; sourceTree = "<group>"; };
 		C75FA0B61D48EB5400B82522 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C79CC4DF1D6550F900EFCBAC /* LCBOStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCBOStore.swift; sourceTree = "<group>"; };
 		C79CC4E31D65558C00EFCBAC /* WinePairLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinePairLoader.swift; sourceTree = "<group>"; };
