@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iYU-0p-6Bw">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iYU-0p-6Bw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -22,8 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-6Z-CY3">
-                                <frame key="frameInset" minY="64" width="320" height="504"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-6Z-CY3">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="eGL-7I-aKS">
                                     <size key="itemSize" width="150" height="62"/>
@@ -72,28 +71,28 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="Lnd-nA-zzm" customClass="FoodHeader" customModule="WineFoodie" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-mC-jfu">
-                                            <frame key="frameInset" width="320" height="63"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-mC-jfu">
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="segment_header.png" translatesAutoresizingMaskIntoConstraints="NO" id="0YE-in-3Rg"/>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-C2-Avo">
-                                                    <frame key="frameInset" minX="43" minY="15" width="269" height="33"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottle_ornament_tight.png" translatesAutoresizingMaskIntoConstraints="NO" id="iCw-KR-hUB">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="iCw-KR-hUB" secondAttribute="height" multiplier="1366:360" id="TXB-gF-dZm"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-C2-Avo">
+                                                    <frame key="frameInset" width="375" height="61"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                     <color key="textColor" red="0.49019607843137253" green="0.17254901960784313" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0YE-in-3Rg" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" id="0UH-5F-Qgw"/>
-                                                <constraint firstAttribute="trailing" secondItem="0YE-in-3Rg" secondAttribute="trailing" id="3pm-jJ-wBl"/>
-                                                <constraint firstItem="0YE-in-3Rg" firstAttribute="leading" secondItem="iTV-mC-jfu" secondAttribute="leading" id="Af1-SC-zPg"/>
-                                                <constraint firstAttribute="bottom" secondItem="0YE-in-3Rg" secondAttribute="bottom" id="GKq-ok-rFx"/>
-                                                <constraint firstItem="SKC-C2-Avo" firstAttribute="trailing" secondItem="iTV-mC-jfu" secondAttribute="trailingMargin" id="OgA-G2-s1b"/>
-                                                <constraint firstItem="SKC-C2-Avo" firstAttribute="leading" secondItem="iTV-mC-jfu" secondAttribute="leadingMargin" constant="35" id="Ogk-6n-Rl2"/>
-                                                <constraint firstItem="SKC-C2-Avo" firstAttribute="centerY" secondItem="iTV-mC-jfu" secondAttribute="centerY" id="Uyi-Kj-m6w"/>
+                                                <constraint firstItem="iCw-KR-hUB" firstAttribute="leading" secondItem="iTV-mC-jfu" secondAttribute="leading" constant="8" id="NeK-WL-fQv"/>
+                                                <constraint firstItem="iCw-KR-hUB" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" id="fu9-YT-8jG"/>
+                                                <constraint firstAttribute="bottom" secondItem="iCw-KR-hUB" secondAttribute="bottom" id="vLo-Dn-sLa"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -128,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfb-CR-DNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="241"/>
+            <point key="canvasLocation" x="-367.19999999999999" y="240.62968515742131"/>
         </scene>
         <!--Wine Pairings-->
         <scene sceneID="USV-qA-FVa">
@@ -150,8 +149,7 @@
                                 <frame key="frameInset" minX="142" minY="265" width="37" height="37"/>
                                 <color key="color" red="0.49019607840000001" green="0.17254901959999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-ey-WOI">
-                                <frame key="frameInset" minX="16" minY="84" width="343" height="83"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-ey-WOI">
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tAb-uy-Utt">
                                         <subviews>
@@ -283,31 +281,31 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Origin" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN3-ez-YTR">
-                                                            <frame key="frameInset" width="124" height="11"/>
+                                                            <frame key="frameInset" width="124" height="12"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Varietal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W3h-m0-xtk">
-                                                            <frame key="frameInset" minY="11" width="124" height="16"/>
+                                                            <frame key="frameInset" minY="12" width="124" height="16"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Style" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6b-it-zEf" userLabel="Style">
-                                                            <frame key="frameInset" minY="27" width="124" height="16"/>
+                                                            <frame key="frameInset" minY="28" width="124" height="16"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Sugar Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdZ-GJ-OcH">
-                                                            <frame key="frameInset" minY="43" width="124" height="16"/>
+                                                            <frame key="frameInset" minY="44" width="124" height="16"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh8-6Y-P6D">
-                                                            <frame key="frameInset" minY="59" width="124" height="16"/>
+                                                            <frame key="frameInset" minY="60" width="124" height="16"/>
                                                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="12"/>
                                                             <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -441,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bu-Vm-qa8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414" y="241"/>
+            <point key="canvasLocation" x="678" y="241"/>
         </scene>
         <!--Stores-->
         <scene sceneID="iAF-8K-hlN">
@@ -558,7 +556,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2333" y="246"/>
+            <point key="canvasLocation" x="2542" y="244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lei-sz-viW">
@@ -576,7 +574,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POP-NM-77k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="431" y="241"/>
+            <point key="canvasLocation" x="-1290" y="245"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X0X-GU-eXp">
@@ -594,14 +592,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJr-QN-G3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1891" y="246"/>
+            <point key="canvasLocation" x="1609" y="241"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bottle_ornament_tight.png" width="1366" height="360"/>
         <image name="dessert.jpg" width="650" height="650"/>
         <image name="red.png" width="400" height="400"/>
         <image name="rose.jpg" width="256" height="469"/>
-        <image name="segment_header.png" width="1200" height="500"/>
         <image name="sparkling.png" width="400" height="400"/>
         <image name="white.png" width="400" height="400"/>
         <image name="wine_glass_bubbles_half_full.png" width="229" height="533"/>

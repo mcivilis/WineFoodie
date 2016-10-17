@@ -45,6 +45,8 @@
 		C73B8BF01DB3C5A3004F3D9B /* bottle_ornament.png in Resources */ = {isa = PBXBuildFile; fileRef = C73B8BEE1DB3C5A3004F3D9B /* bottle_ornament.png */; };
 		C73B8BF11DB3C5A3004F3D9B /* wine_glass_ornament.png in Resources */ = {isa = PBXBuildFile; fileRef = C73B8BEF1DB3C5A3004F3D9B /* wine_glass_ornament.png */; };
 		C75FA0B71D48EB5400B82522 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C75FA0B61D48EB5400B82522 /* GoogleService-Info.plist */; };
+		C765BBDB1DB4568C004FA58C /* bottle_ornament_tight.png in Resources */ = {isa = PBXBuildFile; fileRef = C765BBD91DB4568C004FA58C /* bottle_ornament_tight.png */; };
+		C765BBDC1DB4568C004FA58C /* wine_glass_ornament_tight.png in Resources */ = {isa = PBXBuildFile; fileRef = C765BBDA1DB4568C004FA58C /* wine_glass_ornament_tight.png */; };
 		C79CC4E01D6550F900EFCBAC /* LCBOStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79CC4DF1D6550F900EFCBAC /* LCBOStore.swift */; };
 		C79CC4E41D65558C00EFCBAC /* WinePairLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79CC4E31D65558C00EFCBAC /* WinePairLoader.swift */; };
 		C79CC4EA1D655B5200EFCBAC /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79CC4E91D655B5200EFCBAC /* UIViewController+Alerts.swift */; };
@@ -97,6 +99,8 @@
 		C73B8BEE1DB3C5A3004F3D9B /* bottle_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament.png; path = Images/bottle_ornament.png; sourceTree = "<group>"; };
 		C73B8BEF1DB3C5A3004F3D9B /* wine_glass_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wine_glass_ornament.png; path = Images/wine_glass_ornament.png; sourceTree = "<group>"; };
 		C75FA0B61D48EB5400B82522 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C765BBD91DB4568C004FA58C /* bottle_ornament_tight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottle_ornament_tight.png; sourceTree = "<group>"; };
+		C765BBDA1DB4568C004FA58C /* wine_glass_ornament_tight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wine_glass_ornament_tight.png; sourceTree = "<group>"; };
 		C79CC4DF1D6550F900EFCBAC /* LCBOStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCBOStore.swift; sourceTree = "<group>"; };
 		C79CC4E31D65558C00EFCBAC /* WinePairLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinePairLoader.swift; sourceTree = "<group>"; };
 		C79CC4E91D655B5200EFCBAC /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 			children = (
 				AF805C981C91E043000BE11D /* cell_background.png */,
 				C73B8BEE1DB3C5A3004F3D9B /* bottle_ornament.png */,
+				C765BBD91DB4568C004FA58C /* bottle_ornament_tight.png */,
+				C765BBDA1DB4568C004FA58C /* wine_glass_ornament_tight.png */,
 				C73B8BEF1DB3C5A3004F3D9B /* wine_glass_ornament.png */,
 				AF805C991C91E043000BE11D /* dessert.jpg */,
 				AF805C9A1C91E043000BE11D /* red.png */,
@@ -350,6 +356,8 @@
 				AFD498CF1C7BD47F0083B788 /* LaunchScreen.storyboard in Resources */,
 				AF805CA51C91E043000BE11D /* sparkling.png in Resources */,
 				AF805CA11C91E043000BE11D /* dessert.jpg in Resources */,
+				C765BBDC1DB4568C004FA58C /* wine_glass_ornament_tight.png in Resources */,
+				C765BBDB1DB4568C004FA58C /* bottle_ornament_tight.png in Resources */,
 				AF805C951C91DFF5000BE11D /* mapIcon.png in Resources */,
 				AF805CA61C91E043000BE11D /* white.png in Resources */,
 				C73B8BF01DB3C5A3004F3D9B /* bottle_ornament.png in Resources */,
