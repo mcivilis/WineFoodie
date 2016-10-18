@@ -35,7 +35,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.reloadData()
     }
     func didFinishWithError(errorToDisplay: String) {
-        //TODO: Handle error
+        let alert = UIAlertController(title: "Could not load wine pairs...", message: "errorToDisplay", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     
