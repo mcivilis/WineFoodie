@@ -60,13 +60,13 @@ class WinePairLoader {
                     }
                 }
             }
-        } catch {
-            //TODO: handle error
-            //if let userInfo = error.userInfo[NSLocalizedDescriptionKey] {
-            //    self.winePairLoaderDelegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
-            //}
+            let error = NSError()
+            throw error
+        } catch let error as NSError {
+            if let errorDescription = error.userInfo[NSLocalizedDescriptionKey] {
+                self.winePairLoaderDelegate?.didFinishWithError(errorToDisplay: errorDescription as! String)
+            }
         }
     }
-    
 }
 
