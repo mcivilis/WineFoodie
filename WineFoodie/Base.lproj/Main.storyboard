@@ -44,7 +44,7 @@
                                                     <color key="textColor" red="0.33725490196078434" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wine_glass_bubbles_half_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-gE-ReL">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wineglass_ornament.png" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-gE-ReL">
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="txJ-gE-ReL" secondAttribute="height" multiplier="19:40" id="XI3-cz-IaL"/>
                                                     </constraints>
@@ -76,23 +76,38 @@
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTV-mC-jfu">
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottle_ornament_tight.png" translatesAutoresizingMaskIntoConstraints="NO" id="iCw-KR-hUB">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="iCw-KR-hUB" secondAttribute="height" multiplier="1366:360" id="TXB-gF-dZm"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-C2-Avo">
-                                                    <frame key="frameInset" width="375" height="61"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKC-C2-Avo">
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                                     <color key="textColor" red="0.49019607843137253" green="0.17254901960784313" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottle_ornament_left.png" translatesAutoresizingMaskIntoConstraints="NO" id="W1f-Hb-sPL">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="W1f-Hb-sPL" secondAttribute="height" multiplier="146:360" id="1cE-5v-dQS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottle_ornament_mid.png" translatesAutoresizingMaskIntoConstraints="NO" id="d0e-KA-CRe"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottle_ornament_right.png" translatesAutoresizingMaskIntoConstraints="NO" id="BgO-VD-vY5">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="BgO-VD-vY5" secondAttribute="height" multiplier="658:360" id="o6E-HY-8sE"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="iCw-KR-hUB" firstAttribute="leading" secondItem="iTV-mC-jfu" secondAttribute="leading" constant="8" id="NeK-WL-fQv"/>
-                                                <constraint firstItem="iCw-KR-hUB" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" id="fu9-YT-8jG"/>
-                                                <constraint firstAttribute="bottom" secondItem="iCw-KR-hUB" secondAttribute="bottom" id="vLo-Dn-sLa"/>
+                                                <constraint firstItem="SKC-C2-Avo" firstAttribute="leading" secondItem="d0e-KA-CRe" secondAttribute="leading" id="0vt-vr-i0P"/>
+                                                <constraint firstItem="W1f-Hb-sPL" firstAttribute="leading" secondItem="iTV-mC-jfu" secondAttribute="leading" constant="8" id="3IV-mu-cdZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="BgO-VD-vY5" secondAttribute="trailing" constant="8" id="Bcs-HM-MJ0"/>
+                                                <constraint firstItem="BgO-VD-vY5" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" constant="12" id="EJA-Rx-oMm"/>
+                                                <constraint firstItem="SKC-C2-Avo" firstAttribute="trailing" secondItem="d0e-KA-CRe" secondAttribute="trailing" id="ISy-zb-3zt"/>
+                                                <constraint firstItem="BgO-VD-vY5" firstAttribute="leading" secondItem="d0e-KA-CRe" secondAttribute="trailing" id="KMy-p7-Dbk"/>
+                                                <constraint firstAttribute="bottom" secondItem="SKC-C2-Avo" secondAttribute="bottom" id="Rar-JL-Mzz"/>
+                                                <constraint firstAttribute="bottom" secondItem="W1f-Hb-sPL" secondAttribute="bottom" id="TG7-lL-i2A"/>
+                                                <constraint firstAttribute="bottom" secondItem="BgO-VD-vY5" secondAttribute="bottom" id="TYa-tq-tNw"/>
+                                                <constraint firstItem="W1f-Hb-sPL" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" constant="12" id="Z3S-5n-HFG"/>
+                                                <constraint firstAttribute="bottom" secondItem="d0e-KA-CRe" secondAttribute="bottom" id="bdG-hn-CgG"/>
+                                                <constraint firstItem="d0e-KA-CRe" firstAttribute="leading" secondItem="W1f-Hb-sPL" secondAttribute="trailing" id="ff9-Ai-Ks3"/>
+                                                <constraint firstItem="d0e-KA-CRe" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" constant="12" id="l3c-KT-A3F"/>
+                                                <constraint firstItem="SKC-C2-Avo" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" constant="12" id="qmA-sh-ZAV"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -596,12 +611,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bottle_ornament_tight.png" width="1366" height="360"/>
+        <image name="bottle_ornament_left.png" width="146" height="360"/>
+        <image name="bottle_ornament_mid.png" width="562" height="360"/>
+        <image name="bottle_ornament_right.png" width="658" height="360"/>
         <image name="dessert.jpg" width="650" height="650"/>
         <image name="red.png" width="400" height="400"/>
         <image name="rose.jpg" width="256" height="469"/>
         <image name="sparkling.png" width="400" height="400"/>
         <image name="white.png" width="400" height="400"/>
-        <image name="wine_glass_bubbles_half_full.png" width="229" height="533"/>
+        <image name="wineglass_ornament.png" width="530" height="1160"/>
     </resources>
 </document>
