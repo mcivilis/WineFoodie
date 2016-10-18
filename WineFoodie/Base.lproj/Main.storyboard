@@ -38,7 +38,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="62"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-Rn-0ty"/>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGs-Rn-0ty">
+                                                    <frame key="frameInset" width="150" height="62"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Oni-97-lwH">
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                     <color key="textColor" red="0.33725490196078434" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,23 +49,19 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wineglass_ornament.png" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-gE-ReL">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="txJ-gE-ReL" secondAttribute="height" multiplier="19:40" id="XI3-cz-IaL"/>
+                                                        <constraint firstAttribute="width" secondItem="txJ-gE-ReL" secondAttribute="height" multiplier="530:1160" id="2OK-C2-3kd"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Oni-97-lwH" firstAttribute="leading" secondItem="txJ-gE-ReL" secondAttribute="trailing" constant="10" id="1ON-Rc-plF"/>
-                                            <constraint firstAttribute="bottom" secondItem="RGs-Rn-0ty" secondAttribute="bottom" id="37O-uq-ZcJ"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="Oni-97-lwH" secondAttribute="trailing" id="5eR-YL-bOr"/>
-                                            <constraint firstItem="RGs-Rn-0ty" firstAttribute="leading" secondItem="KU4-Bj-Qzl" secondAttribute="leading" id="5kj-lX-3NB"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="Oni-97-lwH" secondAttribute="bottom" id="7h4-bI-DRp"/>
-                                            <constraint firstItem="txJ-gE-ReL" firstAttribute="leading" secondItem="KU4-Bj-Qzl" secondAttribute="leadingMargin" id="8nK-7q-Sqw"/>
-                                            <constraint firstItem="RGs-Rn-0ty" firstAttribute="top" secondItem="KU4-Bj-Qzl" secondAttribute="top" id="9Pn-lP-EJm"/>
-                                            <constraint firstItem="Oni-97-lwH" firstAttribute="top" secondItem="KU4-Bj-Qzl" secondAttribute="topMargin" id="Ejc-sb-uce"/>
-                                            <constraint firstItem="txJ-gE-ReL" firstAttribute="top" secondItem="KU4-Bj-Qzl" secondAttribute="topMargin" id="R0o-Jr-nIa"/>
-                                            <constraint firstAttribute="trailing" secondItem="RGs-Rn-0ty" secondAttribute="trailing" id="fJv-W9-tOT"/>
-                                            <constraint firstItem="txJ-gE-ReL" firstAttribute="height" secondItem="Oni-97-lwH" secondAttribute="height" multiplier="0.9" id="l1Q-K5-TpE"/>
+                                            <constraint firstItem="txJ-gE-ReL" firstAttribute="leading" secondItem="KU4-Bj-Qzl" secondAttribute="leading" constant="12" id="F19-NG-jFA"/>
+                                            <constraint firstItem="Oni-97-lwH" firstAttribute="top" secondItem="KU4-Bj-Qzl" secondAttribute="top" id="Lb3-Kc-jS5"/>
+                                            <constraint firstItem="txJ-gE-ReL" firstAttribute="top" secondItem="KU4-Bj-Qzl" secondAttribute="top" constant="8" id="Lil-Ra-vsT"/>
+                                            <constraint firstAttribute="bottom" secondItem="Oni-97-lwH" secondAttribute="bottom" id="RTt-D1-ajo"/>
+                                            <constraint firstAttribute="trailing" secondItem="Oni-97-lwH" secondAttribute="trailing" constant="12" id="S86-Kk-Xc9"/>
+                                            <constraint firstAttribute="bottom" secondItem="txJ-gE-ReL" secondAttribute="bottom" constant="8" id="WGT-0O-rhk"/>
+                                            <constraint firstItem="Oni-97-lwH" firstAttribute="leading" secondItem="txJ-gE-ReL" secondAttribute="trailing" constant="16" id="dJY-Ar-xLO"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="foodLabel" destination="Oni-97-lwH" id="xia-k6-Wmb"/>
@@ -95,8 +94,8 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="SKC-C2-Avo" firstAttribute="leading" secondItem="d0e-KA-CRe" secondAttribute="leading" id="0vt-vr-i0P"/>
-                                                <constraint firstItem="W1f-Hb-sPL" firstAttribute="leading" secondItem="iTV-mC-jfu" secondAttribute="leading" constant="8" id="3IV-mu-cdZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="BgO-VD-vY5" secondAttribute="trailing" constant="8" id="Bcs-HM-MJ0"/>
+                                                <constraint firstItem="W1f-Hb-sPL" firstAttribute="leading" secondItem="iTV-mC-jfu" secondAttribute="leading" constant="12" id="3IV-mu-cdZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="BgO-VD-vY5" secondAttribute="trailing" constant="12" id="Bcs-HM-MJ0"/>
                                                 <constraint firstItem="BgO-VD-vY5" firstAttribute="top" secondItem="iTV-mC-jfu" secondAttribute="top" constant="12" id="EJA-Rx-oMm"/>
                                                 <constraint firstItem="SKC-C2-Avo" firstAttribute="trailing" secondItem="d0e-KA-CRe" secondAttribute="trailing" id="ISy-zb-3zt"/>
                                                 <constraint firstItem="BgO-VD-vY5" firstAttribute="leading" secondItem="d0e-KA-CRe" secondAttribute="trailing" id="KMy-p7-Dbk"/>
@@ -589,7 +588,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POP-NM-77k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1290" y="245"/>
+            <point key="canvasLocation" x="-1284" y="241"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="X0X-GU-eXp">
