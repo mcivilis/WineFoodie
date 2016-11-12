@@ -35,6 +35,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     var img: UIImageView!
     var scrollView: UIScrollView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLocation()

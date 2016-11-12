@@ -40,6 +40,7 @@
 		AFD498CF1C7BD47F0083B788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD498CD1C7BD47F0083B788 /* LaunchScreen.storyboard */; };
 		AFD498D71C7BD4930083B788 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498D61C7BD4930083B788 /* DataManager.swift */; };
 		C71730021DD776C1007CCB60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C71730011DD776C1007CCB60 /* GoogleService-Info.plist */; };
+		C71730041DD78316007CCB60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71730031DD78316007CCB60 /* Constants.swift */; };
 		C74218FA1DB5ABD4009277A8 /* wineglass_ornament.png in Resources */ = {isa = PBXBuildFile; fileRef = C74218F91DB5ABD4009277A8 /* wineglass_ornament.png */; };
 		C74219041DB5AE91009277A8 /* bottle_ornament_left.png in Resources */ = {isa = PBXBuildFile; fileRef = C74219011DB5AE91009277A8 /* bottle_ornament_left.png */; };
 		C74219051DB5AE91009277A8 /* bottle_ornament_mid.png in Resources */ = {isa = PBXBuildFile; fileRef = C74219021DB5AE91009277A8 /* bottle_ornament_mid.png */; };
@@ -91,6 +92,7 @@
 		AFD498D01C7BD47F0083B788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFD498D61C7BD4930083B788 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C71730011DD776C1007CCB60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C71730031DD78316007CCB60 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C74218F91DB5ABD4009277A8 /* wineglass_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wineglass_ornament.png; path = Images/wineglass_ornament.png; sourceTree = "<group>"; };
 		C74219011DB5AE91009277A8 /* bottle_ornament_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament_left.png; path = Images/bottle_ornament_left.png; sourceTree = "<group>"; };
 		C74219021DB5AE91009277A8 /* bottle_ornament_mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament_mid.png; path = Images/bottle_ornament_mid.png; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				AFD498C41C7BD47F0083B788 /* AppDelegate.swift */,
+				C71730031DD78316007CCB60 /* Constants.swift */,
 				AFABCE591C7E83D500B711F3 /* View Controllers */,
 				AFABCE621C7F469500B711F3 /* Model */,
 				C79CC4E21D65556F00EFCBAC /* WinePairingModel */,
@@ -427,6 +430,7 @@
 				AFABCE5D1C7E8B7300B711F3 /* FoodHeader.swift in Sources */,
 				AF6C477E1C8F1DDE0007C4DD /* WinePairViewController+Helpers.swift in Sources */,
 				AF2E64221C83620F00079BA2 /* WinePairViewController+Setup.swift in Sources */,
+				C71730041DD78316007CCB60 /* Constants.swift in Sources */,
 				AF6C47781C8F151C0007C4DD /* WinePair.swift in Sources */,
 				C79CC4E01D6550F900EFCBAC /* LCBOStore.swift in Sources */,
 				AF9C07ED1C863AE200324FA5 /* WineDetailViewController+Helpers.swift in Sources */,
