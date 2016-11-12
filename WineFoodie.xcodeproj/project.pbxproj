@@ -39,11 +39,11 @@
 		AFD498CC1C7BD47F0083B788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD498CB1C7BD47F0083B788 /* Assets.xcassets */; };
 		AFD498CF1C7BD47F0083B788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD498CD1C7BD47F0083B788 /* LaunchScreen.storyboard */; };
 		AFD498D71C7BD4930083B788 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498D61C7BD4930083B788 /* DataManager.swift */; };
+		C71730021DD776C1007CCB60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C71730011DD776C1007CCB60 /* GoogleService-Info.plist */; };
 		C74218FA1DB5ABD4009277A8 /* wineglass_ornament.png in Resources */ = {isa = PBXBuildFile; fileRef = C74218F91DB5ABD4009277A8 /* wineglass_ornament.png */; };
 		C74219041DB5AE91009277A8 /* bottle_ornament_left.png in Resources */ = {isa = PBXBuildFile; fileRef = C74219011DB5AE91009277A8 /* bottle_ornament_left.png */; };
 		C74219051DB5AE91009277A8 /* bottle_ornament_mid.png in Resources */ = {isa = PBXBuildFile; fileRef = C74219021DB5AE91009277A8 /* bottle_ornament_mid.png */; };
 		C74219061DB5AE91009277A8 /* bottle_ornament_right.png in Resources */ = {isa = PBXBuildFile; fileRef = C74219031DB5AE91009277A8 /* bottle_ornament_right.png */; };
-		C75FA0B71D48EB5400B82522 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C75FA0B61D48EB5400B82522 /* GoogleService-Info.plist */; };
 		C79CC4E01D6550F900EFCBAC /* LCBOStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79CC4DF1D6550F900EFCBAC /* LCBOStore.swift */; };
 		C79CC4E41D65558C00EFCBAC /* WinePairLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79CC4E31D65558C00EFCBAC /* WinePairLoader.swift */; };
 		C79CC4EA1D655B5200EFCBAC /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79CC4E91D655B5200EFCBAC /* UIViewController+Alerts.swift */; };
@@ -90,11 +90,11 @@
 		AFD498CE1C7BD47F0083B788 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFD498D01C7BD47F0083B788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFD498D61C7BD4930083B788 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		C71730011DD776C1007CCB60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C74218F91DB5ABD4009277A8 /* wineglass_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wineglass_ornament.png; path = Images/wineglass_ornament.png; sourceTree = "<group>"; };
 		C74219011DB5AE91009277A8 /* bottle_ornament_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament_left.png; path = Images/bottle_ornament_left.png; sourceTree = "<group>"; };
 		C74219021DB5AE91009277A8 /* bottle_ornament_mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament_mid.png; path = Images/bottle_ornament_mid.png; sourceTree = "<group>"; };
 		C74219031DB5AE91009277A8 /* bottle_ornament_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament_right.png; path = Images/bottle_ornament_right.png; sourceTree = "<group>"; };
-		C75FA0B61D48EB5400B82522 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C79CC4DF1D6550F900EFCBAC /* LCBOStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCBOStore.swift; sourceTree = "<group>"; };
 		C79CC4E31D65558C00EFCBAC /* WinePairLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinePairLoader.swift; sourceTree = "<group>"; };
 		C79CC4E91D655B5200EFCBAC /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 				AF3C4AE41C7F98A4003A5F5F /* images */,
 				AFD498CD1C7BD47F0083B788 /* LaunchScreen.storyboard */,
 				AFD498D01C7BD47F0083B788 /* Info.plist */,
-				C75FA0B61D48EB5400B82522 /* GoogleService-Info.plist */,
+				C71730011DD776C1007CCB60 /* GoogleService-Info.plist */,
 			);
 			path = WineFoodie;
 			sourceTree = "<group>";
@@ -345,6 +345,7 @@
 			files = (
 				C74219051DB5AE91009277A8 /* bottle_ornament_mid.png in Resources */,
 				C74219061DB5AE91009277A8 /* bottle_ornament_right.png in Resources */,
+				C71730021DD776C1007CCB60 /* GoogleService-Info.plist in Resources */,
 				AF805C971C91E00A000BE11D /* iconLCBO.png in Resources */,
 				AFD498CF1C7BD47F0083B788 /* LaunchScreen.storyboard in Resources */,
 				AF805CA51C91E043000BE11D /* sparkling.png in Resources */,
@@ -357,7 +358,6 @@
 				AF805CA21C91E043000BE11D /* red.png in Resources */,
 				C74219041DB5AE91009277A8 /* bottle_ornament_left.png in Resources */,
 				AFD498CA1C7BD47F0083B788 /* Main.storyboard in Resources */,
-				C75FA0B71D48EB5400B82522 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
