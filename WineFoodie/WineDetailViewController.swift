@@ -63,9 +63,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
     }
     
 //MARK: MK Map View Delegate
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        view.annotation?.coordinate
-    }
+   
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifyer = "Stores"
         if (annotation.isEqual(mapView.userLocation)) {

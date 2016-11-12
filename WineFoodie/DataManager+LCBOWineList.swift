@@ -32,8 +32,9 @@ extension DataManager {
         let url = lcboWinesURL(winePair)
         let lcboProductURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
         loadDataFromURL(lcboProductURL!) { (data, error) -> Void in
-            guard error == nil else {
-                print(error)
+            
+            if let isError = error {
+                print(isError)
                 return
             }
             typealias Payload = [String: AnyObject]

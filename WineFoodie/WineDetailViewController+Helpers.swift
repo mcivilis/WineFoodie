@@ -15,8 +15,9 @@ extension WineDetailViewController {
     func getPostalCodeForLocation(_ location: CLLocation) {
         
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error)->Void in
-            if (error != nil) {
-                print(error)
+            
+            if let isError = error {
+                print(isError)
                 return
             } else {
                 let placemark = placemarks![0] as CLPlacemark

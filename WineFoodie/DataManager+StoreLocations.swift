@@ -16,8 +16,9 @@ extension DataManager {
         let lcboStoreURL = URL(string: url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
         
         loadDataFromURL(lcboStoreURL!) { (data, error) -> Void in
-            guard error == nil else {
-                print(error)
+            
+            if let isError = error {
+                print(isError)
                 return
             }
             
