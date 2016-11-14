@@ -10,9 +10,6 @@ import Foundation
 import UIKit
 import MapKit
 
-let kWineFoodieBurgundy = UIColor(red: 125/255, green: 44/255, blue: 95/255, alpha: 1.0)
-let kWineFoodieGray = UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 1.0)
-
 class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIScrollViewDelegate {
     
     @IBOutlet var imageView: UIImageView!
@@ -77,7 +74,7 @@ class WineDetailViewController : UIViewController, CLLocationManagerDelegate, MK
         pinView?.canShowCallout = true
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         btn.setBackgroundImage(UIImage(named: "mapIcon"), for: UIControlState())
-        btn.tintColor = kWineFoodieBurgundy
+        btn.tintColor = kWineFoodie.colors.burgundy
         pinView!.rightCalloutAccessoryView = btn
         pinView?.image = UIImage(named: "iconLCBO")
         

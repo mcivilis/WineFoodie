@@ -17,9 +17,9 @@ extension WinePairViewController {
     
     func selectCurrentLabel(_ currentLabel: UILabel) {
         for label in wineGroupLabels {
-            label.textColor = kWineFoodieGray
+            label.textColor = kWineFoodie.colors.gray
             if (label.isEqual(currentLabel)) {
-                label.textColor = kWineFoodieBurgundy
+                label.textColor = kWineFoodie.colors.burgundy
             }
         }
     }

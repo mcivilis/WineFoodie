@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WineFoodie/MainViewController.swift"
-            timestampString = "500666420.325308"
+            timestampString = "500775832.949415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178">
+            startingLineNumber = "121"
+            endingLineNumber = "121">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,7 +30,7 @@
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "lcboStoresURL(_:longitude:productID:)"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,16 +84,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WineFoodie/MainViewController.swift"
-            timestampString = "500665486.470153"
+            filePath = "WineFoodie/DataManager+LCBOWineList.swift"
+            timestampString = "500774957.267739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "currentPostalCodeReceivedNotifcation(notification:)"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "wines(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

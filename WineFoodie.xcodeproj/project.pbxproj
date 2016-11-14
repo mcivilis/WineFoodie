@@ -41,6 +41,11 @@
 		AFD498D71C7BD4930083B788 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD498D61C7BD4930083B788 /* DataManager.swift */; };
 		C71730021DD776C1007CCB60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C71730011DD776C1007CCB60 /* GoogleService-Info.plist */; };
 		C71730041DD78316007CCB60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71730031DD78316007CCB60 /* Constants.swift */; };
+		C717301E1DD93530007CCB60 /* white_bw.png in Resources */ = {isa = PBXBuildFile; fileRef = C71730191DD93530007CCB60 /* white_bw.png */; };
+		C717301F1DD93530007CCB60 /* sparkling_bw.png in Resources */ = {isa = PBXBuildFile; fileRef = C717301A1DD93530007CCB60 /* sparkling_bw.png */; };
+		C71730201DD93530007CCB60 /* red_bw.png in Resources */ = {isa = PBXBuildFile; fileRef = C717301B1DD93530007CCB60 /* red_bw.png */; };
+		C71730211DD93530007CCB60 /* dessert_bw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C717301C1DD93530007CCB60 /* dessert_bw.jpg */; };
+		C71730221DD93530007CCB60 /* rose_bw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C717301D1DD93530007CCB60 /* rose_bw.jpg */; };
 		C74218FA1DB5ABD4009277A8 /* wineglass_ornament.png in Resources */ = {isa = PBXBuildFile; fileRef = C74218F91DB5ABD4009277A8 /* wineglass_ornament.png */; };
 		C74219041DB5AE91009277A8 /* bottle_ornament_left.png in Resources */ = {isa = PBXBuildFile; fileRef = C74219011DB5AE91009277A8 /* bottle_ornament_left.png */; };
 		C74219051DB5AE91009277A8 /* bottle_ornament_mid.png in Resources */ = {isa = PBXBuildFile; fileRef = C74219021DB5AE91009277A8 /* bottle_ornament_mid.png */; };
@@ -77,7 +82,6 @@
 		AF9C07E11C84FBD600324FA5 /* WineDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WineDetailViewController.swift; sourceTree = "<group>"; };
 		AF9C07E31C8505B600324FA5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF9C07E91C8613BA00324FA5 /* DataManager+StoreLocations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataManager+StoreLocations.swift"; sourceTree = "<group>"; };
-		AF9C07EB1C8632FD00324FA5 /* Toronto.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Toronto.gpx; sourceTree = "<group>"; };
 		AF9C07EC1C863AE200324FA5 /* WineDetailViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WineDetailViewController+Helpers.swift"; sourceTree = "<group>"; };
 		AF9C07F01C863B8300324FA5 /* WineDetailViewController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WineDetailViewController+Setup.swift"; sourceTree = "<group>"; };
 		AF9C07F21C863D4A00324FA5 /* WineDetailViewController+Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WineDetailViewController+Actions.swift"; sourceTree = "<group>"; };
@@ -93,6 +97,11 @@
 		AFD498D61C7BD4930083B788 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		C71730011DD776C1007CCB60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C71730031DD78316007CCB60 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C71730191DD93530007CCB60 /* white_bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_bw.png; path = Images/white_bw.png; sourceTree = "<group>"; };
+		C717301A1DD93530007CCB60 /* sparkling_bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sparkling_bw.png; path = Images/sparkling_bw.png; sourceTree = "<group>"; };
+		C717301B1DD93530007CCB60 /* red_bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_bw.png; path = Images/red_bw.png; sourceTree = "<group>"; };
+		C717301C1DD93530007CCB60 /* dessert_bw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dessert_bw.jpg; path = Images/dessert_bw.jpg; sourceTree = "<group>"; };
+		C717301D1DD93530007CCB60 /* rose_bw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rose_bw.jpg; path = Images/rose_bw.jpg; sourceTree = "<group>"; };
 		C74218F91DB5ABD4009277A8 /* wineglass_ornament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wineglass_ornament.png; path = Images/wineglass_ornament.png; sourceTree = "<group>"; };
 		C74219011DB5AE91009277A8 /* bottle_ornament_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament_left.png; path = Images/bottle_ornament_left.png; sourceTree = "<group>"; };
 		C74219021DB5AE91009277A8 /* bottle_ornament_mid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bottle_ornament_mid.png; path = Images/bottle_ornament_mid.png; sourceTree = "<group>"; };
@@ -137,15 +146,20 @@
 		AF3C4AE41C7F98A4003A5F5F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AF805C9E1C91E043000BE11D /* white.png */,
+				C71730191DD93530007CCB60 /* white_bw.png */,
+				AF805C9D1C91E043000BE11D /* sparkling.png */,
+				C717301A1DD93530007CCB60 /* sparkling_bw.png */,
+				AF805C9A1C91E043000BE11D /* red.png */,
+				C717301B1DD93530007CCB60 /* red_bw.png */,
+				AF805C991C91E043000BE11D /* dessert.jpg */,
+				C717301C1DD93530007CCB60 /* dessert_bw.jpg */,
+				AF805C9B1C91E043000BE11D /* rose.jpg */,
+				C717301D1DD93530007CCB60 /* rose_bw.jpg */,
 				C74218F91DB5ABD4009277A8 /* wineglass_ornament.png */,
 				C74219011DB5AE91009277A8 /* bottle_ornament_left.png */,
 				C74219021DB5AE91009277A8 /* bottle_ornament_mid.png */,
 				C74219031DB5AE91009277A8 /* bottle_ornament_right.png */,
-				AF805C991C91E043000BE11D /* dessert.jpg */,
-				AF805C9A1C91E043000BE11D /* red.png */,
-				AF805C9B1C91E043000BE11D /* rose.jpg */,
-				AF805C9D1C91E043000BE11D /* sparkling.png */,
-				AF805C9E1C91E043000BE11D /* white.png */,
 				AF805C941C91DFF5000BE11D /* mapIcon.png */,
 				AF805C961C91E00A000BE11D /* iconLCBO.png */,
 			);
@@ -210,7 +224,6 @@
 		AFD498B81C7BD47F0083B788 = {
 			isa = PBXGroup;
 			children = (
-				AF9C07EB1C8632FD00324FA5 /* Toronto.gpx */,
 				AF9C07E31C8505B600324FA5 /* MapKit.framework */,
 				AFD498C31C7BD47F0083B788 /* WineFoodie */,
 				AFD498C21C7BD47F0083B788 /* Products */,
@@ -348,19 +361,24 @@
 			files = (
 				C74219051DB5AE91009277A8 /* bottle_ornament_mid.png in Resources */,
 				C74219061DB5AE91009277A8 /* bottle_ornament_right.png in Resources */,
+				C71730201DD93530007CCB60 /* red_bw.png in Resources */,
 				C71730021DD776C1007CCB60 /* GoogleService-Info.plist in Resources */,
 				AF805C971C91E00A000BE11D /* iconLCBO.png in Resources */,
 				AFD498CF1C7BD47F0083B788 /* LaunchScreen.storyboard in Resources */,
 				AF805CA51C91E043000BE11D /* sparkling.png in Resources */,
 				AF805CA11C91E043000BE11D /* dessert.jpg in Resources */,
+				C717301F1DD93530007CCB60 /* sparkling_bw.png in Resources */,
 				C74218FA1DB5ABD4009277A8 /* wineglass_ornament.png in Resources */,
+				C717301E1DD93530007CCB60 /* white_bw.png in Resources */,
 				AF805C951C91DFF5000BE11D /* mapIcon.png in Resources */,
 				AF805CA61C91E043000BE11D /* white.png in Resources */,
+				C71730211DD93530007CCB60 /* dessert_bw.jpg in Resources */,
 				AF805CA31C91E043000BE11D /* rose.jpg in Resources */,
 				AFD498CC1C7BD47F0083B788 /* Assets.xcassets in Resources */,
 				AF805CA21C91E043000BE11D /* red.png in Resources */,
 				C74219041DB5AE91009277A8 /* bottle_ornament_left.png in Resources */,
 				AFD498CA1C7BD47F0083B788 /* Main.storyboard in Resources */,
+				C71730221DD93530007CCB60 /* rose_bw.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
