@@ -38,6 +38,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let alert = UIAlertController(title: "Error", message: "Could not load wine pairing recommendations", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        alert.view.tintColor = kWineFoodie.colors.burgundy
     }
     
     //MARK: Collection View Data Source

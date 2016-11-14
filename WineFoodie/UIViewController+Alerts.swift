@@ -15,5 +15,6 @@ extension UIViewController {
         
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         self.present(alert, animated: true, completion: nil)
+        alert.view.tintColor = kWineFoodie.colors.burgundy
     }
 }

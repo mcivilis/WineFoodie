@@ -52,6 +52,7 @@ extension WinePairViewController {
         sortAlert.addAction(cancel)
         
         self.present(sortAlert, animated: true, completion: nil)
+        sortAlert.view.tintColor = kWineFoodie.colors.burgundy
     }
     
     //MARK: Sort Actions
