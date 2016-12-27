@@ -34,27 +34,12 @@ extension WinePairViewController {
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             alert.view.tintColor = kWineFoodie.colors.burgundy
+            return
         }
         
         dataManager.delegate = self
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
-        
-        if (!self.wineGroupHasMatch(.Red)) {
-            self.redImage.image = UIImage.init(named: "red_bw")
-        }
-        if (!self.wineGroupHasMatch(.White)) {
-            self.redImage.image = UIImage.init(named: "white_bw.png")
-        }
-        if (!self.wineGroupHasMatch(.Rose)) {
-            self.redImage.image = UIImage.init(named: "rose_bw.png")
-        }
-        if (!self.wineGroupHasMatch(.Sparkling)) {
-            self.redImage.image = UIImage.init(named: "sparkling_bw.png")
-        }
-        if (!self.wineGroupHasMatch(.Dessert)) {
-            self.redImage.image = UIImage.init(named: "dessert_bw.png")
-        }
     }
-
+    
 }

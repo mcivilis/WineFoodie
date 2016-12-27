@@ -72,5 +72,39 @@ extension WinePairViewController {
         present(alert, animated: true, completion: nil)
         alert.view.tintColor = kWineFoodie.colors.burgundy
     }
+    
+    func updateImages() -> Void {
+        
+        if (self.wineGroupHasMatch(.Red)) {
+            self.redImage.image = UIImage.init(named: "red.png")
+        } else {
+            self.redImage.image = UIImage.init(named: "red_bw.png")
+        }
+        if (self.wineGroupHasMatch(.White)) {
+            self.whiteImage.image = UIImage.init(named: "white.png")
+        } else {
+            self.whiteImage.image = UIImage.init(named: "white_bw.png")
+        }
+        if (self.wineGroupHasMatch(.Rose)) {
+            self.roseImage.image = UIImage.init(named: "rose.jpg")
+        } else {
+            self.roseImage.image = UIImage.init(named: "rose_bw.jpg")
+        }
+        if (self.wineGroupHasMatch(.Sparkling)) {
+            self.sparklingImage.image = UIImage.init(named: "sparkling.png")
+        } else {
+            self.sparklingImage.image = UIImage.init(named: "sparkling_bw.png")
+        }
+        if (self.wineGroupHasMatch(.Dessert)) {
+            self.dessertImage.image = UIImage.init(named: "dessert.jpg")
+        } else {
+            self.dessertImage.image = UIImage.init(named: "dessert_bw.jpg")
+        }
+        self.redImage.setNeedsLayout()
+        self.whiteImage.setNeedsLayout()
+        self.roseImage.setNeedsLayout()
+        self.dessertImage.setNeedsLayout()
+        self.sparklingImage.setNeedsLayout()
+    }
 
 }

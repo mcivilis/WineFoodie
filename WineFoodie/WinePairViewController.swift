@@ -47,6 +47,10 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
         loadWines()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateImages()
+    }
+
 //MARK: Data Manager Delegate
     
     func didUpdateWineList() {
