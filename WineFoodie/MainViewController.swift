@@ -19,7 +19,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     
     //MARK: Properties
-    var initialLocationSet = false
     var winePairingModel = [FoodCategory]()
     
     // MARK: UIViewController Lifecycle
