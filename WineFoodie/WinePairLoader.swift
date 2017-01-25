@@ -34,10 +34,7 @@ class WinePairLoader {
             if let foodCategoryData = data {
                 self.mapJSON(data: (foodCategoryData as NSData) as Data)
             } else {
-                //TODO: handle error
-                //if let userInfo = error?.userInfo[NSLocalizedDescriptionKey] {
-                //    self.winePairLoaderDelegate?.didFinishWithError(userInfo[NSLocalizedDescriptionKey])
-                //}
+                self.winePairLoaderDelegate?.didFinishWithError(errorToDisplay: "Failed to load wine pairings...")
             }
         }
     }

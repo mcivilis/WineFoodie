@@ -19,15 +19,7 @@ let kSTORES_PER_PAGE = "&per_page=20"
 extension DataManager {
     
     func lcboWinesURL(_ winePair: WinePair) -> String {
-        return kPRODUCTS_API + kAPI_KEY + kPRODUCTS_OPTIONS + "&q=" + prepareWinePairString(winePair)
-    }
-    
-    func prepareWinePairString(_ winePair: WinePair) -> String {
-        let wineGroup = winePair.group.rawValue
-        let varietal = winePair.varietal
-        let country = winePair.country
-        let plus = "+"
-        return wineGroup + plus + varietal! + plus + country!
+        return kPRODUCTS_API + kAPI_KEY + kPRODUCTS_OPTIONS + "&q=" + "wine+" + winePair.varietal
     }
 
     func lcboStoresURL(_ latitude: Double, longitude: Double, productID: Int) -> String {
