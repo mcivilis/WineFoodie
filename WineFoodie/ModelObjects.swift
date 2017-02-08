@@ -32,7 +32,6 @@ enum WineGroup : String {
     case Red        = "Red Wine"
     case White      = "White Wine"
     case Rose       = "Rosé Wine"
-    case Sparkling  = "Sparkling Wine"
     case Dessert    = "Dessert Wine"
 }
 
@@ -59,9 +58,7 @@ func == (lhs:WinePair, rhs:WinePair) -> Bool {
 }
 
 func wineGroup(_ group: String) -> WineGroup {
-    if group.lowercased().contains("sparkling") {
-        return .Sparkling
-    } else if group.lowercased().contains("red") {
+    if group.lowercased().contains("red") {
         return .Red
     } else if group.lowercased().contains("white") {
         return .White

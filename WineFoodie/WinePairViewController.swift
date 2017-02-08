@@ -26,8 +26,6 @@ class WinePairViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet var roseLabel: UILabel!
     @IBOutlet var whiteImage: UIImageView!
     @IBOutlet var whiteLabel: UILabel!
-    @IBOutlet var sparklingImage: UIImageView!
-    @IBOutlet var sparklingLabel: UILabel!
     
     @IBOutlet var dessertLabel: UILabel!
     @IBOutlet var sortOrder: UIBarButtonItem!

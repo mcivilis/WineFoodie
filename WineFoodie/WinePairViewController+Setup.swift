@@ -26,9 +26,6 @@ extension WinePairViewController {
         } else if (self.wineGroupHasMatch(.Dessert)) {
             selectCurrentLabel(dessertLabel)
             self.currentWineGroup = .Dessert
-        } else if (self.wineGroupHasMatch(.Sparkling)) {
-            selectCurrentLabel(sparklingLabel)
-            self.currentWineGroup = .Sparkling
         } else {
             let alert = UIAlertController(title: "Error", message: "Could not load wine list", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

@@ -12,7 +12,7 @@ import UIKit
 extension WinePairViewController {
     
     func saveLabels() {
-        wineGroupLabels = [sparklingLabel, whiteLabel, roseLabel, redLabel, dessertLabel]
+        wineGroupLabels = [whiteLabel, roseLabel, redLabel, dessertLabel]
     }
     
     func selectCurrentLabel(_ currentLabel: UILabel) {
@@ -90,11 +90,6 @@ extension WinePairViewController {
         } else {
             self.roseImage.image = UIImage.init(named: "rose_bw.jpg")
         }
-        if (self.wineGroupHasMatch(.Sparkling)) {
-            self.sparklingImage.image = UIImage.init(named: "sparkling.png")
-        } else {
-            self.sparklingImage.image = UIImage.init(named: "sparkling_bw.png")
-        }
         if (self.wineGroupHasMatch(.Dessert)) {
             self.dessertImage.image = UIImage.init(named: "dessert.jpg")
         } else {
@@ -104,7 +99,6 @@ extension WinePairViewController {
         self.whiteImage.setNeedsLayout()
         self.roseImage.setNeedsLayout()
         self.dessertImage.setNeedsLayout()
-        self.sparklingImage.setNeedsLayout()
     }
 
 }

@@ -12,10 +12,6 @@ import UIKit
 extension WinePairViewController {
     
     func configureGestures() {
-        let tapGestureSparkling = UITapGestureRecognizer(target:self, action:#selector(WinePairViewController.tapActionSparkling))
-        sparklingImage.isUserInteractionEnabled = true
-        sparklingImage.addGestureRecognizer(tapGestureSparkling)
-        
         let tapGestureWhite = UITapGestureRecognizer(target: self, action: #selector(WinePairViewController.tapActionWhite))
         whiteImage.isUserInteractionEnabled = true
         whiteImage.addGestureRecognizer(tapGestureWhite)
@@ -33,15 +29,6 @@ extension WinePairViewController {
         dessertImage.addGestureRecognizer(tapGestureDessert)
     }
     
-    func tapActionSparkling() {
-        if (wineGroupHasMatch(.Sparkling)) {
-        selectCurrentLabel(sparklingLabel)
-        currentWineGroup = .Sparkling
-        loadWines()
-        } else {
-            alertNoWinePairsFoundForType(.Sparkling)
-        }
-    }
     
     func tapActionWhite() {
         if (wineGroupHasMatch(.White)) {
