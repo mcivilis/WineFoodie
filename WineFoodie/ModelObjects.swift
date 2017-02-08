@@ -59,22 +59,20 @@ func == (lhs:WinePair, rhs:WinePair) -> Bool {
 }
 
 func wineGroup(_ group: String) -> WineGroup {
-    
-    if group == "red" {
-        return .Red
-    } else if group == "white" {
-        return .White
-    } else if group == "rose" {
-        return .Rose
-    } else if group == "sparkling" {
+    if group.lowercased().contains("sparkling") {
         return .Sparkling
-    } else if group == "dessert" {
+    } else if group.lowercased().contains("red") {
+        return .Red
+    } else if group.lowercased().contains("white") {
+        return .White
+    } else if group.lowercased().contains("ros") {
+        return .Rose
+    } else if group.lowercased().contains("dessert") {
         return .Dessert
-    } else {
+    } else {    
         return .Red
     }
 }
-
 struct LCBOStore {
     var id: Int!
     var name: String!
