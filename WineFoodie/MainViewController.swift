@@ -34,7 +34,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.reloadData()
     }
     func didFinishWithError(errorToDisplay: String) {
-        let alert = UIAlertController(title: "Error", message: "Could not load wine pairing recommendations", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "Could not load wine pairing recommendations, please insture you are connected to the internet", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         alert.view.tintColor = kWineFoodie.colors.burgundy
