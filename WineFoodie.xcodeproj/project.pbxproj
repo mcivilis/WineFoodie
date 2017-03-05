@@ -587,7 +587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcivilis.WineFoodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "24cd69d3-c2c0-451f-b8a9-3aa2d325c629";
+				PROVISIONING_PROFILE = "00781b20-f5d7-4515-b41c-2dd2c5fc7d96";
 				PROVISIONING_PROFILE_SPECIFIER = WineFoodieDevelopment;
 				SWIFT_VERSION = 3.0;
 			};
@@ -606,7 +606,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mcivilis.WineFoodie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8fa45592-6427-4220-80dc-f5de7b7bb46d";
+				PROVISIONING_PROFILE = "a9a0dc77-c7dd-4563-8a96-f806452acff6";
 				PROVISIONING_PROFILE_SPECIFIER = WineFoodieDistribution;
 				SWIFT_VERSION = 3.0;
 			};
