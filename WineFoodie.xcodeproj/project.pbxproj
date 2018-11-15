@@ -51,7 +51,6 @@
 		C7C9A6661E12F2B600B08081 /* red_bw.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C9A6611E12F2B600B08081 /* red_bw.png */; };
 		C7C9A6671E12F2B600B08081 /* rose_bw.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7C9A6621E12F2B600B08081 /* rose_bw.jpg */; };
 		C7C9A6691E12F2B600B08081 /* white_bw.png in Resources */ = {isa = PBXBuildFile; fileRef = C7C9A6641E12F2B600B08081 /* white_bw.png */; };
-		C7D8115E1D5678AA00564C72 /* JSONParsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D8115D1D5678AA00564C72 /* JSONParsing.swift */; };
 		C7D811601D56793B00564C72 /* ModelObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D8115F1D56793B00564C72 /* ModelObjects.swift */; };
 		C7D811661D56894300564C72 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D811651D56894300564C72 /* Food.swift */; };
 		C7D811681D568D2800564C72 /* FoodCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D811671D568D2800564C72 /* FoodCategory.swift */; };
@@ -106,7 +105,6 @@
 		C7C9A6611E12F2B600B08081 /* red_bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = red_bw.png; path = Images/red_bw.png; sourceTree = "<group>"; };
 		C7C9A6621E12F2B600B08081 /* rose_bw.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rose_bw.jpg; path = Images/rose_bw.jpg; sourceTree = "<group>"; };
 		C7C9A6641E12F2B600B08081 /* white_bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white_bw.png; path = Images/white_bw.png; sourceTree = "<group>"; };
-		C7D8115D1D5678AA00564C72 /* JSONParsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONParsing.swift; path = ../../JSONToObject/JSONToObject/JSONParsing.swift; sourceTree = "<group>"; };
 		C7D8115F1D56793B00564C72 /* ModelObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelObjects.swift; sourceTree = "<group>"; };
 		C7D811651D56894300564C72 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		C7D811671D568D2800564C72 /* FoodCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodCategory.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 		AFABCE621C7F469500B711F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C7D8115D1D5678AA00564C72 /* JSONParsing.swift */,
 				C7D8115F1D56793B00564C72 /* ModelObjects.swift */,
 				AF6C47771C8F151C0007C4DD /* WinePair.swift */,
 				C7D811651D56894300564C72 /* Food.swift */,
@@ -323,14 +320,14 @@
 					1,
 				);
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = mcivilis;
 				TargetAttributes = {
 					AFD498C01C7BD47F0083B788 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 9HM5LLY46P;
+						DevelopmentTeam = CH5ZC7B8ED;
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -435,7 +432,6 @@
 			files = (
 				AF9C07E21C84FBD600324FA5 /* WineDetailViewController.swift in Sources */,
 				C79CC4E41D65558C00EFCBAC /* WinePairLoader.swift in Sources */,
-				C7D8115E1D5678AA00564C72 /* JSONParsing.swift in Sources */,
 				AF6C47801C8F1E5D0007C4DD /* WinePairViewController+Sort.swift in Sources */,
 				C7D811681D568D2800564C72 /* FoodCategory.swift in Sources */,
 				AF6C47841C8F724D0007C4DD /* DataManager+Options.swift in Sources */,
@@ -494,14 +490,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -541,14 +545,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -581,14 +593,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9HM5LLY46P;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CH5ZC7B8ED;
 				INFOPLIST_FILE = WineFoodie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcivilis.WineFoodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcivilis.winefoodieapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "00781b20-f5d7-4515-b41c-2dd2c5fc7d96";
-				PROVISIONING_PROFILE_SPECIFIER = WineFoodieDevelopment;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -598,16 +611,17 @@
 			baseConfigurationReference = FD2293189D45697B74EDF94C /* Pods-WineFoodie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 9HM5LLY46P;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CH5ZC7B8ED;
 				INFOPLIST_FILE = WineFoodie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcivilis.WineFoodie;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcivilis.winefoodieapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "a9a0dc77-c7dd-4563-8a96-f806452acff6";
-				PROVISIONING_PROFILE_SPECIFIER = WineFoodieDistribution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
